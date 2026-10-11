@@ -1,0 +1,37 @@
+{
+  "id": "medical_reasoning_expert",
+  "name": "Medical question reasoning",
+  "capabilities": [
+    "medical question answering",
+    "clinical knowledge reasoning",
+    "medical exam questions"
+  ],
+  "aliases": [
+    "medical expert",
+    "medical reasoning",
+    "clinical question"
+  ],
+  "description": "Reasons about medical and biomedical questions, including exam-style differential diagnosis and treatment knowledge; not a substitute for a clinician.",
+  "keywords": [
+    "medical",
+    "medicine",
+    "clinical",
+    "diagnosis",
+    "symptom",
+    "treatment",
+    "medqa",
+    "biomedical",
+    "медицина",
+    "симптом",
+    "диагноз",
+    "лечение"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "root",
+    "node_id": "medical",
+    "description": "Medical and biomedical questions, including clinical reasoning and symptoms."
+  }
+}

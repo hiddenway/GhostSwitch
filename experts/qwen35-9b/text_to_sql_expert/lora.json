@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "text-to-sql-shop",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-9B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/whileai/text-to-sql-shop-qwen3.5-9b-r1-step75",
+    "revision": "2bec8c53096c4d99641dbbec8dc6bd5a7a0823fa",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "text-to-sql-shop.gguf"
+  }
+}

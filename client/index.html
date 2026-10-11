@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#121317" />
+    <title>GhostSwitch — local assistant</title>
+    <link rel="stylesheet" href="/app/vendor/katex/katex.min.css" />
+    <link rel="stylesheet" href="/app/styles.css" />
+    <script src="/app/vendor/katex/katex.min.js" defer></script>
+    <script src="/app/app.js" defer></script>
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Main menu">
+        <a class="brand" href="#chat"
+          ><span class="brand-mark" data-icon="brain"></span
+          ><span><strong>GhostSwitch</strong><small>Local assistant</small></span
+          ></a
+        >
+        <button class="new-chat" id="newChat" type="button">
+          <span data-icon="plus"></span> New chat <kbd>⌘ N</kbd>
+        </button>
+        <nav class="main-nav" aria-label="Sections">
+          <button
+            class="sidebar-link"
+            data-view="chat"
+            id="chatNav"
+            type="button"
+          >
+            <span data-icon="chat"></span> Chat
+          </button>
+          <button class="sidebar-link" data-view="experts" type="button">
+            <span data-icon="layers"></span> Experts
+          </button>
+        </nav>
+        <div class="sidebar-label">
+          <span>Conversations <span id="conversationCount">0</span></span
+          ><button
+            class="quiet-icon"
+            id="searchButton"
+            type="button"
+            aria-label="Search conversations"
+          >
+            <span data-icon="search"></span>
+          </button>
+        </div>
+        <nav
+          class="conversation-list"
+          id="conversationList"
+          aria-label="Conversations"
+        ></nav>
+        <div class="sidebar-bottom">
+          <details class="tools-nav" id="toolsNav">
+            <summary>
+              <span data-icon="terminal"></span> Tools
+              <span data-icon="chevron"></span>
+            </summary>
+            <nav class="tools-links" aria-label="Tools">
+              <button class="sidebar-link" data-view="overview" type="button">
+                <span data-icon="grid"></span> Statistics
+              </button>
+              <button class="sidebar-link" data-view="requests" type="button">
+                <span data-icon="activity"></span> Request log
+              </button>
+              <button class="sidebar-link" data-view="api" id="apiNav" type="button">
+                <span data-icon="code"></span> API
+              </button>
+            </nav>
+          </details>
+          <button class="sidebar-link" data-view="settings" type="button">
+            <span data-icon="settings"></span> Settings
+          </button>
+          <div class="server-card">
+            <span class="connection-dot" id="connectionDot"></span>
+            <button
+              class="server-model"
+              data-view="settings"
+              type="button"
+              title="Choose the base model and backend"
+            >
+              <strong id="connectionText">Checking connection</strong
+              ><small id="connectionDetail">Local server</small>
+            </button>
+            <button
+              class="quiet-icon"
+              id="refreshServer"
+              type="button"
+              aria-label="Check connection"
+            >
+              <span data-icon="refresh"></span>
+            </button>
+          </div>
+        </div>
+      </aside>
+      <button
+        class="sidebar-scrim hidden"
+        id="sidebarScrim"
+        type="button"
+        aria-label="Close menu"
+      ></button>
+      <main class="workspace">
+        <header class="topbar">
+          <button
+            class="icon-button mobile-menu"
+            id="mobileMenu"
+            type="button"
+            aria-label="Open menu"
+          >
+            <span data-icon="menu"></span>
+          </button>
+          <div class="breadcrumb">
+            <strong id="viewTitle">New chat</strong>
+          </div>
+          <div class="topbar-actions" id="chatActions">
+            <span class="sr-only" id="conversationSubtitle">New chat</span>
+            <details class="floating-details chat-menu">
+              <summary class="icon-button" aria-label="Conversation actions" title="Conversation actions">
+                <span data-icon="more"></span>
+              </summary>
+              <div class="chat-menu-panel">
+                <button id="renameChat" type="button">
+                  <span data-icon="edit"></span> Rename
+                </button>
+                <button id="exportChat" type="button">
+                  <span data-icon="download"></span> Download conversation
+                </button>
+              </div>
+            </details>
+            <button
+              class="icon-button"
+              id="inspectorButton"
+              type="button"
+              aria-label="Response details"
+              title="Response details"
+            >
+              <span data-icon="panel"></span>
+            </button>
+          </div>
+          <div class="global-actions">
+            <span class="topbar-status" id="topbarStatus">Offline</span
+            ><button
+              class="icon-button"
+              id="globalSearch"
+              type="button"
+              aria-label="Search"
+              title="Search · ⌘ K"
+            >
+              <span data-icon="search"></span></button
+            ><button
+              class="icon-button"
+              id="themeButton"
+              type="button"
+              aria-label="Toggle theme"
+            >
+              <span data-icon="sun"></span>
+            </button>
+          </div>
+        </header>
+        <section
+          class="panel-view"
+          id="overviewView"
+          aria-label="Overview"
+        ></section>
+        <section class="chat-layout hidden" id="chatView" aria-label="Chat">
+          <div class="chat-main">
+            <div class="message-scroll" id="messageScroll">
+              <div class="messages" id="messages"></div>
+            </div>
+            <button
+              class="scroll-bottom hidden"
+              id="scrollBottom"
+              type="button"
+            >
+              <span data-icon="arrowDown"></span> Jump to latest message
+            </button>
+            <div class="composer-wrap">
+              <div class="composer-note" id="composerNote" role="status"></div>
+              <form class="composer" id="composerForm">
+                <div class="composer-attachments hidden" id="composerAttachments" aria-label="Attachments"></div>
+                <label class="sr-only" for="messageInput">Message</label
+                ><textarea
+                  id="messageInput"
+                  rows="1"
+                  placeholder="Ask a question or describe a task…"
+                  autocomplete="off"
+                ></textarea>
+                <div class="composer-drop-hint" aria-hidden="true">Drop images or files to attach</div>
+                <div class="composer-footer">
+                  <button
+                    class="quiet-icon composer-attach"
+                    id="attachButton"
+                    type="button"
+                    title="Attach images or files"
+                    aria-label="Attach images or files"
+                  >
+                    <span data-icon="paperclip"></span>
+                  </button>
+                  <input class="hidden" id="attachmentInput" type="file" multiple tabindex="-1" />
+                  <button
+                    class="composer-model"
+                    id="composerModel"
+                    type="button"
+                    aria-haspopup="dialog"
+                    title="Choose expert"
+                  >
+                    <span data-icon="sparkles"></span
+                    ><span id="composerMode">Auto</span
+                    ><span data-icon="chevron"></span>
+                  </button>
+                  <div class="composer-controls">
+                    <button class="composer-search" id="webSearchToggle" type="button">
+                      <span data-icon="globe"></span><span id="webSearchMode">Off</span>
+                    </button>
+                    <button class="composer-search" id="thinkingToggle" type="button">
+                      <span data-icon="brain"></span><span id="thinkingMode">Auto</span>
+                    </button>
+                    <details class="floating-details generation-settings">
+                      <summary class="quiet-icon" aria-label="Response settings" title="Response settings">
+                        <span data-icon="sliders"></span>
+                      </summary>
+                      <div class="generation-popover">
+                        <strong>Response settings</strong>
+                        <label for="temperature">Temperature
+                          <input id="temperature" type="number" min="0" max="2" step="0.1" value="0.7" />
+                        </label>
+                        <label for="maxTokens">Token limit
+                          <input id="maxTokens" type="number" min="1" max="10240" value="4096" />
+                        </label>
+                        <p>Lower temperature gives more predictable responses. More tokens allow longer responses.</p>
+                      </div>
+                    </details>
+                    <button
+                      class="send-button"
+                      id="sendButton"
+                      type="submit"
+                      aria-label="Send"
+                    >
+                      <span data-icon="arrowUp"></span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <div class="composer-hint">
+                Enter — send <span>·</span> Shift+Enter — new line
+              </div>
+            </div>
+          </div>
+          <aside class="inspector" id="inspector" aria-label="Response inspector">
+            <div class="inspector-heading">
+              <span><span data-icon="activity"></span> Response details</span
+              ><button
+                class="quiet-icon"
+                id="closeInspector"
+                type="button"
+                aria-label="Close inspector"
+              >
+                <span data-icon="close"></span>
+              </button>
+            </div>
+            <div id="inspectorContent"></div>
+          </aside>
+        </section>
+        <section
+          class="panel-view hidden"
+          id="expertsView"
+          aria-label="Experts"
+        ></section>
+        <section
+          class="panel-view hidden"
+          id="requestsView"
+          aria-label="Request log"
+        ></section>
+        <section
+          class="panel-view hidden"
+          id="docsView"
+          aria-label="API playground"
+        ></section>
+        <section
+          class="panel-view hidden"
+          id="settingsView"
+          aria-label="Settings"
+        ></section>
+      </main>
+    </div>
+    <div class="overlay hidden" id="modelOverlay">
+      <div
+        class="dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modelDialogTitle"
+        tabindex="-1"
+      >
+        <div class="dialog-header">
+          <div>
+            <h2 id="modelDialogTitle">Choose an expert</h2>
+          </div>
+          <button
+            class="icon-button"
+            id="closeModelDialog"
+            type="button"
+            aria-label="Close"
+          >
+            <span data-icon="close"></span>
+          </button>
+        </div>
+        <p class="dialog-intro">
+          Use automatic selection or choose a specialist for this conversation.
+        </p>
+        <label class="search-field"
+          ><span data-icon="search"></span
+          ><input
+            id="expertSearch"
+            placeholder="Name, capabilities, or ID"
+            aria-label="Search LoRAs"
+        /></label>
+        <div class="expert-list" id="expertList"></div>
+        <div class="dialog-footer">
+          <span id="expertCount"></span
+          ><button class="text-button" id="refreshExperts" type="button">
+            Refresh
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay hidden" id="searchOverlay">
+      <div
+        class="dialog search-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Search conversations"
+        tabindex="-1"
+      >
+        <div class="dialog-header">
+          <h2>Search conversations</h2>
+          <button
+            class="icon-button"
+            id="closeSearch"
+            type="button"
+            aria-label="Close"
+          >
+            <span data-icon="close"></span>
+          </button>
+        </div>
+        <label class="search-field"
+          ><span data-icon="search"></span
+          ><input
+            id="workspaceSearch"
+            placeholder="Title, text, or request ID…"
+            aria-label="Search conversations"
+        /></label>
+        <div id="searchResults" class="search-results"></div>
+        <div class="dialog-footer">
+          <span>Conversations and responses from this browser</span><kbd>ESC</kbd>
+        </div>
+      </div>
+    </div>
+    <div class="overlay hidden" id="detailOverlay">
+      <div
+        class="dialog request-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Request details"
+        tabindex="-1"
+      >
+        <div class="dialog-header">
+          <div>
+            <span class="eyebrow">DIAGNOSTICS</span>
+            <h2>Request details</h2>
+          </div>
+          <button
+            class="icon-button"
+            id="closeDetail"
+            type="button"
+            aria-label="Close"
+          >
+            <span data-icon="close"></span>
+          </button>
+        </div>
+        <div id="requestDetail" class="request-detail"></div>
+      </div>
+    </div>
+    <div class="overlay hidden" id="addExpertOverlay">
+      <div class="dialog add-expert-dialog" role="dialog" aria-modal="true"
+           aria-labelledby="addExpertTitle" aria-describedby="addExpertIntro" tabindex="-1">
+        <div class="dialog-header">
+          <h2 id="addExpertTitle">Upload expert / LoRA</h2>
+          <button class="icon-button" id="closeAddExpert" type="button" aria-label="Close">
+            <span data-icon="close"></span>
+          </button>
+        </div>
+        <p class="dialog-intro" id="addExpertIntro">Contribute an expert through GitHub. Store the weights on Hugging Face and add a small reference package to Git.</p>
+        <ol class="add-expert-steps">
+          <li>Copy <code>experts/_template</code> to <code>experts/qwen35-9b/&lt;expert_id&gt;</code>.</li>
+          <li>Fill in <code>expert.json</code>, <code>prompt.txt</code>, and <code>README.md</code>. In <code>lora.json</code>, add the Hugging Face URL, file paths, and pinned commit SHA.</li>
+          <li>Run <code>python scripts/validate_experts.py</code> and submit the folder through GitHub. Keep large weight files out of Git.</li>
+          <li>After the contribution is merged, pull the update and restart GhostSwitch. Select <strong>Download and enable</strong> in the library.</li>
+        </ol>
+        <div class="dialog-footer">
+          <a class="primary-button" href="https://github.com/hiddenway/ghostswitch#add-your-own-expert" target="_blank" rel="noopener noreferrer">Read the GitHub README <span data-icon="arrowRight"></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="overlay hidden" id="onboardingOverlay">
+      <div class="dialog onboarding-dialog" role="dialog" aria-modal="true"
+           aria-labelledby="onboardingTitle" tabindex="-1">
+        <div class="dialog-header onboarding-header">
+          <div>
+            <span class="eyebrow" id="onboardingStepLabel"></span>
+            <div class="onboarding-dots" id="onboardingDots" aria-hidden="true"></div>
+          </div>
+          <button class="icon-button" id="closeOnboarding" type="button" aria-label="Close">
+            <span data-icon="close"></span>
+          </button>
+        </div>
+        <div class="onboarding-body" id="onboardingBody"></div>
+        <div class="dialog-footer onboarding-footer" id="onboardingFooter"></div>
+      </div>
+    </div>
+    <input
+      id="importFile"
+      type="file"
+      accept="application/json,.json"
+      class="hidden"
+    />
+    <div class="toast hidden" id="toast" role="status"></div>
+  </body>
+</html>

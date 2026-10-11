@@ -1,0 +1,5 @@
+huggingface_hub>=0.26
+jsonschema>=4.23,<5
+# Image attachments are decoded and resized on the server; PDF text is extracted from file attachments.
+Pillow>=10.3
+pypdf>=5

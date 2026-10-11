@@ -1,0 +1,46 @@
+{
+  "id": "receipt_extraction_expert",
+  "name": "Receipt and invoice extraction",
+  "capabilities": [
+    "receipt extraction",
+    "invoice extraction",
+    "OCR field extraction",
+    "structured document extraction"
+  ],
+  "aliases": [
+    "receipt extraction",
+    "invoice extraction",
+    "document OCR",
+    "receipt OCR"
+  ],
+  "description": "Extracts structured fields such as merchant, address, date, line items, tax, and total from receipt or invoice text transcribed by OCR.",
+  "keywords": [
+    "merchant",
+    "vendor",
+    "purchase",
+    "subtotal",
+    "tax",
+    "total",
+    "line item",
+    "invoice",
+    "receipt",
+    "scan",
+    "transcribed document",
+    "чек",
+    "квитанция",
+    "счёт",
+    "счет",
+    "покупка",
+    "итого",
+    "адрес",
+    "дата"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-4b",
+  "default_enabled": true,
+  "routing": {
+    "parent": "root",
+    "node_id": "receipts",
+    "description": "Extract structured fields from receipts, invoices, and noisy transaction OCR."
+  }
+}

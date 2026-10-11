@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "finance-arithmetic",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-9B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/ZaoKing/khudi-finance-v0-3-arithmetic-candidate",
+    "revision": "eaca45ed04c0513917de105907e0529195b74729",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "finance-arithmetic.gguf"
+  }
+}

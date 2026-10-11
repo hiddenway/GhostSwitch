@@ -1,0 +1,29 @@
+{
+  "id": "translation_en_kn_expert",
+  "name": "Kannada translation and writing",
+  "capabilities": [
+    "translation into Kannada",
+    "English to Kannada translation",
+    "Kannada language generation"
+  ],
+  "aliases": [
+    "Kannada translator",
+    "English Kannada translation"
+  ],
+  "description": "Translates text from English or other languages into Kannada and writes short Kannada texts; trained on English to Kannada translation.",
+  "keywords": [
+    "translate",
+    "translation",
+    "Kannada",
+    "ಕನ್ನಡ",
+    "ಅನುವಾದ"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-4b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "root",
+    "node_id": "translation",
+    "description": "Translate text into Kannada from any language, or write short texts in Kannada."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "verdict": "no_gain",
+  "blocked": false,
+  "note": "Leans better than the base model but not significant at n=60; kept pending a larger run.",
+  "measured": {
+    "task": "Gretel PII masking, entity-string F1",
+    "n": 60,
+    "base": 0.7533,
+    "expert": 0.7833,
+    "expert_better": 7,
+    "base_better": 2,
+    "p_value": 0.18,
+    "identical_answers": 30,
+    "runtime": "Qwen3.5-9B Q4_K_M GGUF, RTX 3090",
+    "mode": "quick: verifier and thinking off, answer line only for multiple choice",
+    "date": "2026-10-09"
+  }
+}

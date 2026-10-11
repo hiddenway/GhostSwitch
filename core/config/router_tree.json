@@ -1,0 +1,66 @@
+{
+  "root_id": "root",
+  "max_depth": 6,
+  "nodes": [
+    {
+      "id": "root",
+      "description": "Choose the available specialist that can fulfill the user's requested outcome. Route formal theorem proving and proof-assistant tasks such as Lean4 to reasoning, and Verilog/SystemVerilog/RTL/FPGA hardware-design tasks to engineering_design. Reserve coding for implementing, debugging, or explaining software.",
+      "children": [
+        "finance",
+        "coding",
+        "legal_contract",
+        "cybersecurity",
+        "reasoning",
+        "engineering_design",
+        "data_tasks",
+        "science_publishing",
+        "roleplay"
+      ]
+    },
+    {
+      "id": "finance",
+      "description": "Financial analysis and calculations, including interest, balances, compound growth, DCF, FCFF, WACC, and valuation.",
+      "children": []
+    },
+    {
+      "id": "coding",
+      "description": "Software implementation, repository engineering, debugging, and application-code generation. Do not choose this branch for formal mathematics or theorem-prover proofs such as Lean4 (reasoning), or HDL/RTL/FPGA hardware design such as Verilog (engineering_design).",
+      "children": []
+    },
+    {
+      "id": "legal_contract",
+      "description": "Legal analysis of contracts, clauses, and hypothetical legal questions.",
+      "children": []
+    },
+    {
+      "id": "cybersecurity",
+      "description": "Personal or sensitive data in text: PII detection and data-loss prevention. Vulnerability analysis, CWE mapping, penetration testing and infrastructure-as-code reviews are not this branch.",
+      "children": []
+    },
+    {
+      "id": "reasoning",
+      "description": "All requested arithmetic, quantitative calculations, and logical deductions, even elementary ones; also formal theorem proving and Lean4. Software implementation and debugging belong under coding.",
+      "children": []
+    },
+    {
+      "id": "engineering_design",
+      "description": "Choose a specialist for CAD, OpenSCAD, or hardware description language and digital hardware design. Verilog/SystemVerilog/RTL/FPGA requests belong here even when phrased as code generation, not under software coding.",
+      "children": []
+    },
+    {
+      "id": "data_tasks",
+      "description": "Natural-language questions turned into Neo4j Cypher queries, and funding information in documents. SQL queries, named entities in prose, and receipt or invoice OCR fields such as merchant, date, and total are not data tasks.",
+      "children": []
+    },
+    {
+      "id": "science_publishing",
+      "description": "Choose a specialist for scientific document structure and annotation.",
+      "children": []
+    },
+    {
+      "id": "roleplay",
+      "description": "Choose a specialist for creative roleplay and character dialogue.",
+      "children": []
+    }
+  ]
+}

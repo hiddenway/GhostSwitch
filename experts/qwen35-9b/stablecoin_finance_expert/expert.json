@@ -1,0 +1,27 @@
+{
+  "id": "stablecoin_finance_expert",
+  "name": "Stablecoin and crypto finance",
+  "capabilities": [
+    "Stablecoin and crypto finance",
+    "Stablecoins, crypto-finance concepts, market mechanisms and risk analysis."
+  ],
+  "aliases": [
+    "stablecoin_finance_expert",
+    "stablecoin crypto finance"
+  ],
+  "description": "Stablecoins, crypto-finance concepts, market mechanisms and risk analysis.",
+  "keywords": [
+    "stablecoin",
+    "crypto",
+    "stablecoin",
+    "finance"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "finance",
+    "node_id": "stablecoin_finance",
+    "description": "Stablecoins and crypto-finance."
+  }
+}

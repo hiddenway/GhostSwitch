@@ -1,0 +1,27 @@
+{
+  "id": "text_to_cypher_expert",
+  "name": "Text-to-Cypher generation",
+  "capabilities": [
+    "Text-to-Cypher generation",
+    "Translate natural-language questions into Neo4j Cypher queries."
+  ],
+  "aliases": [
+    "text_to_cypher_expert",
+    "text to Cypher Neo4j graph query"
+  ],
+  "description": "Translate natural-language questions into Neo4j Cypher queries.",
+  "keywords": [
+    "Cypher",
+    "Neo4j",
+    "graph",
+    "query"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "data_tasks",
+    "node_id": "text_to_cypher",
+    "description": "Natural language to Neo4j Cypher."
+  }
+}

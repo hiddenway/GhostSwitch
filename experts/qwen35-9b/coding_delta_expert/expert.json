@@ -1,0 +1,28 @@
+{
+  "id": "coding_delta_expert",
+  "name": "DeltaCoder coding agent",
+  "capabilities": [
+    "DeltaCoder coding agent",
+    "Autonomous coding workflows that explicitly require structured tool calls."
+  ],
+  "aliases": [
+    "coding_delta_expert",
+    "Qwen3.5 DeltaCoder tool calling code agent"
+  ],
+  "description": "Autonomous coding workflows with explicitly requested structured tool calls; ordinary functions and scripts use the general coding expert.",
+  "keywords": [
+    "code",
+    "coding",
+    "tool",
+    "calling",
+    "DeltaCoder"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "coding",
+    "node_id": "coding_delta",
+    "description": "Only autonomous coding workflows with explicitly requested structured tool calls. Ordinary functions and scripts use coding_agentic."
+  }
+}

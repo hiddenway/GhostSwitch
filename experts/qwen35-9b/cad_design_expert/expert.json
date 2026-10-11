@@ -1,0 +1,28 @@
+{
+  "id": "cad_design_expert",
+  "name": "CAD and Build123d design",
+  "capabilities": [
+    "CAD and Build123d design",
+    "Generate CAD designs and Build123d scripts from dimensional requirements."
+  ],
+  "aliases": [
+    "cad_design_expert",
+    "CAD Build123d design"
+  ],
+  "description": "Generate CAD designs and Build123d scripts from dimensional requirements.",
+  "keywords": [
+    "CAD",
+    "Build123d",
+    "3D",
+    "mechanical",
+    "design"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "engineering_design",
+    "node_id": "cad_design",
+    "description": "CAD and Build123d design."
+  }
+}

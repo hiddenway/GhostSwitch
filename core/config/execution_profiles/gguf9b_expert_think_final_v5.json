@@ -1,0 +1,48 @@
+{
+  "profile_id": "gguf9b_expert_think_final_v5",
+  "profile_version": 5,
+  "backbone_id": "qwen35-9b",
+  "backend": "gguf",
+  "input_types": [
+    "text"
+  ],
+  "max_experts_per_task_default": 10,
+  "routing": {
+    "method": "capability_graph_v2",
+    "revision": "v2_guarded_dispatch_v5",
+    "thinking": false,
+    "policy": "v2_capability_dispatch_v5",
+    "graph_max_tokens": 512,
+    "coverage_max_tokens": 160,
+    "pair_repair_max_tokens": 128,
+    "specialization_max_tokens": 32,
+    "task_check_max_tokens": 24,
+    "max_retries": 1,
+    "cache_budget_mib": 1024
+  },
+  "experts": {
+    "thinking": true,
+    "temperature": 0,
+    "max_tokens_per_call": 10240,
+    "generation_chunk_tokens": 4096,
+    "max_sequence_tokens": 102400,
+    "late_handoff_enabled": false,
+    "answer_reserve_tokens": 2048,
+    "answer_reserve_ratio": 0.2
+  },
+  "final": {
+    "thinking": false,
+    "max_tokens_per_call": 1028,
+    "max_actions": 5,
+    "max_late_handoff_rounds": 0
+  },
+  "single_path_generation_token_reference": 12288,
+  "internal_decomposition_default": true,
+  "result_schema_version": 2,
+  "generation": {
+    "single_max_tokens": 12288,
+    "multi_max_tokens": 104448,
+    "final_reserve_tokens": 2048,
+    "routing_included": true
+  }
+}

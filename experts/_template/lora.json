@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "display_id": "my-adapter",
+  "accepted_base_names": ["Qwen/Qwen3.5-9B"],
+  "source": {
+    "url": "https://huggingface.co/OWNER/REPOSITORY",
+    "revision": "REPLACE_WITH_40_CHARACTER_COMMIT_SHA",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "my_expert.gguf"
+  }
+}

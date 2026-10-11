@@ -1,0 +1,50 @@
+{
+  "id": "finance_market_expert",
+  "name": "Finance and market analysis",
+  "capabilities": [
+    "financial market analysis",
+    "company and sector analysis",
+    "company valuation and DCF calculation",
+    "market terminology and finance reasoning",
+    "interest, balances, and compound growth calculations"
+  ],
+  "aliases": [
+    "finance_market_expert",
+    "finance market expert",
+    "market analysis",
+    "financial market analysis"
+  ],
+  "description": "Analyzes financial questions and calculations, including interest, account balances, compound growth, company valuation, DCF, FCFF, and market concepts.",
+  "keywords": [
+    "finance",
+    "financial",
+    "market",
+    "markets",
+    "stock",
+    "equity",
+    "revenue",
+    "earnings",
+    "valuation",
+    "DCF",
+    "FCFF",
+    "WACC",
+    "EBITDA",
+    "terminal value",
+    "investment",
+    "company analysis",
+    "финансы",
+    "рынок",
+    "акции",
+    "выручка",
+    "прибыль",
+    "оценка"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-4b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "finance",
+    "node_id": "market_finance",
+    "description": "Financial calculations including interest and compound growth, company valuation, DCF and FCFF."
+  }
+}

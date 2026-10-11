@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "pentest-v5",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-9B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/HRB25/qwen35-9b-pentest-v5",
+    "revision": "c63aed71520b17c25ba9c8e0836f75f34470580f",
+    "config": "adapter/adapter_config.json",
+    "weights": "adapter/adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "pentest-v5.gguf"
+  }
+}

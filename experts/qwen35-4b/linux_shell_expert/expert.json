@@ -1,0 +1,37 @@
+{
+  "id": "linux_shell_expert",
+  "name": "Linux shell commands",
+  "capabilities": [
+    "Linux shell command generation",
+    "Bash command composition",
+    "shell scripting"
+  ],
+  "aliases": [
+    "Linux command expert",
+    "Bash command",
+    "shell script"
+  ],
+  "description": "Creates concise Linux shell commands and scripts for filesystem, process, and command-line administration tasks.",
+  "keywords": [
+    "bash",
+    "shell",
+    "linux",
+    "terminal",
+    "command line",
+    "find",
+    "grep",
+    "sed",
+    "awk",
+    "команда оболочки",
+    "терминал",
+    "линукс"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-4b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "root",
+    "node_id": "linux_shell",
+    "description": "Compose Linux shell commands and scripts for command-line tasks."
+  }
+}

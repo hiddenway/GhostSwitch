@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "verdict": "no_gain",
+  "blocked": true,
+  "reason": "Not better than the base model at extracting names from prose (F1 67% vs 67%, n=60). The adapter extracts legal-contract entities (parties, dates, jurisdictions), so the router description that sends prose here was wrong as well.",
+  "measured": {
+    "task": "CoNLL-2003 test, entity-string F1 (tner/conll2003)",
+    "n": 60,
+    "base": 0.6741,
+    "expert": 0.6721,
+    "expert_better": 17,
+    "base_better": 14,
+    "p_value": 0.72,
+    "identical_answers": 15,
+    "runtime": "Qwen3.5-9B Q4_K_M GGUF, RTX 3090",
+    "mode": "quick: verifier and thinking off, answer line only for multiple choice",
+    "date": "2026-10-09"
+  }
+}

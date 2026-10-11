@@ -1,0 +1,28 @@
+{
+  "id": "privacy_dlp_expert",
+  "name": "PII detection and data loss prevention",
+  "capabilities": [
+    "PII detection and data loss prevention",
+    "Identify personal or sensitive information and data-loss-prevention risks in text."
+  ],
+  "aliases": [
+    "privacy_dlp_expert",
+    "PII DLP privacy sensitive data detection"
+  ],
+  "description": "Identify personal or sensitive information and data-loss-prevention risks in text.",
+  "keywords": [
+    "PII",
+    "DLP",
+    "privacy",
+    "personal",
+    "information"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "cybersecurity",
+    "node_id": "privacy_dlp",
+    "description": "PII detection and data-loss prevention."
+  }
+}

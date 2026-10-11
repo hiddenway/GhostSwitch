@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "verdict": "no_gain",
+  "blocked": true,
+  "reason": "Not better than the base model at choosing secure Terraform S3 patches (52% vs 53%, n=60).",
+  "measured": {
+    "task": "Terraform S3 security MCQ (rootly-ai-labs/terraform-s3-security-mcq)",
+    "n": 60,
+    "base": 0.5333,
+    "expert": 0.5167,
+    "expert_better": 5,
+    "base_better": 6,
+    "p_value": 1.0,
+    "identical_answers": 44,
+    "runtime": "Qwen3.5-9B Q4_K_M GGUF, RTX 3090",
+    "mode": "quick: verifier and thinking off, answer line only for multiple choice",
+    "date": "2026-10-09"
+  }
+}

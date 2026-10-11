@@ -1,0 +1,27 @@
+{
+  "id": "roleplay_expert",
+  "name": "Roleplay dialogue",
+  "capabilities": [
+    "Roleplay dialogue",
+    "Creative roleplay and character dialogue."
+  ],
+  "aliases": [
+    "roleplay_expert",
+    "roleplay character dialogue"
+  ],
+  "description": "Creative roleplay and character dialogue.",
+  "keywords": [
+    "roleplay",
+    "character",
+    "fiction",
+    "dialogue"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "roleplay",
+    "node_id": "roleplay_general",
+    "description": "Creative character dialogue and roleplay."
+  }
+}

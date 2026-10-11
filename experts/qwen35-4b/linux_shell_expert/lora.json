@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "shell-expert",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-4B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/louisguthmann/qwen3.5-4b-shellcommand-linux-lora",
+    "revision": "d5d64cf904c647f6ed4b451964d407d55129bc9f",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "shell-expert-4b.gguf"
+  }
+}

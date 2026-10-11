@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "verilog-v33",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-9B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/Pablo-Flores-Mollinedo/verilog-qwen3.5-9b-v33-thinking-reinforced-lora",
+    "revision": "a89182dc1de16761f76c3772630177031c170fd8",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "verilog-v33.gguf"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "penetration_testing_expert",
+  "name": "Penetration testing",
+  "capabilities": [
+    "Penetration testing",
+    "Authorized penetration-testing methodology, vulnerability validation and security assessment."
+  ],
+  "aliases": [
+    "penetration_testing_expert",
+    "pentest penetration testing security assessment"
+  ],
+  "description": "Authorized penetration-testing methodology, vulnerability validation and security assessment.",
+  "keywords": [
+    "pentest",
+    "penetration",
+    "testing",
+    "exploit",
+    "vulnerability"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "cybersecurity",
+    "node_id": "penetration_testing",
+    "description": "Authorized penetration-testing and security assessments."
+  }
+}

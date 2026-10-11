@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "finance-market-expert",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-4B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/alinakhay/FinVector-Market-4B",
+    "revision": "eb72ea2456e3d8eecc46dc8c88bea40a47224047",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "finance-market-expert-4b.gguf"
+  }
+}

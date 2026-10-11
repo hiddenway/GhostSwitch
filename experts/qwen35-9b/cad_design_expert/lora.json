@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "cadmium-cad",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-9B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/gaurav-tyagi/cadmium-cad-grpo-9b",
+    "revision": "21e76910130eaf5952a1798a13a5f9873b36207d",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "cadmium-cad.gguf"
+  }
+}

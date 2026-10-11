@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "verdict": "no_gain",
+  "blocked": true,
+  "reason": "Not better than the base model on HumanEval+ (78% vs 77%, n=60, p=1.0), and trained on top of Jackrong/Qwen3.5-9B-Claude-4.6-Opus-Reasoning-Distilled-v2 rather than Qwen3.5-9B; coding_expert covers the domain and does beat the base model.",
+  "measured": {
+    "task": "HumanEval+ (evalplus/humanevalplus)",
+    "n": 60,
+    "base": 0.7667,
+    "expert": 0.7833,
+    "expert_better": 3,
+    "base_better": 2,
+    "p_value": 1.0,
+    "identical_answers": 14,
+    "runtime": "Qwen3.5-9B Q4_K_M GGUF, RTX 3090",
+    "mode": "quick: verifier and thinking off, answer line only for multiple choice",
+    "date": "2026-10-09"
+  }
+}

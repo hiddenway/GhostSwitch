@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "verdict": "hurts",
+  "blocked": true,
+  "reason": "Worse than the base model at mapping CVE descriptions to CWE (52% vs 57%, n=60; the base model won 6 questions, the expert 3).",
+  "measured": {
+    "task": "CTI-Bench cti-rcm (AI4Sec/cti-bench)",
+    "n": 60,
+    "base": 0.5667,
+    "expert": 0.5167,
+    "expert_better": 3,
+    "base_better": 6,
+    "p_value": 0.508,
+    "identical_answers": 31,
+    "runtime": "Qwen3.5-9B Q4_K_M GGUF, RTX 3090",
+    "mode": "quick: verifier and thinking off, answer line only for multiple choice",
+    "date": "2026-10-09"
+  }
+}

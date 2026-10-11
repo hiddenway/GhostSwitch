@@ -1,0 +1,27 @@
+{
+  "id": "spanish_legal_expert",
+  "name": "Spanish legal analysis",
+  "capabilities": [
+    "Spanish legal analysis",
+    "Analyze Spanish-language legal texts and questions, with explanations in the user's requested language."
+  ],
+  "aliases": [
+    "spanish_legal_expert",
+    "Spanish legal law español derecho"
+  ],
+  "description": "Analyze Spanish-language legal texts and questions. The user's question and explanatory answer may be in any requested language. Preserve the legal context and jurisdiction of the supplied text.",
+  "keywords": [
+    "Spanish",
+    "legal",
+    "español",
+    "derecho"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "legal_contract",
+    "node_id": "spanish_legal",
+    "description": "Analyze Spanish-language legal texts and questions; the user's question and explanations may be in any requested language. Preserve the supplied legal context and jurisdiction."
+  }
+}

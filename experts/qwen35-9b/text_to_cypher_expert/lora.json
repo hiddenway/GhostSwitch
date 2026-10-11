@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "nl2cypher",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-9B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/danp27/qwen3.5-9b-nl2cypher-lora",
+    "revision": "d29956017d13b5cd8d7a1dba258538eb3d96043d",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "text-to-cypher.gguf"
+  }
+}

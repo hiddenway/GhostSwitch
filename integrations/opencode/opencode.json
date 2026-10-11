@@ -1,0 +1,59 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "ghostswitch": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "GhostSwitch Local",
+      "options": {
+        "baseURL": "http://127.0.0.1:27246/v1",
+        "apiKey": "local",
+        "timeout": 600000,
+        "headers": {
+          "X-GhostSwitch-Client": "OpenCode"
+        }
+      },
+      "models": {
+        "ghostswitch-v6": {
+          "name": "GhostSwitch v6",
+          "tool_call": true,
+          "reasoning": false,
+          "attachment": true,
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "limit": {
+            "context": 100000,
+            "output": 4096
+          }
+        }
+      }
+    }
+  },
+  "model": "ghostswitch/ghostswitch-v6",
+  "small_model": "ghostswitch/ghostswitch-v6",
+  "agent": {
+    "ghostswitch": {
+      "description": "Coding agent powered by local GhostSwitch",
+      "mode": "primary",
+      "model": "ghostswitch/ghostswitch-v6",
+      "prompt": "You are a coding agent. Read relevant files before editing. Use tools to carry out the user's task, run the relevant tests, and report the result concisely. Never claim to have executed a command without its tool result. Work within the current project.",
+      "tools": {
+        "*": false,
+        "read": true,
+        "edit": true,
+        "write": true,
+        "bash": true,
+        "glob": true,
+        "grep": true
+      }
+    },
+    "title": {
+      "disable": true
+    },
+    "summary": {
+      "disable": true
+    }
+  },
+  "default_agent": "ghostswitch"
+}

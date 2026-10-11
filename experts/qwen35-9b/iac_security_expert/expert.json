@@ -1,0 +1,28 @@
+{
+  "id": "iac_security_expert",
+  "name": "Infrastructure-as-code security",
+  "capabilities": [
+    "Infrastructure-as-code security",
+    "Security review and remediation for infrastructure-as-code configurations."
+  ],
+  "aliases": [
+    "iac_security_expert",
+    "IaC security Terraform infrastructure configuration"
+  ],
+  "description": "Security review and remediation for infrastructure-as-code configurations.",
+  "keywords": [
+    "IaC",
+    "Terraform",
+    "infrastructure",
+    "security",
+    "misconfiguration"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "cybersecurity",
+    "node_id": "iac_security",
+    "description": "Infrastructure-as-code security."
+  }
+}

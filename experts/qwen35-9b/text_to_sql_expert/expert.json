@@ -1,0 +1,27 @@
+{
+  "id": "text_to_sql_expert",
+  "name": "Text-to-SQL generation",
+  "capabilities": [
+    "Text-to-SQL generation",
+    "Translate natural-language questions into SQL queries for relational databases."
+  ],
+  "aliases": [
+    "text_to_sql_expert",
+    "text to SQL database query"
+  ],
+  "description": "Translate natural-language questions into SQL queries for relational databases.",
+  "keywords": [
+    "SQL",
+    "text-to-SQL",
+    "database",
+    "query"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "data_tasks",
+    "node_id": "text_to_sql",
+    "description": "Natural language to SQL."
+  }
+}

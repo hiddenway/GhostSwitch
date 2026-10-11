@@ -1,0 +1,29 @@
+{
+  "id": "funding_data_expert",
+  "name": "Funding data extraction",
+  "capabilities": [
+    "Funding data extraction",
+    "Parse venture funding announcements and extract structured funding fields."
+  ],
+  "aliases": [
+    "funding_data_expert",
+    "funding parsing venture funding data extraction"
+  ],
+  "description": "Parse venture funding announcements and extract structured funding fields.",
+  "keywords": [
+    "funding",
+    "round",
+    "investment",
+    "venture",
+    "capital",
+    "parsing"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "data_tasks",
+    "node_id": "funding_data",
+    "description": "Parse venture funding information."
+  }
+}

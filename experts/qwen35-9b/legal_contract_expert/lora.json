@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "legal-contract",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-9B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/ximilala/qwen35-9b-legal-lora",
+    "revision": "4115cd0dba3208f09bd585bb6e6a32e184931ed4",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "legal-contract.gguf"
+  }
+}

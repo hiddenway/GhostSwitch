@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "repos": [
+    {
+      "repo_id": "MaliDDD/gpqa_marginal_9b-sft_1.0",
+      "reason": "Trained on trajectories built from GPQA questions in a tool-calling format; it would contaminate GPQA results and does not answer ordinary requests."
+    },
+    {
+      "repo_id": "MaliDDD/mmlu_marginal_9b-sft_1.0",
+      "reason": "Trained on trajectories built from MMLU questions in a tool-calling format; it would contaminate MMLU results and does not answer ordinary requests."
+    }
+  ]
+}

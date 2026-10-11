@@ -1,0 +1,35 @@
+{
+  "id": "legal_trademark_expert",
+  "name": "Trademark distinctiveness classification",
+  "capabilities": [
+    "Abercrombie trademark classification",
+    "trademark distinctiveness analysis"
+  ],
+  "aliases": [
+    "trademark classification",
+    "Abercrombie spectrum"
+  ],
+  "description": "Classifies a trademark on the Generic, Descriptive, Suggestive, Arbitrary, or Fanciful Abercrombie spectrum, given the mark and its goods or services.",
+  "keywords": [
+    "trademark",
+    "distinctiveness",
+    "generic",
+    "descriptive",
+    "suggestive",
+    "arbitrary",
+    "fanciful",
+    "mark",
+    "goods",
+    "services",
+    "товарный знак",
+    "бренд"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-4b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "root",
+    "node_id": "trademark",
+    "description": "Classify trademark distinctiveness for specified goods or services."
+  }
+}

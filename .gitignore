@@ -1,0 +1,24 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+# Local checkpoints and GGUF files of every backbone (directories or symlinks).
+/base/*/model
+/base/*/gguf/
+/runtime/
+
+# Community expert packages contain only metadata and Hugging Face references.
+/experts/**/*.safetensors
+/experts/**/*.gguf
+/experts/**/*.bin
+/experts/**/*.pt
+/experts/**/*.pth
+
+# macOS Finder metadata
+.DS_Store
+
+# Benchmark answers and reports
+/results/
+
+# Local Claude Code configuration
+/.claude/

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "legal-trademark",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-4B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/DoodDood/abercrombie-grpo",
+    "revision": "d575839ab404e3104179d800e6dfe7e45af20253",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "legal-trademark-4b.gguf"
+  }
+}

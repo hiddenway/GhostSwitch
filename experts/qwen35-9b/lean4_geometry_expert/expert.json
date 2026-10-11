@@ -1,0 +1,28 @@
+{
+  "id": "lean4_geometry_expert",
+  "name": "Lean4 geometry proof",
+  "capabilities": [
+    "Lean4 geometry proof",
+    "Formal geometry proofs and Lean4 theorem scripts."
+  ],
+  "aliases": [
+    "lean4_geometry_expert",
+    "Lean4 geometry theorem proof"
+  ],
+  "description": "Formal geometry proofs and Lean4 theorem scripts.",
+  "keywords": [
+    "Lean4",
+    "geometry",
+    "formal",
+    "proof",
+    "theorem"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "reasoning",
+    "node_id": "lean4_geometry",
+    "description": "Formal geometry theorem proving with Lean4, including proof-assistant scripts. Choose this for mathematical geometry proofs even when the user asks for code."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "verdict": "no_gain",
+  "blocked": true,
+  "reason": "Not better than the base model on penetration-testing questions (87% vs 88%, n=60); 51 of 60 answers were identical.",
+  "measured": {
+    "task": "pentesting-eval (preemware/pentesting-eval)",
+    "n": 60,
+    "base": 0.8833,
+    "expert": 0.8667,
+    "expert_better": 3,
+    "base_better": 4,
+    "p_value": 1.0,
+    "identical_answers": 51,
+    "runtime": "Qwen3.5-9B Q4_K_M GGUF, RTX 3090",
+    "mode": "quick: verifier and thinking off, answer line only for multiple choice",
+    "date": "2026-10-09"
+  }
+}

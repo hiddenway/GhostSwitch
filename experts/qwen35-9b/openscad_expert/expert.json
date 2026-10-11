@@ -1,0 +1,28 @@
+{
+  "id": "openscad_expert",
+  "name": "OpenSCAD model generation",
+  "capabilities": [
+    "OpenSCAD model generation",
+    "Generate and edit parametric 3D models using OpenSCAD code."
+  ],
+  "aliases": [
+    "openscad_expert",
+    "OpenSCAD parametric 3D model"
+  ],
+  "description": "Generate and edit parametric 3D models using OpenSCAD code.",
+  "keywords": [
+    "OpenSCAD",
+    "3D",
+    "CAD",
+    "parametric",
+    "modeling"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "engineering_design",
+    "node_id": "openscad",
+    "description": "Parametric 3D design with OpenSCAD."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "korean_roleplay_expert",
+  "name": "Korean roleplay",
+  "capabilities": [
+    "Korean roleplay",
+    "Roleplay and character dialogue with Korean-language specialization; follow the user's requested dialogue language."
+  ],
+  "aliases": [
+    "korean_roleplay_expert",
+    "Korean roleplay Korean character dialogue"
+  ],
+  "description": "Roleplay and character dialogue with Korean-language specialization. Prefer this specialist when Korean dialogue or a Korean character context is requested; honor an explicit request for dialogue in another language.",
+  "keywords": [
+    "Korean",
+    "한국어",
+    "roleplay",
+    "캐릭터",
+    "dialogue"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "roleplay",
+    "node_id": "roleplay_korean",
+    "description": "Roleplay with Korean-language specialization. Prefer for Korean dialogue or Korean character context; honor the user's requested dialogue language."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "mode": "adaptive",
+  "verification": ["numeric", "claims"],
+  "python": "always",
+  "review_mode": "advisory",
+  "review_when": "multi_step",
+  "final_guidance": "For DCF/FCFF valuation, calculate EBITDA = revenue × EBITDA margin, EBIT = EBITDA − D&A, NOPAT = EBIT × (1 − tax rate), then FCFF = NOPAT + D&A − CapEx − change in NWC. Treat a positive change in NWC as a cash outflow. Forecast each year from the prior year's revenue. Terminal value at the end of Year 3 is FCFF_3 × (1 + g) / (WACC − g). Enterprise value is the sum of each forecast FCFF discounted by (1 + WACC)^t plus terminal value discounted by (1 + WACC)^3. Equity value = enterprise value − debt + cash; per-share value = equity value / shares. Do not treat EBITDA as EBIT, do not add CapEx, and do not omit discounting. Show the formula and units.",
+  "review_guidance": "Independently check that D&A is subtracted to derive EBIT, added back after tax, CapEx and positive change in NWC are subtracted, each annual FCFF is discounted at the correct period, terminal value uses next year's FCFF, terminal value is discounted to present, and net debt is subtracted exactly once. Recompute the equity bridge and per-share division."
+}

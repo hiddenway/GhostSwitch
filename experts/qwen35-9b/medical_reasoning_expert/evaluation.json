@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "verdict": "no_gain",
+  "blocked": true,
+  "reason": "Not better than the base model on MedQA USMLE (65% vs 67%, n=60); 56 of 60 answers were identical to the base model's.",
+  "measured": {
+    "task": "MedQA USMLE 4 options (GBaker/MedQA-USMLE-4-options)",
+    "n": 60,
+    "base": 0.6667,
+    "expert": 0.65,
+    "expert_better": 1,
+    "base_better": 2,
+    "p_value": 1.0,
+    "identical_answers": 56,
+    "runtime": "Qwen3.5-9B Q4_K_M GGUF, RTX 3090",
+    "mode": "quick: verifier and thinking off, answer line only for multiple choice",
+    "date": "2026-10-09"
+  }
+}

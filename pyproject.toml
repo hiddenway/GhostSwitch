@@ -1,0 +1,54 @@
+[project]
+name = "ghostswitch"
+version = "6.0.0"
+description = "A local assistant that routes each request to a LoRA expert on one shared Qwen3.5 base model"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.12"
+# Pinned to the versions the app is tested with; uv.lock pins everything they pull in.
+dependencies = [
+    "huggingface_hub==1.32.0",
+    "jsonschema==4.26.0",
+    "Pillow==12.3.0",
+    "pypdf==6.19.0",
+]
+
+[project.optional-dependencies]
+# Apple Silicon: MLX runs the model on the Mac's GPU.
+mlx = [
+    "mlx==0.32.2; sys_platform == 'darwin' and platform_machine == 'arm64'",
+    "mlx-lm==0.31.3; sys_platform == 'darwin' and platform_machine == 'arm64'",
+]
+# Windows and Linux: llama.cpp (GGUF) on the processor.
+cpu = ["llama-cpp-python==0.3.35", "transformers==5.17.0", "gguf==0.19.0"]
+# Windows and Linux with an NVIDIA GPU. The CUDA build links the CUDA runtime and cuBLAS without
+# shipping them; core/cuda_libraries.py makes these packages' copies loadable.
+cuda = [
+    "llama-cpp-python==0.3.35",
+    "transformers==5.17.0",
+    "gguf==0.19.0",
+    "nvidia-cuda-runtime-cu12==12.4.*; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-cublas-cu12==12.4.*; sys_platform == 'linux' or sys_platform == 'win32'",
+]
+
+[tool.uv]
+# An application run from its folder (python -m core.cli), not a package to build.
+package = false
+conflicts = [[{ extra = "cpu" }, { extra = "cuda" }]]
+
+# llama-cpp-python's PyPI release is source only; these indexes hold its prebuilt wheels.
+[tool.uv.sources]
+llama-cpp-python = [
+    { index = "llama-cpp-cpu", extra = "cpu" },
+    { index = "llama-cpp-cu124", extra = "cuda" },
+]
+
+[[tool.uv.index]]
+name = "llama-cpp-cpu"
+url = "https://abetlen.github.io/llama-cpp-python/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "llama-cpp-cu124"
+url = "https://abetlen.github.io/llama-cpp-python/whl/cu124"
+explicit = true

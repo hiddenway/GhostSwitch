@@ -1,0 +1,4 @@
+-r requirements-common.txt
+llama-cpp-python>=0.3.35
+transformers>=5.0
+gguf>=0.17.1

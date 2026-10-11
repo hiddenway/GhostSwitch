@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "verdict": "no_gain",
+  "blocked": false,
+  "note": "Leans better than the base model but not significant at n=60; kept pending a larger run.",
+  "measured": {
+    "task": "LegalBench CUAD clause questions (nguha/legalbench)",
+    "n": 60,
+    "base": 0.7667,
+    "expert": 0.8333,
+    "expert_better": 4,
+    "base_better": 0,
+    "p_value": 0.125,
+    "identical_answers": 56,
+    "runtime": "Qwen3.5-9B Q4_K_M GGUF, RTX 3090",
+    "mode": "quick: verifier and thinking off, answer line only for multiple choice",
+    "date": "2026-10-09"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "coding-swegym",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-9B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/Shreyansh327/qwen3.5-9b-swegym-lora-full",
+    "revision": "d7c7ee36238ef64d9b8eff926726e139a4bad8c2",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "coding-swegym.gguf"
+  }
+}

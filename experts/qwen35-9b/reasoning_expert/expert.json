@@ -1,0 +1,39 @@
+{
+  "id": "reasoning_expert",
+  "name": "Structured mathematical reasoning",
+  "capabilities": [
+    "multi-step reasoning",
+    "mathematical problem solving",
+    "logic and verification",
+    "elementary arithmetic, ratios, unit conversions, and short deductions"
+  ],
+  "aliases": [
+    "reasoning expert",
+    "logic expert",
+    "multi-step reasoning"
+  ],
+  "description": "Solves mathematical calculations and logical deductions of any length, including elementary arithmetic, ratios, unit conversions, conditional reasoning, and verification.",
+  "keywords": [
+    "reasoning",
+    "logic",
+    "proof",
+    "derive",
+    "multi-step",
+    "calculate",
+    "verify",
+    "sequence",
+    "puzzle",
+    "обоснование",
+    "логика",
+    "рассуждение",
+    "пошагово"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": true,
+  "routing": {
+    "parent": "reasoning",
+    "node_id": "general_reasoning",
+    "description": "Mathematical calculations and logical deductions of any length, including simple arithmetic, unit conversions, conditional implications, and verification. Lean4 proofs use their dedicated leaves."
+  }
+}

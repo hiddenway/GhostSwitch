@@ -1,0 +1,42 @@
+{
+  "id": "legal_contract_expert",
+  "name": "Legal contract analysis",
+  "capabilities": [
+    "contract review",
+    "legal issue spotting",
+    "contract clause analysis"
+  ],
+  "aliases": [
+    "legal expert",
+    "contract lawyer",
+    "legal contract expert"
+  ],
+  "description": "Reviews hypothetical legal questions and contract terms, identifies relevant clauses and issues, and states factual questions without claiming to be a lawyer.",
+  "keywords": [
+    "legal",
+    "law",
+    "contract",
+    "supplier",
+    "delivery",
+    "breach",
+    "clause",
+    "liability",
+    "remedy",
+    "jurisdiction",
+    "agreement",
+    "договор",
+    "юридический",
+    "право",
+    "поставщик",
+    "нарушение",
+    "условие"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "legal_contract",
+    "node_id": "contract_law",
+    "description": "Contracts and legal analysis."
+  }
+}

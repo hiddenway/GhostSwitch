@@ -1,0 +1,30 @@
+{
+  "id": "software_engineering_expert",
+  "name": "SWE-Gym software engineering",
+  "capabilities": [
+    "SWE-Gym software engineering",
+    "Repository-level software engineering, bug fixing, issue resolution and code changes."
+  ],
+  "aliases": [
+    "software_engineering_expert",
+    "SWE Gym software engineering repository bug fix"
+  ],
+  "description": "Repository-level software engineering, bug fixing, issue resolution and code changes.",
+  "keywords": [
+    "software",
+    "engineering",
+    "bug",
+    "fix",
+    "GitHub",
+    "issue",
+    "repo"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "coding",
+    "node_id": "coding_swegym",
+    "description": "Repository issues, bug fixing and software engineering."
+  }
+}

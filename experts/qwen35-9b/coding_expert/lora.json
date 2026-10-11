@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "display_id": "coding-agentic",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-9B",
+    "D:\\aimodels\\hf\\Qwen3.5-9B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/blackshell69/Qwen3.5-9B-distilled-coding-agentic",
+    "revision": "5b04891d777b23a85f9ed25fee8e40b8e7bd9a58",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "coding-agentic.gguf",
+    "source": {
+      "url": "https://huggingface.co/blackshell69/Qwen3.5-9B-distilled-coding-agentic",
+      "revision": "5b04891d777b23a85f9ed25fee8e40b8e7bd9a58",
+      "weights": "Qwen3.5-9B-distilled-LoRA-F16.gguf"
+    }
+  }
+}

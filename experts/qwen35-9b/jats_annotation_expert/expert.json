@@ -1,0 +1,28 @@
+{
+  "id": "jats_annotation_expert",
+  "name": "JATS scientific-document annotation",
+  "capabilities": [
+    "JATS scientific-document annotation",
+    "Annotate and structure scientific documents using JATS XML."
+  ],
+  "aliases": [
+    "jats_annotation_expert",
+    "JATS XML scientific document annotation"
+  ],
+  "description": "Annotate and structure scientific documents using JATS XML.",
+  "keywords": [
+    "JATS",
+    "XML",
+    "scientific",
+    "article",
+    "annotation"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "science_publishing",
+    "node_id": "jats_annotation",
+    "description": "Scientific document annotation in JATS XML."
+  }
+}

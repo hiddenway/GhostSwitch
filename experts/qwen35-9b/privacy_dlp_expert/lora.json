@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "privacy-dlp",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-9B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/querypieai/qwen3.5-9b-dlp-pii-lora",
+    "revision": "06d1b7f7d53b08f6e668d830f66b22bc5257301f",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "privacy-dlp.gguf"
+  }
+}

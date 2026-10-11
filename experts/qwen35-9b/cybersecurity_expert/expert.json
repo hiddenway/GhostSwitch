@@ -1,0 +1,39 @@
+{
+  "id": "cybersecurity_expert",
+  "name": "Cybersecurity and vulnerability analysis",
+  "capabilities": [
+    "source-code security review",
+    "CWE classification",
+    "vulnerability analysis",
+    "secure coding fixes"
+  ],
+  "aliases": [
+    "cybersecurity expert",
+    "security reviewer",
+    "vulnerability analyst"
+  ],
+  "description": "Analyzes software and C/C++ source for security vulnerabilities, maps findings to CWE categories, and recommends mitigations.",
+  "keywords": [
+    "cybersecurity",
+    "security",
+    "vulnerability",
+    "CWE",
+    "buffer overflow",
+    "injection",
+    "memory corruption",
+    "exploit",
+    "secure coding",
+    "уязвимость",
+    "кибербезопасность",
+    "безопасность",
+    "переполнение буфера"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "cybersecurity",
+    "node_id": "cybersecurity_cwe",
+    "description": "Source-code vulnerabilities and CWE."
+  }
+}

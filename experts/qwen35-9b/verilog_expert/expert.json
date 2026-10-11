@@ -1,0 +1,28 @@
+{
+  "id": "verilog_expert",
+  "name": "Verilog and RTL design",
+  "capabilities": [
+    "Verilog and RTL design",
+    "Write, explain and debug Verilog/SystemVerilog and RTL designs."
+  ],
+  "aliases": [
+    "verilog_expert",
+    "Verilog RTL HDL hardware design"
+  ],
+  "description": "Write, explain and debug Verilog/SystemVerilog, RTL and FPGA hardware designs; this is a hardware-description language specialist, not general application coding.",
+  "keywords": [
+    "Verilog",
+    "SystemVerilog",
+    "RTL",
+    "HDL",
+    "FPGA"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "engineering_design",
+    "node_id": "verilog",
+    "description": "Verilog/SystemVerilog/RTL/FPGA hardware design, including writing, explaining, and debugging HDL code. Route here instead of general software coding for digital hardware tasks."
+  }
+}

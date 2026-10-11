@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "coding-deltacoder",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-9B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/danielcherubini/Qwen3.5-DeltaCoder-9B",
+    "revision": "10a2546fff9d80a418dfd883fa5f3a5c63bbbbe7",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "coding-deltacoder.gguf"
+  }
+}

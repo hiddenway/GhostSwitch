@@ -1,0 +1,28 @@
+{
+  "id": "decompilation_expert",
+  "name": "C++ decompilation and reverse engineering",
+  "capabilities": [
+    "C++ decompilation and reverse engineering",
+    "PowerPC C++ decompilation, source reconstruction and binary reverse-engineering tasks."
+  ],
+  "aliases": [
+    "decompilation_expert",
+    "decompilation reverse engineering PowerPC C++"
+  ],
+  "description": "PowerPC C++ decompilation, source reconstruction and binary reverse-engineering tasks.",
+  "keywords": [
+    "decompilation",
+    "reverse",
+    "engineering",
+    "PowerPC",
+    "C++"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "coding",
+    "node_id": "decompilation",
+    "description": "PowerPC C++ decompilation and reverse engineering."
+  }
+}

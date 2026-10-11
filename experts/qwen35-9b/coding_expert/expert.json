@@ -1,0 +1,44 @@
+{
+  "id": "coding_expert",
+  "name": "Coding and software engineering",
+  "capabilities": [
+    "software development",
+    "code generation",
+    "debugging",
+    "agentic coding tasks"
+  ],
+  "aliases": [
+    "coding expert",
+    "software engineer",
+    "programming specialist"
+  ],
+  "description": "Writes, reviews, debugs, and explains code, including multi-step software engineering tasks.",
+  "keywords": [
+    "coding",
+    "code",
+    "programming",
+    "python",
+    "javascript",
+    "typescript",
+    "rust",
+    "golang",
+    "bug",
+    "debug",
+    "refactor",
+    "function",
+    "class",
+    "api",
+    "программирование",
+    "код",
+    "разработка",
+    "отладка"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": true,
+  "routing": {
+    "parent": "coding",
+    "node_id": "coding_agentic",
+    "description": "Software engineering, coding and debugging."
+  }
+}

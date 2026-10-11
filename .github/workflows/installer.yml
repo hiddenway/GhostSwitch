@@ -1,0 +1,115 @@
+# Installs GhostSwitch from this commit on clean macOS, Linux and Windows machines, starts it, and
+# removes it again: what a new user's one-line install does, minus the model download.
+name: Installer
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  unix:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, ubuntu-22.04, ubuntu-24.04]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install from this commit
+        env:
+          GHOSTSWITCH_SOURCE: ${{ github.workspace }}
+          GHOSTSWITCH_INSTALLER_URL: file://${{ github.workspace }}/install.sh
+          GHOSTSWITCH_NO_START: "1"
+        run: sh install.sh
+
+      - name: Check the installation
+        run: ~/.ghostswitch/bin/ghostswitch doctor
+
+      - name: Run the installation tests in the installed copy
+        run: cd ~/.ghostswitch/app && PYTHONUTF8=1 ~/.ghostswitch/venv/bin/python -m unittest core.tests.test_install -v
+
+      - name: Start GhostSwitch and open the first-run screen
+        run: |
+          GHOSTSWITCH_NO_BROWSER=1 ~/.ghostswitch/bin/ghostswitch > cli.log 2>&1 &
+          for _ in $(seq 1 180); do curl -fs http://127.0.0.1:27246/health && break; sleep 1; done
+          echo
+          curl -fs http://127.0.0.1:27246/health | grep '"setup_required": true'
+          curl -fs http://127.0.0.1:27246/v1/runtime | python3 -m json.tool
+          curl -fs -o /dev/null http://127.0.0.1:27246/app/
+
+      - name: Update
+        env:
+          GHOSTSWITCH_SOURCE: ${{ github.workspace }}
+        run: ~/.ghostswitch/bin/ghostswitch update --no-start
+
+      - name: Uninstall
+        run: |
+          GHOSTSWITCH_PURGE=1 ~/.ghostswitch/bin/ghostswitch uninstall
+          test ! -e ~/.ghostswitch
+
+      - name: Show the logs
+        if: failure()
+        run: cat cli.log ~/.ghostswitch/data/runtime/logs/server.log || true
+
+  windows:
+    runs-on: windows-2022
+    defaults:
+      run:
+        # Windows PowerShell 5.1, the one most Windows computers have.
+        shell: powershell
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install from this commit
+        env:
+          GHOSTSWITCH_SOURCE: ${{ github.workspace }}
+          GHOSTSWITCH_INSTALLER_URL: file:///${{ github.workspace }}/install.ps1
+          GHOSTSWITCH_NO_START: "1"
+        # The same as the one-line install: the script runs inside this PowerShell session.
+        run: Get-Content -Raw .\install.ps1 | Invoke-Expression
+
+      - name: Check the installation
+        shell: cmd
+        run: call "%LOCALAPPDATA%\GhostSwitch\bin\ghostswitch.cmd" doctor
+
+      - name: Run the installation tests in the installed copy
+        shell: cmd
+        run: |
+          cd /d "%LOCALAPPDATA%\GhostSwitch\app"
+          set PYTHONUTF8=1
+          "%LOCALAPPDATA%\GhostSwitch\venv\Scripts\python.exe" -m unittest core.tests.test_install -v
+
+      - name: Start GhostSwitch and open the first-run screen
+        run: |
+          $env:GHOSTSWITCH_NO_BROWSER = "1"
+          Start-Process -FilePath "$env:LOCALAPPDATA\GhostSwitch\bin\ghostswitch.cmd" -NoNewWindow -RedirectStandardOutput cli.log -RedirectStandardError cli.err
+          $health = $null
+          for ($i = 0; $i -lt 180 -and -not $health; $i++) {
+            try { $health = Invoke-RestMethod http://127.0.0.1:27246/health } catch { Start-Sleep 1 }
+          }
+          $health | ConvertTo-Json
+          if (-not $health.setup_required) { throw "GhostSwitch did not start in first-run mode" }
+          Invoke-RestMethod http://127.0.0.1:27246/v1/runtime | ConvertTo-Json -Depth 6
+          Invoke-WebRequest -UseBasicParsing http://127.0.0.1:27246/app/ | Out-Null
+
+      - name: Update
+        shell: cmd
+        env:
+          GHOSTSWITCH_SOURCE: ${{ github.workspace }}
+          GHOSTSWITCH_NO_START: "1"
+        run: call "%LOCALAPPDATA%\GhostSwitch\bin\ghostswitch.cmd" update
+
+      - name: Uninstall
+        env:
+          GHOSTSWITCH_ACTION: uninstall
+          GHOSTSWITCH_PURGE: "1"
+        run: |
+          Get-Content -Raw .\install.ps1 | Invoke-Expression
+          if (Test-Path "$env:LOCALAPPDATA\GhostSwitch") { throw "The GhostSwitch folder is still there" }
+
+      - name: Show the logs
+        if: failure()
+        run: Get-Content cli.log, cli.err, "$env:LOCALAPPDATA\GhostSwitch\data\runtime\logs\server.log" -ErrorAction SilentlyContinue

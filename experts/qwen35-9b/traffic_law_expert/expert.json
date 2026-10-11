@@ -1,0 +1,32 @@
+{
+  "id": "traffic_law_expert",
+  "name": "Vietnamese traffic law and regulation",
+  "capabilities": [
+    "Vietnamese traffic law and regulation",
+    "Answer Vietnamese traffic-law questions grounded in supplied legal context or evidence cards."
+  ],
+  "aliases": [
+    "traffic_law_expert",
+    "Vietnamese traffic law regulations",
+    "traffic evidence card"
+  ],
+  "description": "Answer Vietnamese traffic-law questions grounded in supplied legal context or evidence cards. Do not generalize this adapter to another jurisdiction or unsupported road-safety advice.",
+  "keywords": [
+    "traffic",
+    "law",
+    "regulation",
+    "road",
+    "traffic",
+    "Vietnamese",
+    "Vietnam",
+    "evidence card"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "legal_contract",
+    "node_id": "traffic_law",
+    "description": "Vietnamese traffic-law RAG: answer questions grounded in supplied Vietnamese traffic regulations or evidence cards. Do not use for other jurisdictions or general road-safety advice without matching legal context."
+  }
+}

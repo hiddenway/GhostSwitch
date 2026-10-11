@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "verdict": "helps",
+  "blocked": false,
+  "measured": {
+    "task": "HumanEval+ (evalplus/humanevalplus)",
+    "n": 60,
+    "base": 0.7667,
+    "expert": 0.8833,
+    "expert_better": 8,
+    "base_better": 1,
+    "p_value": 0.039,
+    "identical_answers": 9,
+    "runtime": "Qwen3.5-9B Q4_K_M GGUF, RTX 3090",
+    "mode": "quick: verifier and thinking off, answer line only for multiple choice",
+    "date": "2026-10-09"
+  }
+}

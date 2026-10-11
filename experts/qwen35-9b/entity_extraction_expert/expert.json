@@ -1,0 +1,28 @@
+{
+  "id": "entity_extraction_expert",
+  "name": "Entity extraction",
+  "capabilities": [
+    "Entity extraction",
+    "Extract and normalize named people, organizations, and places from prose; not receipt or invoice fields."
+  ],
+  "aliases": [
+    "entity_extraction_expert",
+    "entity extraction named entities"
+  ],
+  "description": "Extract and normalize named people, organizations, and places from prose; not merchant, tax, line items, or transaction totals from receipts and invoices.",
+  "keywords": [
+    "entity",
+    "extraction",
+    "names",
+    "organizations",
+    "locations"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "data_tasks",
+    "node_id": "entity_extraction",
+    "description": "Extract named people, organizations, and places from prose. Not transaction totals, tax, line items, or receipt and invoice fields."
+  }
+}

@@ -1,0 +1,2 @@
+-r requirements-common.txt
+mlx-lm>=0.30.7

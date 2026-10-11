@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "display_id": "decompile-lifter-v17",
+  "accepted_base_names": [
+    "Qwen/Qwen3.5-9B"
+  ],
+  "source": {
+    "url": "https://huggingface.co/freeqaz/decomp-synth-lifter-v17-mix-qwen3.5-9b-lora",
+    "revision": "023323c4661ee9cc4215c2277711ac11cb017495",
+    "config": "adapter_config.json",
+    "weights": "adapter_model.safetensors"
+  },
+  "gguf": {
+    "filename": "decompilation-lifter.gguf"
+  }
+}

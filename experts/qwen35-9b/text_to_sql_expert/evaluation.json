@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "verdict": "no_gain",
+  "blocked": true,
+  "reason": "No effect on executed SQL accuracy (58% vs 58%, n=60); 38 of 60 answers were identical to the base model's.",
+  "measured": {
+    "task": "Gretel synthetic text-to-SQL, executed in SQLite",
+    "n": 60,
+    "base": 0.5833,
+    "expert": 0.5833,
+    "expert_better": 1,
+    "base_better": 1,
+    "p_value": 1.0,
+    "identical_answers": 38,
+    "runtime": "Qwen3.5-9B Q4_K_M GGUF, RTX 3090",
+    "mode": "quick: verifier and thinking off, answer line only for multiple choice",
+    "date": "2026-10-09"
+  }
+}

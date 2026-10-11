@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "my_expert",
+  "backbone": "qwen35-9b",
+  "name": "My specialist",
+  "description": "Describe the tasks this expert can handle and its domain limits.",
+  "capabilities": ["replace_with_capability"],
+  "aliases": [],
+  "keywords": ["replace_with_search_keyword"],
+  "default_enabled": false,
+  "routing": {
+    "parent": "coding",
+    "node_id": "my_expert",
+    "description": "Describe when to choose this expert over neighboring specialists."
+  }
+}

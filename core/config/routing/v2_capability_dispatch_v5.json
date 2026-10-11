@@ -1,0 +1,151 @@
+{
+  "version": "capability_dispatch_v5",
+  "semantics": "Preferred responsibility for requested deliverables, not a claim of exclusive model knowledge. Explicit domain analysis plus requested application code are separate jobs, including security analysis plus a patch/test. SQL and application code are also separately dispatched. A supplied formula/specification needs implementation only unless new domain analysis is requested.",
+  "capabilities": {
+    "code": {
+      "expert": "coding_expert",
+      "description": "Application code, functions, scripts, debugging, tests; includes implementation from a supplied specification/formula, not new domain analysis."
+    },
+    "repo": {
+      "expert": "software_engineering_expert",
+      "description": "Actual changes in an existing source-code repository/project, multi-file bug fixes and repository issues. Standalone functions/classes/methods, including the repository design pattern, use code."
+    },
+    "sql": {
+      "expert": "text_to_sql_expert",
+      "description": "Design, write or explain relational SQL queries."
+    },
+    "cypher": {
+      "expert": "text_to_cypher_expert",
+      "description": "Neo4j Cypher queries."
+    },
+    "security": {
+      "expert": "cybersecurity_expert",
+      "description": "Security assessment, vulnerabilities, CWE classification, mitigation requirements. Separate requested executable patches/tests go to code."
+    },
+    "iac": {
+      "expert": "iac_security_expert",
+      "description": "Security review and remediation of infrastructure/configuration as code: Terraform, CloudFormation, Kubernetes deployment manifests and Helm charts, including IAM permissions, container privileges and public-access settings."
+    },
+    "pentest": {
+      "expert": "penetration_testing_expert",
+      "description": "Authorized penetration-testing methodology and validation."
+    },
+    "privacy": {
+      "expert": "privacy_dlp_expert",
+      "description": "Identify PII, sensitive data and DLP risks."
+    },
+    "finance": {
+      "expert": "finance_market_expert",
+      "description": "Financial analysis, valuation, finance formulas and calculations."
+    },
+    "crypto": {
+      "expert": "stablecoin_finance_expert",
+      "description": "Stablecoins and crypto-finance analysis."
+    },
+    "contract": {
+      "expert": "legal_contract_expert",
+      "description": "Interpret and analyze contracts and clauses; no application-code implementation."
+    },
+    "spanish_legal": {
+      "expert": "spanish_legal_expert",
+      "description": "Spanish-language legal analysis."
+    },
+    "traffic_vn": {
+      "expert": "traffic_law_expert",
+      "description": "Vietnamese traffic law using supplied legal evidence; not other countries."
+    },
+    "medical": {
+      "expert": "medical_reasoning_expert",
+      "description": "Medical and biomedical knowledge, educational clinical reasoning."
+    },
+    "reasoning": {
+      "expert": "reasoning_expert",
+      "description": "Mathematics, logic and quantitative reasoning outside financial analysis."
+    },
+    "lean": {
+      "expert": "lean4_generalist_expert",
+      "description": "Formal mathematical proofs in Lean4."
+    },
+    "lean_geometry": {
+      "expert": "lean4_geometry_expert",
+      "description": "Formal geometry proofs in Lean4."
+    },
+    "verilog": {
+      "expert": "verilog_expert",
+      "description": "Verilog, SystemVerilog, RTL, FPGA hardware descriptions, including their tests."
+    },
+    "cad": {
+      "expert": "cad_design_expert",
+      "description": "CAD and Build123d models."
+    },
+    "openscad": {
+      "expert": "openscad_expert",
+      "description": "OpenSCAD parametric 3D models."
+    },
+    "decompile": {
+      "expert": "decompilation_expert",
+      "description": "PowerPC/C++ decompilation and reverse engineering."
+    },
+    "entities": {
+      "expert": "entity_extraction_expert",
+      "description": "Extract and normalize named entities from supplied text."
+    },
+    "funding": {
+      "expert": "funding_data_expert",
+      "description": "Extract venture funding announcement fields."
+    },
+    "jats": {
+      "expert": "jats_annotation_expert",
+      "description": "JATS XML scientific-document annotation."
+    },
+    "roleplay": {
+      "expert": "roleplay_expert",
+      "description": "Creative roleplay and character dialogue."
+    },
+    "korean_roleplay": {
+      "expert": "korean_roleplay_expert",
+      "description": "Korean-language roleplay."
+    }
+  },
+  "general_work": "Non-specialist conversation, wording and presentation are handled by the final Thinker from the full original query. Return no specialist jobs when none are needed.",
+  "specializations": {
+    "security": [
+      "iac",
+      "pentest"
+    ],
+    "roleplay": [
+      "korean_roleplay"
+    ],
+    "finance": [
+      "crypto"
+    ],
+    "contract": [
+      "spanish_legal"
+    ],
+    "lean": [
+      "lean_geometry"
+    ]
+  },
+  "specialization_note": "Do not rerank code into repo: the primary extractor distinguishes standalone methods from changes in an existing project. Rechecking this introduced false repo assignments.",
+  "coverage_families": {
+    "security": [
+      "iac",
+      "pentest"
+    ],
+    "roleplay": [
+      "korean_roleplay"
+    ],
+    "finance": [
+      "crypto"
+    ],
+    "contract": [
+      "spanish_legal"
+    ],
+    "lean": [
+      "lean_geometry"
+    ],
+    "code": [
+      "repo"
+    ]
+  }
+}

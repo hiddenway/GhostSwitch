@@ -1,0 +1,28 @@
+{
+  "id": "lean4_generalist_expert",
+  "name": "Lean4 formal mathematics",
+  "capabilities": [
+    "Lean4 formal mathematics",
+    "Formal mathematical reasoning and Lean4 proof development across topics."
+  ],
+  "aliases": [
+    "lean4_generalist_expert",
+    "Lean4 formal mathematics proof"
+  ],
+  "description": "Formal mathematical reasoning and Lean4 proof development across topics.",
+  "keywords": [
+    "Lean4",
+    "formal",
+    "mathematics",
+    "theorem",
+    "proof"
+  ],
+  "schema_version": 1,
+  "backbone": "qwen35-9b",
+  "default_enabled": false,
+  "routing": {
+    "parent": "reasoning",
+    "node_id": "lean4_generalist",
+    "description": "Formal mathematics and Lean4 theorem proofs across topics, including proof-assistant code. Choose this over general coding for mathematical proof tasks."
+  }
+}
