@@ -73,6 +73,11 @@ def display_name(backbone_id: str) -> str:
     return str(_row(backbone_id).get("display_name", backbone_id))
 
 
+def uncensored(backbone_id: str) -> bool:
+    """Whether the backbone is a fine-tune with its refusal training removed."""
+    return _row(backbone_id).get("uncensored") is True
+
+
 def profile_name(backbone_id: str, backend: str) -> str:
     """Execution profile file stem for a backbone and backend, such as mlx9b_v6."""
     name = _row(backbone_id).get("profiles", {}).get(backend)

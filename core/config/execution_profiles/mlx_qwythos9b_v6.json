@@ -1,0 +1,16 @@
+{
+  "profile_id": "mlx_qwythos9b_v6",
+  "profile_version": 6,
+  "backbone_id": "qwythos-9b",
+  "backend": "mlx",
+  "context_window": 100000,
+  "default_max_tokens": 4096,
+  "max_tokens_per_call": 10240,
+  "router_max_tokens": 128,
+  "verifier_max_tokens": 512,
+  "agent_step_target_tokens": 1024,
+  "agent_repair_max_tokens": 1024,
+  "thinking_max_tokens": 4096,
+  "auto_thinking": true,
+  "max_retries": 4
+}

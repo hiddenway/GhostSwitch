@@ -30,5 +30,22 @@
     "profiles": {"mlx": "mlx4b_v6", "gguf": "gguf4b_v6"},
     "mlx": {"repo_id": "mlx-community/Qwen3.5-4B-4bit", "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c", "weights_bytes": 3034300695},
     "gguf": {"filename": "Qwen3.5-4B-Q4_K_M.gguf", "repo_id": "lmstudio-community/Qwen3.5-4B-GGUF", "revision": "f9f88ac3e234be915e23811a6d28ea287bdb927e", "weights_bytes": 2707513696, "context": 32768, "mmproj": "mmproj-Qwen3.5-4B-BF16.gguf"}
+  },
+  "qwythos-9b": {
+    "display_name": "Qwythos-9B v2",
+    "uncensored": true,
+    "model_id": "ahmedandaloes/Qwythos-9B-v2-MLX-4bit",
+    "local_model_path": "./base/qwythos-9b/model",
+    "total_params": 9000000000,
+    "model_type": "qwen3_5",
+    "quantization_bits": 4,
+    "text_hidden_size": 4096,
+    "text_num_layers": 32,
+    "adapter_base_names": ["empero-ai/Qwythos-9B-v2"],
+    "hf_base_repo": "empero-ai/Qwythos-9B-v2",
+    "kv_bytes_per_token": 32768,
+    "profiles": {"mlx": "mlx_qwythos9b_v6", "gguf": "gguf_qwythos9b_v6"},
+    "mlx": {"repo_id": "ahmedandaloes/Qwythos-9B-v2-MLX-4bit", "revision": "1c8ed7217ec8f921698b1a0180e9c4b950fef50b", "weights_bytes": 5038160953},
+    "gguf": {"filename": "Qwythos-9B-v2-Q4_K_M.gguf", "repo_id": "empero-ai/Qwythos-9B-v2-GGUF", "revision": "97c11b03687f194b300efbdb4760d9bc4021b759", "weights_bytes": 5736063744, "context": 32768, "mmproj": "mmproj-Qwythos-9B-v2-BF16.gguf"}
   }
 }

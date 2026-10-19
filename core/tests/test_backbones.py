@@ -33,6 +33,13 @@ class BackboneRegistryTests(unittest.TestCase):
             self.assertTrue(all(node.get("children") or node.get("expert_id") or node["id"] == "root"
                                 for node in tree["nodes"]))
 
+    def test_qwythos_is_an_uncensored_backbone_with_its_own_lineage(self):
+        self.assertTrue(core_models.uncensored("qwythos-9b"))
+        self.assertFalse(core_models.uncensored("qwen35-9b"))
+        self.assertEqual(core_models.adapter_base_names("qwythos-9b"), {"empero-ai/Qwythos-9B-v2"})
+        self.assertEqual(load_packages("qwythos-9b"), {})
+        self.assertEqual(core_models.download_source("qwythos-9b", "gguf")["filename"], "Qwythos-9B-v2-Q4_K_M.gguf")
+
     def test_receipts_belong_to_the_4b_library_only(self):
         self.assertIn("receipt_extraction_expert", load_packages("qwen35-4b"))
         self.assertNotIn("receipt_extraction_expert", load_packages("qwen35-9b"))

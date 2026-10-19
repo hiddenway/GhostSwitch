@@ -974,6 +974,7 @@ function runtimePanel() {
     const info = text("div", "runtime-name");
     info.append(text("strong", "", option.name));
     if (option.default) info.append(text("small", "", "Default"));
+    if (option.uncensored) info.append(text("small", "", "Uncensored"));
     row.append(info);
     const backends = text("div", "runtime-backends");
     for (const backend of ["mlx", "gguf"]) {
@@ -1255,6 +1256,7 @@ function onboardingModel() {
     title.append(text("strong", "", option.name));
     if (recommended.backbone === option.id && recommended.backend === o.backend)
       title.append(text("span", "badge success", "Recommended"));
+    if (option.uncensored) title.append(text("span", "badge neutral", "Uncensored"));
     const running = !setupRequired() && runtime.current.backbone === option.id && runtime.current.backend === o.backend;
     if (running) title.append(text("span", "badge neutral", "Running"));
     card.append(

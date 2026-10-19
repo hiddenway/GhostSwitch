@@ -20,7 +20,7 @@ from pathlib import Path
 
 from core_models import (
     ACTIVE_BACKBONE_ENV, DEFAULT_BACKBONE, backbone_ids, data_root, display_name, download_source, find_gguf,
-    get_backbone, gguf_context, kv_bytes_per_token, local_model_dir, user_dir,
+    get_backbone, gguf_context, kv_bytes_per_token, local_model_dir, uncensored, user_dir,
 )
 
 BACKENDS = ("mlx", "gguf")
@@ -273,6 +273,7 @@ def options() -> list[dict]:
             gguf_ready, gguf_detail = True, gguf_file
         rows.append({
             "id": backbone, "name": display_name(backbone), "default": backbone == DEFAULT_BACKBONE,
+            "uncensored": uncensored(backbone),
             "backends": {
                 "mlx": {"available": mlx_ready, "detail": mlx_detail,
                         "installed": mlx_installed and mlx_local,
