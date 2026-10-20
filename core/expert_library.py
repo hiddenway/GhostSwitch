@@ -7,7 +7,7 @@ import threading
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-from core_models import user_dir
+from core_models import expert_library, user_dir
 
 from . import llm
 from .expert_packages import blocked, load_packages
@@ -19,6 +19,7 @@ class ExpertLibrary:
         self._lock = threading.RLock()
         self._executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="expert-download")
         self._scope = None
+        self._merged_scope = None
         self._selected: set[str] = set()
         self._jobs: dict[str, dict] = {}
         self._futures = {}
@@ -28,13 +29,21 @@ class ExpertLibrary:
         return Path(os.environ.get("GHOSTSWITCH_EXPERT_STATE", user_dir(Path.home() / ".config") / "experts.json")).expanduser()
 
     def _initialize(self) -> None:
-        scope = f"{llm.ACTIVE_BACKBONE}:{llm.MODEL_SPECS['thinker'].backend}"
+        backend = llm.MODEL_SPECS["thinker"].backend
+        # A fine-tune that uses another backbone's experts shares that backbone's selection.
+        scope = f"{expert_library(llm.ACTIVE_BACKBONE)}:{backend}"
+        own_scope = f"{llm.ACTIVE_BACKBONE}:{backend}"
         if self._scope == scope:
             return
         state = json.loads(self.path.read_text()) if self.path.exists() else {"schema_version": 1, "selections": {}}
         if not isinstance(state, dict) or state.get("schema_version") != 1 or not isinstance(state.get("selections"), dict):
             raise ValueError(f"Invalid expert selection state: {self.path}")
         selected = state["selections"].get(scope)
+        self._merged_scope = None
+        if own_scope != scope and isinstance(state["selections"].get(own_scope), list):
+            # Selected before the backbones shared one: merge it in once, then drop it.
+            selected = sorted(set(selected or []) | set(state["selections"][own_scope]))
+            self._merged_scope = own_scope
         if selected is None:
             selected = [eid for eid, p in load_packages(llm.ACTIVE_BACKBONE).items()
                         if p["profile"].get("default_enabled") and eid in ADAPTERS and not blocked(p)]
@@ -49,6 +58,8 @@ class ExpertLibrary:
     def _save(self) -> None:
         state = json.loads(self.path.read_text()) if self.path.exists() else {"schema_version": 1, "selections": {}}
         state["selections"][self._scope] = sorted(self._selected)
+        if self._merged_scope:
+            state["selections"].pop(self._merged_scope, None)
         self.path.parent.mkdir(parents=True, exist_ok=True)
         temporary = self.path.with_name(self.path.name + ".partial")
         temporary.write_text(json.dumps(state, indent=2) + "\n")

@@ -224,3 +224,34 @@ class RuntimeApiTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SharedExpertSelectionTests(unittest.TestCase):
+    def library(self, backbone: str, folder: str):
+        from types import SimpleNamespace
+        from core.expert_library import ExpertLibrary
+        lib = ExpertLibrary()
+        patches = [patch.dict(os.environ, {"GHOSTSWITCH_EXPERT_STATE": f"{folder}/experts.json"}),
+                   patch("core.expert_library.llm.ACTIVE_BACKBONE", backbone),
+                   patch.dict("core.expert_library.llm.MODEL_SPECS", {"thinker": SimpleNamespace(backend="mlx")})]
+        for item in patches:
+            item.start()
+            self.addCleanup(item.stop)
+        return lib
+
+    def test_a_fine_tune_shares_its_expert_library_selection(self):
+        with tempfile.TemporaryDirectory() as folder:
+            state = Path(folder) / "experts.json"
+            state.write_text(json.dumps({"schema_version": 1, "selections": {
+                "qwen35-9b:mlx": ["coding_expert"], "qwythos-9b:mlx": ["privacy_dlp_expert"]}}))
+            lib = self.library("qwythos-9b", folder)
+            self.assertTrue(lib.enabled("coding_expert"))
+            self.assertTrue(lib.enabled("privacy_dlp_expert"))
+            saved = json.loads(state.read_text())["selections"]
+            self.assertEqual(saved, {"qwen35-9b:mlx": ["coding_expert", "privacy_dlp_expert"]})
+            # Disabling on the fine-tune disables it on the original too, and the merge does not repeat.
+            lib._selected.discard("privacy_dlp_expert")
+            lib._save()
+            lib._scope = None
+            self.assertFalse(lib.enabled("privacy_dlp_expert"))
+            self.assertEqual(json.loads(state.read_text())["selections"], {"qwen35-9b:mlx": ["coding_expert"]})

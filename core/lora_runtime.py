@@ -38,7 +38,7 @@ except ImportError as error:  # GGUF runs on Linux without the Apple MLX stack.
     remove_lora_layers = None  # type: ignore[assignment]
     safe_open = None  # type: ignore[assignment]
     _MLX_IMPORT_ERROR = error
-from core_models import active_backbone, adapter_base_names, get_backbone, user_dir
+from core_models import active_backbone, adapter_base_names, expert_library, get_backbone, user_dir
 
 
 @dataclass(frozen=True)
@@ -192,7 +192,7 @@ def gguf_adapter_path(name: str) -> Path:
         raise ValueError(f"GGUF LoRA adapter {name!r} has no prepared GGUF filename")
     root = Path(os.environ.get(
         "GHOSTSWITCH_GGUF_LORA_DIR",
-        str(user_dir(Path.home() / ".cache") / "gguf-lora" / (_GGUF_BACKBONE_ID or "unknown")),
+        str(user_dir(Path.home() / ".cache") / "gguf-lora" / (expert_library(_GGUF_BACKBONE_ID) if _GGUF_BACKBONE_ID else "unknown")),
     )).expanduser()
     return root / spec.gguf_file
 
