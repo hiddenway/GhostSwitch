@@ -257,6 +257,14 @@ _PEFT_KEY = re.compile(
     r"^base_model\.model\.model\.(?:language_model\.)?layers\.(\d+)\.(.+)\.lora_([AB])\.weight$"
 )
 _SAFE_DTYPES = {"F32", "F16", "BF16"}
+
+
+def declared_module(key: str, target_names: set[str]) -> bool:
+    """Whether a PEFT tensor's module is in target_modules, as PEFT itself matches a list:
+    the module's full name or a dotted suffix of it, such as "o_proj" or
+    "model.language_model.layers.31.self_attn.o_proj"."""
+    module = key.removeprefix("base_model.model.").rsplit(".lora_", 1)[0]
+    return any(module == name or module.endswith(f".{name}") for name in target_names)
 _PROJECT_ROOT = Path(__file__).resolve().parents[1]
 _LOCAL_CACHE_ROOT = _PROJECT_ROOT / "base" / active_backbone() / "lora-cache"
 _DEFAULT_CACHE_ROOT = (
@@ -375,7 +383,7 @@ def _ensure_native_adapter_locked(name: str, progress: ProgressCallback | None =
             raise ValueError(f"Unsupported PEFT tensor: {key}")
         layer_index, suffix, side = match.groups()
         normalized_module = f"model.layers.{layer_index}.{suffix}"
-        if target_names is not None and suffix.rsplit(".", 1)[-1] not in target_names:
+        if target_names is not None and not declared_module(key, target_names):
             raise ValueError(f"Tensor targets an undeclared module: {key}")
         if target_pattern is not None and not target_pattern.search(f"language_model.{normalized_module}"):
             raise ValueError(f"Tensor targets an undeclared module: {key}")

@@ -75,3 +75,17 @@ class LoraMemoryBudgetTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TargetModuleTests(unittest.TestCase):
+    KEY = "base_model.model.model.language_model.layers.31.self_attn.o_proj.lora_B.weight"
+
+    def test_short_and_full_target_module_names_declare_a_tensor(self):
+        self.assertTrue(lora_runtime.declared_module(self.KEY, {"q_proj", "o_proj"}))
+        self.assertTrue(lora_runtime.declared_module(self.KEY, {"model.language_model.layers.31.self_attn.o_proj"}))
+        self.assertTrue(lora_runtime.declared_module(self.KEY, {"self_attn.o_proj"}))
+
+    def test_other_modules_and_partial_names_do_not(self):
+        self.assertFalse(lora_runtime.declared_module(self.KEY, {"q_proj"}))
+        self.assertFalse(lora_runtime.declared_module(self.KEY, {"model.language_model.layers.30.self_attn.o_proj"}))
+        self.assertFalse(lora_runtime.declared_module(self.KEY, {"proj"}))
