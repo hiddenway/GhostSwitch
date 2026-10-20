@@ -19,7 +19,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-from core_models import adapter_base_names
+from core_models import adapter_base_names, expert_library
 
 from .expert_packages import ROOT, blocked, load_packages, reload_packages, user_root
 
@@ -44,7 +44,7 @@ def _hub_bases(backbone: str) -> list[str]:
 def blocked_repos(backbone: str) -> dict[str, str]:
     """Repositories never offered: listed in blocklist.json, or measured and blocked as experts."""
     result = {}
-    path = ROOT / backbone / "blocklist.json"
+    path = ROOT / expert_library(backbone) / "blocklist.json"
     if path.exists():
         value = json.loads(path.read_text())
         for row in value.get("repos", []):

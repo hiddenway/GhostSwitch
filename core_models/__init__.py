@@ -182,6 +182,15 @@ def backbone_ids() -> tuple[str, ...]:
     return tuple(_rows())
 
 
+def expert_library(backbone_id: str) -> str:
+    """The backbone whose curated experts this one uses: itself, or the model it was fine-tuned from."""
+    library = _row(backbone_id).get("expert_library", backbone_id)
+    if not isinstance(library, str):
+        raise ValueError(f"Invalid expert library for {backbone_id!r}")
+    _row(library)
+    return library
+
+
 def adapter_base_names(backbone_id: str) -> frozenset[str]:
     names = _row(backbone_id).get("adapter_base_names", [])
     if not isinstance(names, list) or any(not isinstance(name, str) for name in names):

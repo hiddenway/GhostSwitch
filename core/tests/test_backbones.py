@@ -36,8 +36,12 @@ class BackboneRegistryTests(unittest.TestCase):
     def test_qwythos_is_an_uncensored_backbone_with_its_own_lineage(self):
         self.assertTrue(core_models.uncensored("qwythos-9b"))
         self.assertFalse(core_models.uncensored("qwen35-9b"))
-        self.assertEqual(core_models.adapter_base_names("qwythos-9b"), {"empero-ai/Qwythos-9B-v2"})
-        self.assertEqual(load_packages("qwythos-9b"), {})
+        self.assertEqual(core_models.expert_library("qwythos-9b"), "qwen35-9b")
+        self.assertEqual(core_models.expert_library("qwen35-9b"), "qwen35-9b")
+        # A Qwen3.5-9B fine-tune: every curated 9B expert loads on it, and Qwythos LoRAs are accepted too.
+        self.assertEqual(set(load_packages("qwythos-9b")), set(load_packages("qwen35-9b")))
+        self.assertTrue(core_models.adapter_base_names("qwen35-9b") < core_models.adapter_base_names("qwythos-9b"))
+        self.assertIn("empero-ai/Qwythos-9B-v2", core_models.adapter_base_names("qwythos-9b"))
         self.assertEqual(core_models.download_source("qwythos-9b", "gguf")["filename"], "Qwythos-9B-v2-Q4_K_M.gguf")
 
     def test_receipts_belong_to_the_4b_library_only(self):

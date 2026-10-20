@@ -1,4 +1,4 @@
 {
   "adapters": {},
-  "expert_packages": "experts/qwythos-9b"
+  "expert_packages": "experts/qwen35-9b"
 }

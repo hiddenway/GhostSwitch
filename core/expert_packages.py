@@ -83,8 +83,11 @@ def reload_packages() -> None:
 
 @lru_cache(maxsize=None)
 def _load_packages(backbone: str) -> dict[str, dict]:
+    from core_models import expert_library
+    # Curated experts may come from the backbone a fine-tune was made from; Hub adapters stay per backbone.
+    library = expert_library(backbone)
     packages = {}
-    folders = sorted((ROOT / backbone).glob("*")) + sorted((user_root() / backbone).glob("hub_*"))
+    folders = sorted((ROOT / library).glob("*")) + sorted((user_root() / backbone).glob("hub_*"))
     for folder in folders:
         if not folder.is_dir():
             continue
@@ -120,7 +123,7 @@ def _load_packages(backbone: str) -> dict[str, dict]:
                 raise ValueError("Unsupported package schema_version")
             if profile.get("id") != folder.name or re.fullmatch(r"[a-z][a-z0-9_]*", folder.name) is None:
                 raise ValueError("Package folder must match the lowercase expert id")
-            if profile.get("backbone") != backbone or not isinstance(profile.get("default_enabled", False), bool):
+            if profile.get("backbone") not in {backbone, library} or not isinstance(profile.get("default_enabled", False), bool):
                 raise ValueError("Invalid backbone or default_enabled")
             if type(profile.get("manual_only", False)) is not bool:
                 raise ValueError("manual_only must be a boolean")
