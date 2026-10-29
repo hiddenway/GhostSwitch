@@ -1,18 +1,18 @@
 {
   "qwen35-9b": {
     "display_name": "Qwen3.5-9B",
-    "model_id": "~/.lmstudio/models/lmstudio-community/Qwen3.5-9B-MLX-4bit",
+    "model_id": "~/.lmstudio/models/mlx-community/Qwen3.5-9B-5bit",
     "local_model_path": "./base/qwen35-9b/model",
     "total_params": 9000000000,
     "model_type": "qwen3_5",
-    "quantization_bits": 4,
+    "quantization_bits": 5,
     "text_hidden_size": 4096,
     "text_num_layers": 32,
     "adapter_base_names": ["Qwen/Qwen3.5-9B", "unsloth/Qwen3.5-9B", "D:\\aimodels\\hf\\Qwen3.5-9B"],
     "hf_base_repo": "Qwen/Qwen3.5-9B",
     "kv_bytes_per_token": 32768,
     "profiles": {"mlx": "mlx9b_v6", "gguf": "gguf9b_v6"},
-    "mlx": {"repo_id": "lmstudio-community/Qwen3.5-9B-MLX-4bit", "revision": "b455506b0f574c74616dbcd56879bde38fafcff3", "weights_bytes": 5950221142},
+    "mlx": {"repo_id": "mlx-community/Qwen3.5-9B-5bit", "revision": "64b670725ad59d26c7b77430a3a4ae671afb776a", "weights_bytes": 7069313579},
     "gguf": {"filename": "Qwen3.5-9B-Q4_K_M.gguf", "repo_id": "lmstudio-community/Qwen3.5-9B-GGUF", "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1", "weights_bytes": 5627044256, "context": 32768, "mmproj": "mmproj-Qwen3.5-9B-BF16.gguf"}
   },
   "qwen35-4b": {

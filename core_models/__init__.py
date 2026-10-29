@@ -106,6 +106,11 @@ def local_model_dir(backbone_id: str) -> Path:
     return (data_root() / _row(backbone_id)["local_model_path"]).resolve()
 
 
+def local_model_link(backbone_id: str) -> Path:
+    """The MLX checkpoint folder's own path, which may be a symlink to a checkpoint elsewhere."""
+    return data_root() / _row(backbone_id)["local_model_path"]
+
+
 def download_source(backbone_id: str, backend: str) -> dict:
     """The pinned Hugging Face repository, revision, and weight size the app downloads."""
     source = _row(backbone_id).get(backend)

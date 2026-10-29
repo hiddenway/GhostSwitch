@@ -18,7 +18,7 @@ import time
 from pathlib import Path
 from typing import Callable
 
-from core_models import backbone_ids, data_root, display_name, download_source, local_model_dir
+from core_models import backbone_ids, data_root, display_name, download_source, local_model_dir, local_model_link
 
 _PROJECT_ROOT = Path(__file__).resolve().parents[1]
 # GGUF inference still reads the tokenizer and chat template from the MLX checkpoint folder.
@@ -31,35 +31,66 @@ def gguf_dir(backbone: str) -> Path:
     return data_root() / "base" / backbone / "gguf"
 
 
+def _downloaded_revision(folder: Path, name: str) -> str | None:
+    """The commit hf_hub_download recorded for a file it put in ``folder``, if any."""
+    metadata = folder / ".cache" / "huggingface" / "download" / f"{name}.metadata"
+    try:
+        return metadata.read_text(encoding="utf-8").split("\n", 1)[0].strip() or None
+    except OSError:
+        return None
+
+
+def _current(path: Path, size: int | None, lfs: bool, revision: str) -> bool:
+    """Whether a local file already is this revision's file.
+
+    A matching size alone is not enough: a new checkpoint of the same model (another
+    quantization) has a config.json and index of exactly the same size. Files without a
+    recorded revision count only when they are large LFS files of the expected size.
+    """
+    if not path.is_file() or size is None or path.stat().st_size != size:
+        return False
+    recorded = _downloaded_revision(path.parent, path.name)
+    return recorded == revision if recorded is not None else lfs
+
+
 def plan(backbone: str, backend: str) -> list[dict]:
     """The files still missing for a backbone and backend, with their sizes."""
     from huggingface_hub import HfApi
 
     api = HfApi()
     mlx = download_source(backbone, "mlx")
-    mlx_files = {item.rfilename: item.size for item in api.model_info(
-        mlx["repo_id"], revision=mlx["revision"], files_metadata=True).siblings}
+    mlx_files = {item.rfilename: (item.size, getattr(item, "lfs", None) is not None)
+                 for item in api.model_info(mlx["repo_id"], revision=mlx["revision"], files_metadata=True).siblings}
     wanted = []
     if backend == "mlx":
-        wanted += [(mlx, name, size, local_model_dir(backbone)) for name, size in mlx_files.items()
+        wanted += [(mlx, name, size, lfs, local_model_dir(backbone)) for name, (size, lfs) in mlx_files.items()
                    if name not in _SKIPPED]
     else:
         gguf = download_source(backbone, "gguf")
-        gguf_files = {item.rfilename: item.size for item in api.model_info(
-            gguf["repo_id"], revision=gguf["revision"], files_metadata=True).siblings}
+        gguf_files = {item.rfilename: (item.size, getattr(item, "lfs", None) is not None)
+                      for item in api.model_info(gguf["repo_id"], revision=gguf["revision"], files_metadata=True).siblings}
         if gguf["filename"] not in gguf_files:
             raise ValueError(f"{gguf['filename']} is missing from {gguf['repo_id']}")
-        wanted += [(mlx, name, mlx_files[name], local_model_dir(backbone)) for name in TOKENIZER_FILES]
-        wanted.append((gguf, gguf["filename"], gguf_files[gguf["filename"]], gguf_dir(backbone)))
+        # These live in the MLX checkpoint folder and are shared with it: a file of the right size
+        # counts, as for an LFS file, so a GGUF install never replaces a working checkpoint's files.
+        wanted += [(mlx, name, mlx_files[name][0], True, local_model_dir(backbone)) for name in TOKENIZER_FILES]
+        wanted.append((gguf, gguf["filename"], *gguf_files[gguf["filename"]], gguf_dir(backbone)))
     files = []
-    for source, name, size, folder in wanted:
-        path = folder / name
-        if path.is_file() and size is not None and path.stat().st_size == size:
+    for source, name, size, lfs, folder in wanted:
+        if _current(folder / name, size, lfs, source["revision"]):
             continue
         files.append({"repo_id": source["repo_id"], "revision": source["revision"], "filename": name,
-                      "size": size or 0, "local_dir": str(folder)})
+                      "size": size or 0, "lfs": lfs, "local_dir": str(folder)})
     # Small files first, so the long download is the last step.
     return sorted(files, key=lambda item: item["size"])
+
+
+def _valid_checkpoint(backbone: str) -> bool:
+    from core_models import get_backbone
+    try:
+        return Path(get_backbone(backbone, validate_checkpoint=True).model_id) == local_model_dir(backbone)
+    except Exception:  # anything unreadable is not a checkpoint worth keeping in place
+        return False
 
 
 def install(backbone: str, backend: str, emit: Callable[[dict], None]) -> str | None:
@@ -68,14 +99,30 @@ def install(backbone: str, backend: str, emit: Callable[[dict], None]) -> str | 
 
     from .download_progress import download_file
 
+    link = local_model_link(backbone)
+    if backend == "mlx" and link.is_symlink() and not _valid_checkpoint(backbone):
+        # The folder points at a checkpoint kept elsewhere (LM Studio, another copy) that is not
+        # this version's: download into a folder of our own instead of overwriting it.
+        link.unlink()
+        link.mkdir(parents=True)
     files = plan(backbone, backend)
     total = sum(item["size"] for item in files)
     target = data_root() / "base" / backbone
     target.mkdir(parents=True, exist_ok=True)
+    # In an MLX install, a planned file that exists is another checkpoint's or revision's (a new
+    # quantization uses the same file names). It is replaced, so its space comes back; it is
+    # removed first, so that an interrupted update never leaves old weights next to a new
+    # config.json, and a failed request to the Hub cannot fall back to the old file. A GGUF
+    # install leaves the MLX folder's files to hf_hub_download, which replaces them atomically.
+    stale = [path for item in files if backend == "mlx"
+             and (path := Path(item["local_dir"]) / item["filename"]).is_file()]
+    replaced = sum(path.stat().st_size for path in stale)
     free = shutil.disk_usage(target).free
-    if total + _DISK_MARGIN > free:
+    if total + _DISK_MARGIN > free + replaced:
         raise OSError(f"Not enough disk space: the download needs {total / 1024 ** 3:.1f} GB "
-                      f"and {free / 1024 ** 3:.1f} GB is free")
+                      f"and {(free + replaced) / 1024 ** 3:.1f} GB is free")
+    for path in stale:
+        path.unlink()
     emit({"event": "plan", "total_bytes": total, "files": len(files)})
     done, started, last = 0, time.monotonic(), 0.0
     for item in files:
@@ -96,6 +143,10 @@ def install(backbone: str, backend: str, emit: Callable[[dict], None]) -> str | 
                       local_dir=item["local_dir"], progress=progress)
         done += item["size"]
     emit({"event": "verifying"})
+    missing = [item["filename"] for item in files if not _current(
+        Path(item["local_dir"]) / item["filename"], item["size"], item.get("lfs", True), item["revision"])]
+    if missing:
+        raise OSError(f"The download did not complete: {', '.join(missing)} is not the expected version")
     model_path = None
     if backend == "gguf":
         model_path = str(gguf_dir(backbone) / download_source(backbone, "gguf")["filename"])

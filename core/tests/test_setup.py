@@ -27,6 +27,15 @@ def machine(total_gb, *, apple=True, mlx=True, gguf=True, gpu_gb=None):
 
 class RecommendationTests(unittest.TestCase):
     def test_largest_model_that_fits_comfortably_on_the_native_backend(self):
+        # The published sizes, not whatever checkpoint this computer has.
+        empty = tempfile.TemporaryDirectory()
+        self.addCleanup(empty.cleanup)
+        local = patch.object(runtime_selection, "local_model_dir", return_value=Path(empty.name))
+        local.start()
+        self.addCleanup(local.stop)
+        # The 5-bit 9B sits exactly at the 'comfortable' limit of a 16 GB Mac (0.55 x 16 GB):
+        # any growth of the estimate would recommend the 4B to every 16 GB Mac.
+        self.assertEqual(runtime_selection.memory_estimate_gb("qwen35-9b", "mlx"), 8.8)
         self.assertEqual(runtime_selection.recommend(machine(16))["backbone"], "qwen35-9b")
         self.assertEqual(runtime_selection.recommend(machine(16))["backend"], "mlx")
         self.assertEqual(runtime_selection.recommend(machine(8))["backbone"], "qwen35-4b")
@@ -79,13 +88,36 @@ class SetupModeTests(unittest.TestCase):
         self.addCleanup(reason.stop)
 
     def test_server_starts_without_a_model_and_does_not_load_one(self):
-        with patch.object(runtime_selection, "installed", return_value=False), \
+        with tempfile.TemporaryDirectory() as folder, \
+             patch.object(runtime_selection, "installed", return_value=False), \
+             patch.object(runtime_selection, "local_model_dir", return_value=Path(folder)), \
              patch.object(main.llm, "configure_backbone") as configure, \
              patch.object(api, "serve") as serve:
             main.main(["--serve", "--port", "8123"])
         configure.assert_not_called()
         serve.assert_called_once_with("127.0.0.1", 8123)
         self.assertIn("not downloaded yet", api.SETUP_REASON)
+
+    def test_an_older_quantization_on_disk_asks_for_an_update(self):
+        """The 9B moved from the 4-bit to the 5-bit checkpoint; the old one is not 'missing'."""
+        with tempfile.TemporaryDirectory() as folder:
+            (Path(folder) / "config.json").write_text(json.dumps(
+                {"model_type": "qwen3_5", "quantization_config": {"bits": 4, "group_size": 64}}))
+            (Path(folder) / "model-00001-of-00002.safetensors").write_bytes(b"w" * 1000)
+            with patch.object(runtime_selection, "local_model_dir", return_value=Path(folder)):
+                self.assertEqual(runtime_selection.outdated_checkpoint("qwen35-9b"), 4)
+                # The old shards do not stand in for the checkpoint that replaces them.
+                self.assertEqual(runtime_selection.memory_estimate_gb("qwen35-9b", "mlx"), 8.8)
+                reason = runtime_selection.setup_reason(runtime_selection.Selection("qwen35-9b", "mlx"))
+                self.assertIn("needs an update", reason)
+                self.assertIn("5-bit", reason)
+                self.assertIsNone(runtime_selection.outdated_checkpoint("qwen35-4b"))
+                self.assertIn("not downloaded yet",
+                              runtime_selection.setup_reason(runtime_selection.Selection("qwen35-9b", "gguf")))
+            (Path(folder) / "config.json").write_text(json.dumps(
+                {"model_type": "qwen3_5", "quantization_config": {"bits": 5, "group_size": 64}}))
+            with patch.object(runtime_selection, "local_model_dir", return_value=Path(folder)):
+                self.assertIsNone(runtime_selection.outdated_checkpoint("qwen35-9b"))
 
     def test_single_requests_still_need_a_model(self):
         with patch.object(runtime_selection, "installed", return_value=False), \
@@ -171,19 +203,34 @@ class SetupApiTests(unittest.TestCase):
 
 
 class DownloadTests(unittest.TestCase):
+    LARGE = {"model.safetensors", "Qwen3.5-4B-Q4_K_M.gguf", "Qwen3.5-4B-Q8_0.gguf"}
+
     def info(self, *files):
-        return SimpleNamespace(siblings=[SimpleNamespace(rfilename=name, size=size) for name, size in files])
+        return SimpleNamespace(siblings=[
+            SimpleNamespace(rfilename=name, size=size,
+                            lfs=SimpleNamespace(size=size) if name in self.LARGE else None)
+            for name, size in files])
+
+    @staticmethod
+    def record(folder: Path, name: str, revision: str) -> None:
+        """What hf_hub_download leaves next to a file it downloaded into a local folder."""
+        metadata = folder / ".cache" / "huggingface" / "download" / f"{name}.metadata"
+        metadata.parent.mkdir(parents=True, exist_ok=True)
+        metadata.write_text(f"{revision}\netag\n1.0\n")
 
     def test_plan_skips_complete_files_and_downloads_the_largest_last(self):
         mlx = self.info((".gitattributes", 1), ("README.md", 1), ("config.json", 3), ("tokenizer.json", 20),
                         ("tokenizer_config.json", 9), ("chat_template.jinja", 7), ("model.safetensors", 3000))
         gguf = self.info(("Qwen3.5-4B-Q4_K_M.gguf", 2700), ("Qwen3.5-4B-Q8_0.gguf", 4400))
+        revision = model_download.download_source("qwen35-4b", "mlx")["revision"]
         with tempfile.TemporaryDirectory() as folder, \
              patch.object(model_download, "_PROJECT_ROOT", Path(folder)), \
              patch.object(model_download, "local_model_dir", return_value=Path(folder) / "model"), \
              patch("huggingface_hub.HfApi.model_info", side_effect=lambda repo, **_: gguf if "GGUF" in repo else mlx):
-            (Path(folder) / "model").mkdir()
-            (Path(folder) / "model/config.json").write_text("abc")
+            model = Path(folder) / "model"
+            model.mkdir()
+            (model / "config.json").write_text("abc")
+            self.record(model, "config.json", revision)
             files = model_download.plan("qwen35-4b", "mlx")
             self.assertEqual([item["filename"] for item in files],
                              ["chat_template.jinja", "tokenizer_config.json", "tokenizer.json", "model.safetensors"])
@@ -192,13 +239,41 @@ class DownloadTests(unittest.TestCase):
                          ["chat_template.jinja", "tokenizer_config.json", "tokenizer.json", "Qwen3.5-4B-Q4_K_M.gguf"])
         self.assertTrue(files[-1]["local_dir"].endswith("base/qwen35-4b/gguf"))
 
+    def test_plan_replaces_same_size_files_from_another_checkpoint(self):
+        """A new quantization of the same model has a config.json and index of the same size."""
+        mlx = self.info(("config.json", 3), ("model.safetensors.index.json", 5), ("model.safetensors", 3000))
+        revision = model_download.download_source("qwen35-4b", "mlx")["revision"]
+        with tempfile.TemporaryDirectory() as folder, \
+             patch.object(model_download, "local_model_dir", return_value=Path(folder)), \
+             patch("huggingface_hub.HfApi.model_info", return_value=mlx):
+            model = Path(folder)
+            (model / "config.json").write_text("abc")
+            (model / "model.safetensors.index.json").write_text("abcde")
+            (model / "model.safetensors").write_bytes(b"x" * 3000)
+            self.record(model, "config.json", "0" * 40)
+            # Another revision's config, an index with no record, and an LFS shard with no record.
+            self.assertEqual([item["filename"] for item in model_download.plan("qwen35-4b", "mlx")],
+                             ["config.json", "model.safetensors.index.json"])
+            self.record(model, "config.json", revision)
+            self.record(model, "model.safetensors.index.json", revision)
+            self.record(model, "model.safetensors", "0" * 40)
+            self.assertEqual([item["filename"] for item in model_download.plan("qwen35-4b", "mlx")],
+                             ["model.safetensors"])
+
+    @classmethod
+    def downloaded(cls, local_dir, filename, revision, size):
+        """What hf_hub_download leaves in a local folder: the file and its revision record."""
+        (Path(local_dir) / filename).write_bytes(b"n" * size)
+        cls.record(Path(local_dir), filename, revision)
+
     def test_install_reports_progress_and_checks_free_space(self):
-        files = [{"repo_id": "r", "revision": "v", "filename": "model.safetensors", "size": 100,
+        files = [{"repo_id": "r", "revision": "v", "filename": "model.safetensors", "size": 100, "lfs": True,
                   "local_dir": "/tmp/ghostswitch-test-model"}]
 
         def download(repo_id, filename, *, revision, local_dir, progress):
             progress({"downloaded_bytes": 50, "bytes_per_second": 10})
             progress({"downloaded_bytes": 100, "bytes_per_second": 10})
+            self.downloaded(local_dir, filename, revision, 100)
 
         events = []
         with tempfile.TemporaryDirectory() as folder, \
@@ -215,6 +290,86 @@ class DownloadTests(unittest.TestCase):
             with patch("shutil.disk_usage", return_value=SimpleNamespace(free=10)), \
                  self.assertRaisesRegex(OSError, "Not enough disk space"):
                 model_download.install("qwen35-4b", "mlx", events.append)
+
+    def test_an_update_replaces_old_files_first_and_counts_their_space(self):
+        """4-bit -> 5-bit: same file names, so the old files go before any new one arrives."""
+        names = ["config.json", "model-00001-of-00002.safetensors", "model-00002-of-00002.safetensors"]
+        with tempfile.TemporaryDirectory() as folder:
+            files = [{"repo_id": "new", "revision": "n" * 40, "filename": name, "size": size, "lfs": lfs,
+                      "local_dir": folder} for name, size, lfs in
+                     zip(names, (3, 600, 170), (False, True, True))]
+            for name, size in zip(names, (3, 550, 60)):
+                self.downloaded(folder, name, "o" * 40, size)
+            seen = []
+
+            def download(repo_id, filename, *, revision, local_dir, progress):
+                # Nothing of the old checkpoint is left once the first new file arrives.
+                seen.append(sorted(path.name for path in Path(local_dir).glob("*") if path.is_file()))
+                self.downloaded(local_dir, filename, revision, next(i["size"] for i in files if i["filename"] == filename))
+
+            with patch.object(model_download, "plan", return_value=files), \
+                 patch("core.download_progress.download_file", side_effect=download), \
+                 patch("core_models.get_backbone"), \
+                 patch("shutil.disk_usage", return_value=SimpleNamespace(free=200)):
+                # 773 bytes to download, 200 free, 613 of old files replaced: it fits (margin aside).
+                with patch.object(model_download, "_DISK_MARGIN", 0):
+                    model_download.install("qwen35-9b", "mlx", lambda event: None)
+            self.assertEqual(seen[0], [])
+
+    def test_a_gguf_install_never_removes_the_mlx_checkpoints_files(self):
+        """Its tokenizer files live in the MLX folder; a failed download must not take them away."""
+        mlx = self.info(("tokenizer.json", 20), ("tokenizer_config.json", 9), ("chat_template.jinja", 7))
+        gguf = self.info(("Qwen3.5-4B-Q4_K_M.gguf", 2700))
+        with tempfile.TemporaryDirectory() as folder:
+            model = Path(folder) / "model"
+            model.mkdir()
+            for name, size in (("tokenizer.json", 20), ("tokenizer_config.json", 9), ("chat_template.jinja", 7)):
+                (model / name).write_bytes(b"t" * size)   # hand-placed: same size, no revision record
+            with patch.object(model_download, "_PROJECT_ROOT", Path(folder)), \
+                 patch.object(model_download, "local_model_dir", return_value=model), \
+                 patch.object(model_download, "gguf_dir", return_value=Path(folder) / "gguf"), \
+                 patch("huggingface_hub.HfApi.model_info", side_effect=lambda repo, **_: gguf if "GGUF" in repo else mlx), \
+                 patch("core.download_progress.download_file", side_effect=OSError("network down")), \
+                 self.assertRaises(OSError):
+                self.assertEqual([item["filename"] for item in model_download.plan("qwen35-4b", "gguf")],
+                                 ["Qwen3.5-4B-Q4_K_M.gguf"])
+                model_download.install("qwen35-4b", "gguf", lambda event: None)
+            self.assertEqual(sorted(path.name for path in model.iterdir()),
+                             ["chat_template.jinja", "tokenizer.json", "tokenizer_config.json"])
+
+    def test_an_outdated_symlinked_checkpoint_is_left_alone(self):
+        """The update downloads into a folder of its own instead of overwriting the link's target."""
+        with tempfile.TemporaryDirectory() as folder:
+            elsewhere = Path(folder) / "lmstudio" / "Qwen3.5-9B-MLX-4bit"
+            elsewhere.mkdir(parents=True)
+            (elsewhere / "config.json").write_text("old")
+            link = Path(folder) / "base" / "qwen35-9b" / "model"
+            link.parent.mkdir(parents=True)
+            link.symlink_to(elsewhere)
+            with patch.object(model_download, "local_model_link", return_value=link), \
+                 patch.object(model_download, "local_model_dir", side_effect=lambda backbone: link.resolve()), \
+                 patch.object(model_download, "plan", return_value=[]), \
+                 patch("core_models.get_backbone"):
+                model_download.install("qwen35-9b", "mlx", lambda event: None)
+            self.assertFalse(link.is_symlink())
+            self.assertTrue(link.is_dir())
+            self.assertEqual((elsewhere / "config.json").read_text(), "old")
+
+    def test_install_fails_when_a_file_is_still_the_old_one(self):
+        """A failed request to the Hub can leave the old file in place; that is not a success."""
+        with tempfile.TemporaryDirectory() as folder:
+            files = [{"repo_id": "new", "revision": "n" * 40, "filename": "model.safetensors", "size": 10,
+                      "lfs": True, "local_dir": folder}]
+
+            def download(repo_id, filename, *, revision, local_dir, progress):
+                self.downloaded(local_dir, filename, "o" * 40, 10)
+
+            with patch.object(model_download, "plan", return_value=files), \
+                 patch("core.download_progress.download_file", side_effect=download), \
+                 patch("core_models.get_backbone") as validate, \
+                 self.assertRaisesRegex(OSError, "did not complete"):
+                model_download.install("qwen35-9b", "mlx", lambda event: None)
+            validate.assert_not_called()
 
     def test_installer_follows_the_child_process(self):
         lines = [json.dumps({"event": "plan", "total_bytes": 100, "files": 1}),

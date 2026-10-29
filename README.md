@@ -27,7 +27,7 @@ Because only one expert is attached at a time, the library can grow to thousands
 You get a chat app in the browser and an OpenAI-compatible API for your scripts and coding agents.
 
 > [!WARNING]
-> **GhostSwitch is an experiment.** It tests whether one small local model with a library of LoRA experts can give expert-quality answers, and that question is still open: so far one expert is measurably better than the base model, routing is slow and sometimes picks the wrong expert, and the API, settings and expert format may change without notice. Try it, measure it, tell us what you find, but do not rely on its answers for medical, legal, financial or security decisions.
+> **GhostSwitch is an experiment.** It tests whether one small local model with a library of LoRA experts can give expert-quality answers, and that question is still open: so far one expert is measurably better than the base model, the router picks the expected expert about 9 times in 10 ([measured](#does-the-router-pick-the-right-expert)), and the API, settings and expert format may change without notice. Try it, measure it, tell us what you find, but do not rely on its answers for medical, legal, financial or security decisions.
 
 <p align="center">
   <img src=".github/assets/screenshot-chat.png" alt="The GhostSwitch chat: a Python question answered by the coding expert, with the response details panel open" width="100%">
@@ -87,7 +87,7 @@ Afterwards:
 
 | Base model | Download | Memory | Experts | Choose it when |
 |---|---|---|---|---|
-| **Qwen3.5-9B** (default) | 6.0 GB (MLX) · 5.6 GB (GGUF) | ~7.8 GB (MLX) · ~6.7 GB (GGUF) | 27 | you have 16 GB of memory or more |
+| **Qwen3.5-9B** (default) | 7.1 GB (MLX) · 5.6 GB (GGUF) | ~8.8 GB (MLX) · ~6.7 GB (GGUF) | 27 | you have 16 GB of memory or more |
 | **Qwen3.5-4B** | 3.0 GB (MLX) · 2.7 GB (GGUF) | ~5.1 GB (MLX) · ~4.0 GB (GGUF) | 6 | you have 8 GB, or want faster answers |
 
 You can switch the model or backend later in **Settings → Base model**. A processor without a GPU works, but slowly: there GhostSwitch does not think before answering unless you ask it to.
@@ -98,7 +98,7 @@ You can switch the model or backend later in **Settings → Base model**. A proc
   <img src=".github/assets/how-it-works.png" alt="Request, route, attach the expert, generate, check: accept, retry with the same expert up to four times, or fail" width="100%">
 </p>
 
-1. **Route.** Short model calls walk a tree of domains: first *general question* or *specialist work*, then the field (finance, coding, reasoning, legal, engineering design, …), then the expert. At each step the model sees only the current node and its children, so every decision is small and focused. It answers with the experts you turned on; when a catalog expert you have not turned on fits better, the app offers to download it.
+1. **Route.** The router walks a tree of domains: the field (finance, coding, reasoning, legal, engineering design, …) or a general question, then the expert. With Qwen3.5-9B on MLX it reads the message once and answers each step with one letter, about 1.6 s per message on an M1 Pro; elsewhere short model calls choose one node at a time. It answers with the experts you turned on; when a catalog expert you have not turned on fits better, the app offers to download it.
 2. **Attach.** The expert's LoRA adapter and its instructions go onto the base model that is already loaded. There is no model reload; the adapter costs about 0.1–0.3 s per answer.
 3. **Generate.** Optionally GhostSwitch searches the web first (DuckDuckGo, Brave or your own SearXNG) and cites the pages as `[1]`, `[2]`. Optionally it reasons step by step; the reasoning is returned separately from the answer.
 4. **Check.** Plain code checks the answer and either accepts it, asks the same expert for a new one, or reports a failure. We tried a second model as a reviewer: it made answers about 42% slower and no more accurate ([audit, in Russian](docs/verifier-audit.ru.md)).
@@ -142,6 +142,34 @@ An adapter that sounds good on its model card does not always beat the model it 
 | **Not measured yet** | 14 experts that need a judge or tools to grade: Verilog, OpenSCAD, Lean4, CAD, decompilation, roleplay and others |
 
 Blocked experts stay in the catalog with the reason on their card and can still be called with `"mode": "direct"`, so anyone can measure them again. Every number, and why each expert was blocked, is in [docs/expert-blocklist.ru.md](docs/expert-blocklist.ru.md) (in Russian); the script is `scripts/expert_eval.py`.
+
+### Does the router pick the right expert?
+
+An expert only helps if the router sends it the right questions. We label questions from public test sets with the expert that should answer them and send them through the router alone, with every expert counted as installed. No Robots everyday prompts and MedQA have no expert, so the right answer for them is the plain base model. The result below is Qwen3.5-9B on MLX on a MacBook Pro M1 Pro (16 GB), on 300 questions the router was never tuned or checked on:
+
+| | Router v7, 5-bit model (now) | Router v6, 4-bit model (before) |
+|---|---|---|
+| Picks the expected expert or the base model | **89.0%** | 81.1% |
+| Questions with an expert sent to it | **91.9%** | 79.2% |
+| Questions without an expert kept on the base model | 71.4% | 89.7% |
+| Routing time per message, median | **1.7 s** | 9.4 s |
+
+The "before" column was measured on another set of 222 questions from the same sources, so compare it loosely.
+
+| Source | Right | Most common miss |
+|---|---|---|
+| Code (HumanEval+) | 49/49 | — |
+| Math (GSM8K) | 35/35 | — |
+| Contracts (LegalBench CUAD) | 35/35 | — |
+| Lean 4 proofs (miniF2F) | 27/27 | — |
+| Graph queries (Text2Cypher) | 18/18 | — |
+| Personal data (PII) | 29/30 | legal ×1 |
+| Everyday prompts (No Robots), base model | 27/32 | roleplay ×4 |
+| Finance (FinQA) | 27/38 | base model ×10 |
+| Verilog (VerilogEval) | 17/26 | general coding ×9 |
+| Medicine (MedQA), base model | 3/10 | math ×7 |
+
+Of the 33 misses, 10 went to the base model, which answers as if no expert were installed. Only 11 of the 258 questions that have an expert went to a different expert. The weak spots are clear: medical questions go to the math expert, and Verilog sometimes goes to the general coding expert. With llama.cpp (GGUF), router v6 picked the expected one for 87.6% of 1,000 questions on an RTX 3090. How the routers work, why the Mac moved to the 5-bit model and every other run are in the [reference](docs/reference.md#layout). Run it yourself with `python scripts/router_eval.py run --seed 7 --max 300`; `report` and `compare` print the tables.
 
 <details>
 <summary><b>The full expert catalog</b></summary>
@@ -318,7 +346,7 @@ uv run python -m core.cli      # starts the server and opens the app, like the i
 
 | Path | What is there |
 |---|---|
-| [`core/`](core/) | The runtime: HTTP API (`api.py`), one inference step (`main.py`), router (`router_v6.py`), checks (`verifier_v6.py`), MLX and llama.cpp backends, expert library |
+| [`core/`](core/) | The runtime: HTTP API (`api.py`), one inference step (`main.py`), routers (`router_v7.py` for the 9B on MLX, `router_v6.py` elsewhere), checks (`verifier_v6.py`), MLX and llama.cpp backends, expert library |
 | [`client/`](client/) | The web app: plain HTML, CSS and JavaScript, no build step |
 | [`experts/`](experts/) | Expert packages for each base model, and the template |
 | [`core_models/`](core_models/) | Base model descriptions with pinned Hugging Face revisions |
@@ -334,7 +362,7 @@ On coding, measurably: the coding expert solves 88% of HumanEval+ against the ba
 Yes, once the base model and your experts are downloaded. Routing, answers and checks all run locally; only web search and browsing Hugging Face for new adapters need the internet.
 
 **How fast is it?**\
-On a MacBook Pro with M1 Pro and 16 GB, the 9B model on MLX writes 13–18 tokens per second. Before the answer, the router makes a few short model calls and the model may think first, so each answer in the screenshots above took about a minute, 17–24 s of it thinking. Turning thinking off for a request, or the 4B model, answers faster.
+On a MacBook Pro with M1 Pro and 16 GB, the 9B model on MLX (5-bit checkpoint) writes 18–24 tokens per second. Before the answer, the router takes about 1–2 s (the first request after a start also loads the model) and the model may think first; each answer in the screenshots above, taken with the earlier 4-bit checkpoint and router, took about a minute, 17–24 s of it thinking. Turning thinking off for a request, or the 4B model, answers faster.
 
 **Can I use my own LoRA?**\
 Yes. Add any adapter made for Qwen3.5-9B or 4B from the **Hugging Face** tab and pick it for a chat, or package it as an expert so the router can choose it.
