@@ -1,0 +1,98 @@
+{
+  "gsm8k": {
+    "repository": "openai/gsm8k",
+    "split": "test",
+    "config": "main",
+    "revision": "740312add88f781978c0658806c59bc2815b9866",
+    "url": "https://huggingface.co/datasets/openai/gsm8k",
+    "expected": "reasoning_expert"
+  },
+  "finqa": {
+    "repository": "dreamerdeo/finqa",
+    "split": "test",
+    "config": "default",
+    "url": "https://huggingface.co/datasets/dreamerdeo/finqa",
+    "revision": null,
+    "expected": "finance_market_expert"
+  },
+  "cuad": {
+    "repository": "nguha/legalbench",
+    "split": "test",
+    "configs": [
+      "cuad_audit_rights",
+      "cuad_non-compete",
+      "cuad_exclusivity",
+      "cuad_cap_on_liability",
+      "cuad_termination_for_convenience"
+    ],
+    "url": "https://huggingface.co/datasets/nguha/legalbench",
+    "revision": null,
+    "expected": "legal_contract_expert"
+  },
+  "pii": {
+    "repository": "gretelai/gretel-pii-masking-en-v1",
+    "split": "test",
+    "config": "default",
+    "url": "https://huggingface.co/datasets/gretelai/gretel-pii-masking-en-v1",
+    "revision": null,
+    "expected": "privacy_dlp_expert"
+  },
+  "humaneval": {
+    "repository": "evalplus/humanevalplus",
+    "split": "test",
+    "config": "default",
+    "url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+    "revision": null,
+    "expected": "coding_expert"
+  },
+  "no_robots": {
+    "repository": "HuggingFaceH4/no_robots",
+    "split": "test",
+    "config": "default",
+    "category_filter": [
+      "Open QA",
+      "Brainstorm",
+      "Rewrite",
+      "Summarize",
+      "Classify",
+      "Closed QA",
+      "Extract",
+      "Generation"
+    ],
+    "url": "https://huggingface.co/datasets/HuggingFaceH4/no_robots",
+    "revision": null,
+    "expected": "base"
+  },
+  "medqa": {
+    "repository": "GBaker/MedQA-USMLE-4-options",
+    "split": "test",
+    "config": "default",
+    "url": "https://huggingface.co/datasets/GBaker/MedQA-USMLE-4-options",
+    "revision": null,
+    "expected": "base"
+  },
+  "minif2f_lean4": {
+    "repository": "cat-searcher/minif2f-lean4",
+    "split": "test",
+    "config": "default",
+    "url": "https://huggingface.co/datasets/cat-searcher/minif2f-lean4",
+    "revision": null,
+    "expected": "lean4_generalist_expert"
+  },
+  "verilogeval": {
+    "repository": "dakies/nvlabs-verilogeval-v2-spec-to-rtl",
+    "split": "test",
+    "config": "default",
+    "url": "https://huggingface.co/datasets/dakies/nvlabs-verilogeval-v2-spec-to-rtl",
+    "revision": null,
+    "expected": "verilog_expert"
+  },
+  "text2cypher": {
+    "repository": "neo4j/text2cypher-2024v1",
+    "split": "test",
+    "config": "default",
+    "url": "https://huggingface.co/datasets/neo4j/text2cypher-2024v1",
+    "revision": null,
+    "expected": "text_to_cypher_expert"
+  }
+}

@@ -105,9 +105,13 @@ class MemoryBudgetTests(unittest.TestCase):
             weights = Path(folder) / "model.safetensors"
             with weights.open("wb") as handle:
                 handle.truncate(3 * gib)
-            with patch.object(runtime_selection, "local_model_dir", return_value=Path(folder)):
+            with patch.object(runtime_selection, "local_model_dir", return_value=Path(folder)), \
+                 patch.object(runtime_selection, "_local_checkpoint_valid", return_value=True):
                 # 3 GiB weights + 1 GiB MLX cache + 0.25 prompt + 0.5 router + 0.5 working KV.
                 self.assertEqual(runtime_selection.memory_estimate_gb("qwen35-4b", "mlx"), 5.2)
+            with patch.object(runtime_selection, "local_model_dir", return_value=Path(folder)):
+                # Shards of an unfinished or outdated download stand for nothing: the published size.
+                self.assertEqual(runtime_selection.memory_estimate_gb("qwen35-4b", "mlx"), 5.1)
         # A file that is not downloaded yet is estimated from its published size.
         self.assertEqual(runtime_selection.memory_estimate_gb("qwen35-4b", "gguf", "/missing.gguf"), 4.0)
         self.assertGreater(runtime_selection.system_memory()["total_gb"], 0)

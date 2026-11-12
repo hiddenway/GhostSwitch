@@ -303,8 +303,8 @@ def doctor() -> int:
     try:
         selection = runtime_selection.resolve()
         ready = runtime_selection.installed(selection)
-        row("Base model", f"{selection.backbone} on {selection.backend.upper()}, "
-                          f"{'downloaded' if ready else 'not downloaded yet (the app downloads it)'}")
+        row("Base model", f"{selection.backbone} on {selection.backend.upper()}, downloaded" if ready
+            else f"{runtime_selection.setup_reason(selection)} (the app downloads it)")
     except ValueError as error:
         row("Base model", f"not downloaded yet ({error})")
     port = running_port()

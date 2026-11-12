@@ -1,0 +1,33 @@
+{
+  "router": "v6",
+  "dataset": {
+    "seed": 0,
+    "limit": 1000,
+    "max": null,
+    "shard": "3 shards"
+  },
+  "model": {
+    "backend": "gguf",
+    "model": "lmstudio-community/Qwen3.5-9B-GGUF Qwen3.5-9B-Q4_K_M.gguf @ 1379f25",
+    "quantization": "Q4_K_M"
+  },
+  "machine": {
+    "system": "vast.ai Linux",
+    "chip": "Intel Xeon Gold 6252 + NVIDIA RTX 3090 24 GB",
+    "memory_gb": null
+  },
+  "sessions": [
+    {
+      "started": "2026-10-27",
+      "questions": 1000,
+      "git": {
+        "branch": "main",
+        "commit": "5e8fcfb",
+        "uncommitted_changes": true,
+        "note": "recorded after the run"
+      },
+      "note": "three router processes shared one GPU"
+    }
+  ],
+  "status": "historical; not a measurement of the current router"
+}

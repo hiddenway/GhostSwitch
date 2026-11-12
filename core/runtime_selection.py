@@ -20,7 +20,7 @@ from pathlib import Path
 
 from core_models import (
     ACTIVE_BACKBONE_ENV, DEFAULT_BACKBONE, backbone_ids, data_root, display_name, download_source, find_gguf,
-    get_backbone, gguf_context, kv_bytes_per_token, local_model_dir, uncensored, user_dir,
+    get_backbone, gguf_context, kv_bytes_per_token, local_model_dir, local_model_link, uncensored, user_dir,
 )
 
 BACKENDS = ("mlx", "gguf")
@@ -105,6 +105,44 @@ def installed(selection: Selection) -> bool:
     return Path(model_id).is_dir()
 
 
+def outdated_checkpoint(backbone: str) -> int | None:
+    """The quantization of an MLX checkpoint on disk that this version no longer uses, if any.
+
+    After the 9B moved from the 4-bit to the 5-bit checkpoint, the old one fails validation;
+    this tells "needs an update" apart from "not downloaded".
+    """
+    try:
+        config = json.loads((local_model_dir(backbone) / "config.json").read_text(encoding="utf-8"))
+        expected = get_backbone(backbone, validate_checkpoint=False)
+    except (OSError, ValueError):
+        return None
+    bits = (config.get("quantization_config") or config.get("quantization") or {}).get("bits")
+    if config.get("model_type") != expected.model_type or not isinstance(bits, int):
+        return None
+    return bits if bits != expected.quantization_bits else None
+
+
+def setup_reason(selection: Selection) -> str:
+    """Why the selected base model cannot load yet, for the setup screen and the doctor."""
+    name, backend = display_name(selection.backbone), selection.backend.upper()
+    if selection.backend == "mlx" and (old := outdated_checkpoint(selection.backbone)) is not None:
+        new = get_backbone(selection.backbone, validate_checkpoint=False).quantization_bits
+        return (f"{name} for {backend} needs an update: this version uses the {new}-bit checkpoint "
+                f"instead of the {old}-bit one on disk")
+    return f"{name} for {backend} is not downloaded yet"
+
+
+def _local_weights_bytes(backbone: str) -> int:
+    return sum(file.stat().st_size for file in local_model_dir(backbone).glob("*.safetensors"))
+
+
+def _local_checkpoint_valid(backbone: str) -> bool:
+    try:
+        return Path(get_backbone(backbone, validate_checkpoint=True).model_id) == local_model_dir(backbone)
+    except (OSError, ValueError):
+        return False
+
+
 def _weights_bytes(backbone: str, backend: str) -> int:
     try:
         return int(download_source(backbone, backend).get("weights_bytes") or 0)
@@ -123,8 +161,9 @@ def memory_estimate_gb(backbone: str, backend: str, gguf_path: str | None = None
         # The KV cache for the whole context is reserved at load, plus compute buffers.
         extra = gguf_context(backbone) * kv_bytes_per_token(backbone) + _GIB // 2
     else:
-        weights = (sum(file.stat().st_size for file in local_model_dir(backbone).glob("*.safetensors"))
-                   or _weights_bytes(backbone, "mlx"))
+        # Only a complete, current local checkpoint stands for itself: the shards of an outdated
+        # one or of an unfinished download say nothing about what will be loaded.
+        weights = (_local_weights_bytes(backbone) if _local_checkpoint_valid(backbone) else 0) or _weights_bytes(backbone, "mlx")
         if not weights:
             return None
         from . import llm
@@ -258,7 +297,9 @@ def options() -> list[dict]:
             mlx_detail = "Local checkpoint" if mlx_local else f"Downloads {model_id} on first start"
         except (OSError, ValueError):
             mlx_ready = False
-            mlx_detail = f"MLX checkpoint missing in {local}"
+            old = outdated_checkpoint(backbone)
+            mlx_detail = (f"Needs an update: the {old}-bit checkpoint in {local} is replaced by a new one"
+                          if old is not None else f"MLX checkpoint missing in {local}")
         if not mlx_installed:
             mlx_ready, mlx_detail = False, "mlx-lm is not installed"
         gguf_file = _gguf_path(backbone, state)
@@ -296,7 +337,11 @@ def overview() -> dict:
     for row in rows:
         for backend, status in row["backends"].items():
             status["fit"] = fit(status["memory_gb"], memory_budget_gb(machine, backend))
-            status["enough_disk"] = status["installed"] or machine["disk_free_gb"] >= status["download_gb"] + 1
+            # An update replaces the outdated checkpoint's files, so their space counts as free.
+            replaced = (_local_weights_bytes(row["id"]) / _GIB if backend == "mlx"
+                        and outdated_checkpoint(row["id"]) is not None
+                        and not local_model_link(row["id"]).is_symlink() else 0)
+            status["enough_disk"] = status["installed"] or machine["disk_free_gb"] + replaced >= status["download_gb"] + 1
     return {"hardware": machine, "recommended": recommend(machine), "options": rows}
 
 

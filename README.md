@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".github/assets/banner.png" alt="GhostSwitch: small model, expert answers" width="100%">
+  <img src=".github/assets/banner.png" alt="GhostSwitch — Big AI power. Small hardware. Specialist AI on your everyday laptop." width="100%">
 </p>
 
 <p align="center">
@@ -20,14 +20,21 @@
   <a href="docs/reference.md"><b>Reference</b></a>
 </p>
 
-**GhostSwitch** is an AI assistant that runs entirely on your own computer. It loads one open model, **Qwen3.5**, and gives it a library of **experts**: small LoRA add-ons trained for code, finance, math, law, CAD, Verilog and two dozen other fields. For every message GhostSwitch picks the expert that fits, attaches it to the model that is already in memory, writes the answer and checks it in code before you see it.
+## Big AI power. Small hardware.
 
-Because only one expert is attached at a time, the library can grow to thousands of experts, a trillion parameters and more in total, and GhostSwitch still runs on a laptop with 16 GB of memory.
+**Specialist AI on your everyday laptop.** GhostSwitch brings a growing library of skills for coding, math, design and more to your own computer. No high-end GPU required.
 
-You get a chat app in the browser and an OpenAI-compatible API for your scripts and coding agents.
+Instead of loading a large model for every task, GhostSwitch keeps **one compact model** in memory and switches small specialist add-ons called **LoRA experts**. Ask a question; it automatically chooses an enabled expert or uses the base model when none fits.
+
+- **Fits ordinary hardware.** Start with the 4B model on an 8 GB machine, or choose 9B with 16 GB or more. Speed depends on your hardware; CPU-only answers are slower.
+- **Runs locally.** Your chats stay on your computer. Work offline after downloading the model and experts; web search is optional.
+- **Ready to chat.** Install with one command and open the app in your browser.
+- **Works with your tools.** An OpenAI-compatible API connects GhostSwitch to your scripts and coding agents.
+
+Free and open source. One base model. A growing library of specialist skills.
 
 > [!WARNING]
-> **GhostSwitch is an experiment.** It tests whether one small local model with a library of LoRA experts can give expert-quality answers, and that question is still open: so far one expert is measurably better than the base model, routing is slow and sometimes picks the wrong expert, and the API, settings and expert format may change without notice. Try it, measure it, tell us what you find, but do not rely on its answers for medical, legal, financial or security decisions.
+> **GhostSwitch is experimental.** More specialist options do not guarantee better answers. So far, only the coding expert has shown a measured improvement over the base model in the project's evaluation; other results vary. See the [expert results](#measured-not-assumed) and [routing measurements](#does-the-router-pick-the-right-expert). The API, settings and expert format may change. Do not rely on its answers for medical, legal, financial or security decisions.
 
 <p align="center">
   <img src=".github/assets/screenshot-chat.png" alt="The GhostSwitch chat: a Python question answered by the coding expert, with the response details panel open" width="100%">
@@ -37,7 +44,7 @@ You get a chat app in the browser and an OpenAI-compatible API for your scripts 
 
 ## Why GhostSwitch
 
-- **A library of any size, in 16 GB.** GhostSwitch keeps one base model in memory and attaches a 30–330 MB expert only for the request that needs it; experts you have not used lately are not kept in memory. A thousand experts need the same memory as one: the base model plus at most 512 MB of recently used adapters. A dedicated fine-tuned model per field would need gigabytes per field and a reload for every switch.
+- **More skills without loading more full models.** GhostSwitch keeps one base model in memory and attaches a 30–330 MB expert for the request that needs it. Recently used adapters share a 512 MB cache budget; older ones are unloaded. Installed experts take disk space, without keeping the whole library in memory.
 - **You don't pick the expert.** A router reads the message and chooses among the experts you turned on, or answers with the plain base model when none fits. You can still name one yourself.
 - **Answers are checked by code, not by another model.** Is the answer complete? Does the arithmetic match the numbers in the question? Does it cite only pages it actually read? Does the JSON keep the requested fields? If a check fails, the same expert writes the answer again, up to four more times.
 - **Experts have to prove themselves.** Each expert can be measured against the bare base model on a public benchmark. Those that are no better are blocked and never routed to. So far one has earned **Verified**: [see the results](#measured-not-assumed).
@@ -87,7 +94,7 @@ Afterwards:
 
 | Base model | Download | Memory | Experts | Choose it when |
 |---|---|---|---|---|
-| **Qwen3.5-9B** (default) | 6.0 GB (MLX) · 5.6 GB (GGUF) | ~7.8 GB (MLX) · ~6.7 GB (GGUF) | 27 | you have 16 GB of memory or more |
+| **Qwen3.5-9B** (default) | 7.1 GB (MLX) · 5.6 GB (GGUF) | ~8.8 GB (MLX) · ~6.7 GB (GGUF) | 27 | you have 16 GB of memory or more |
 | **Qwen3.5-4B** | 3.0 GB (MLX) · 2.7 GB (GGUF) | ~5.1 GB (MLX) · ~4.0 GB (GGUF) | 6 | you have 8 GB, or want faster answers |
 
 You can switch the model or backend later in **Settings → Base model**. A processor without a GPU works, but slowly: there GhostSwitch does not think before answering unless you ask it to.
@@ -95,10 +102,10 @@ You can switch the model or backend later in **Settings → Base model**. A proc
 ## How it works
 
 <p align="center">
-  <img src=".github/assets/how-it-works.png" alt="Request, route, attach the expert, generate, check: accept, retry with the same expert up to four times, or fail" width="100%">
+  <img src=".github/assets/how-it-works.png" alt="More skills. One small model. Ask, select a specialist, attach its LoRA adapter, answer locally and check the response in code. The base model stays loaded. Experimental; expert quality varies." width="100%">
 </p>
 
-1. **Route.** Short model calls walk a tree of domains: first *general question* or *specialist work*, then the field (finance, coding, reasoning, legal, engineering design, …), then the expert. At each step the model sees only the current node and its children, so every decision is small and focused. It answers with the experts you turned on; when a catalog expert you have not turned on fits better, the app offers to download it.
+1. **Route.** The router walks a tree of domains: the field (finance, coding, reasoning, legal, engineering design, …) or a general question, then the expert. With Qwen3.5-9B on MLX it reads the message once and answers each step with one letter, with cached routing instructions; other backends use short model calls to choose one node at a time. See the [current routing measurements](docs/evaluation.md). It answers with the experts you turned on; when a catalog expert you have not turned on fits better, the app offers to download it.
 2. **Attach.** The expert's LoRA adapter and its instructions go onto the base model that is already loaded. There is no model reload; the adapter costs about 0.1–0.3 s per answer.
 3. **Generate.** Optionally GhostSwitch searches the web first (DuckDuckGo, Brave or your own SearXNG) and cites the pages as `[1]`, `[2]`. Optionally it reasons step by step; the reasoning is returned separately from the answer.
 4. **Check.** Plain code checks the answer and either accepts it, asks the same expert for a new one, or reports a failure. We tried a second model as a reviewer: it made answers about 42% slower and no more accurate ([audit, in Russian](docs/verifier-audit.ru.md)).
@@ -119,7 +126,7 @@ GhostSwitch answers **one step at a time** and stays out of your workflow: plans
 
 A [LoRA](https://arxiv.org/abs/2106.09685) adapter is a small set of extra weights trained on top of a base model. Because every expert was trained for the same base model, GhostSwitch can keep that model in memory once and switch skills by swapping adapters, on a laptop with 16 GB.
 
-That is why the size of the library does not matter for memory. A 222 MB adapter holds about 110 million parameters, so a library of 9,000 such experts adds up to a trillion parameters, yet each answer needs only the base model and one of them. Recently used adapters stay in memory so that switching back is instant, within a 512 MB budget; older ones are dropped and loaded again from disk in under a second when needed. Measured on an M1 Pro with the 9B model: using six different experts in a row adds 1.2 GB to the server without the budget, and about 0.6 GB with it, however many experts follow. Two things do grow with the library: the disk space of the experts you turn on, and the choice the router has to make. And a large library is breadth, not size: every answer still comes from Qwen3.5 with one expert attached.
+The library grows on disk, while each answer uses the base model and at most one expert. Recently used adapters share a 512 MB memory budget; older ones are unloaded and read from disk when needed again. Measured on an M1 Pro with the 9B model, using six different experts in a row added about 0.6 GB to the server with this budget, versus 1.2 GB without it. Model size, context length and backend also affect total memory use. Adding experts expands the tasks you can try; it does not turn the base model into a larger model or guarantee better answers.
 
 ## Experts
 
@@ -131,17 +138,47 @@ Experts are LoRA adapters that people publish on Hugging Face, packaged for Ghos
 
 ### Measured, not assumed
 
-An adapter that sounds good on its model card does not always beat the model it was trained on. In October 2026 we asked 13 of the 9B experts 60 questions each from a public benchmark of their field, and asked the bare base model the same questions (Qwen3.5-9B Q4_K_M, verifier and thinking off). Only differences that hold up in a paired test count.
+An adapter that sounds good on its model card does not always beat the model it was trained on. In October 2026 we asked 13 of the 9B experts 60 questions each from a public benchmark of their field, and asked the bare base model the same questions (Qwen3.5-9B Q4_K_M, verifier and thinking off). The project gate uses an unadjusted paired test. This is a preliminary screen across 13 specialists, not a full benchmark or a result corrected for multiple comparisons; see the [evaluation limitations](docs/evaluation.md#historical-specialist-vs-base-model-evaluation).
 
 | Result | Experts |
 |---|---|
-| ✅ **Verified**: better than the base model (p < 0.05) | `coding_expert`: HumanEval+ **88.3%** vs 76.7% |
+| ✅ **Verified**: passed the project gate (unadjusted p < 0.05) | `coding_expert`: HumanEval+ **88.3%** vs 76.7% |
 | ↗ **Leaning better**: needs a larger run | `legal_contract_expert`: LegalBench CUAD 83.3% vs 76.7% · `privacy_dlp_expert`: PII F1 78.3% vs 75.3% |
 | ⏳ **Undecided** | `reasoning_expert`: GSM8K 90.0% vs 88.3%, measured without thinking · `finance_market_expert`: FinQA 66.7% vs 61.7% · `software_engineering_expert`: HumanEval+ 81.7% vs 76.7% |
 | ⛔ **Blocked**: no better than the base model | `cybersecurity_expert` (worse: 51.7% vs 56.7%), `coding_delta_expert`, `text_to_sql_expert`, `medical_reasoning_expert`, `penetration_testing_expert`, `iac_security_expert`, `entity_extraction_expert` |
 | **Not measured yet** | 14 experts that need a judge or tools to grade: Verilog, OpenSCAD, Lean4, CAD, decompilation, roleplay and others |
 
 Blocked experts stay in the catalog with the reason on their card and can still be called with `"mode": "direct"`, so anyone can measure them again. Every number, and why each expert was blocked, is in [docs/expert-blocklist.ru.md](docs/expert-blocklist.ru.md) (in Russian); the script is `scripts/expert_eval.py`.
+
+### Does the router pick the right expert?
+
+The current router v7 was remeasured on **2026-11-12** using Qwen3.5-9B, MLX
+5-bit, on an Apple M1 Pro with 16 GB RAM. The run separates 300 fresh questions
+from a 300-question replay of the earlier v7 test.
+
+| Measure | Fresh questions | Reference replay |
+|---|---|---|
+| Expected expert or base | **269/300 (89.7%)** | 267/300 (89.0%) |
+| Specialist questions sent to the right expert | 227/246 (92.3%) | 237/258 (91.9%) |
+| Base questions kept on base | 42/54 (77.8%) | 30/42 (71.4%) |
+| Median routing time | **1.60 s** | 1.79 s |
+| Router exceptions | 0 | 0 |
+
+The fresh sample has no ID overlap with 1,538 questions from saved prior routing
+runs. It contains nine dataset sources; HumanEval has no unused tasks left and
+is covered only by the reference replay. These are router-only measurements,
+with every tree expert counted as enabled. They do not measure answer quality,
+a user's smaller expert library or multi-turn agent sessions.
+
+The earlier 89.0% v7 result used older code and was not a fully independent
+holdout: 29 question IDs overlapped the development set. The 87.6% result on
+1,000 RTX 3090 questions is **historical router v6**, not current v7.
+
+See the [evaluation results](docs/evaluation.md) for current per-domain accuracy,
+failures, latency, limitations and historical specialist comparisons. The
+[versioned archive](benchmarks/2026-11-12-router-v7/report.md) includes per-question
+records and a command to verify the checksums and recompute the tables without
+a model. Other v7 backbones and backends remain unmeasured.
 
 <details>
 <summary><b>The full expert catalog</b></summary>
@@ -318,7 +355,7 @@ uv run python -m core.cli      # starts the server and opens the app, like the i
 
 | Path | What is there |
 |---|---|
-| [`core/`](core/) | The runtime: HTTP API (`api.py`), one inference step (`main.py`), router (`router_v6.py`), checks (`verifier_v6.py`), MLX and llama.cpp backends, expert library |
+| [`core/`](core/) | The runtime: HTTP API (`api.py`), one inference step (`main.py`), routers selected by execution profile (`router_v7.py`, with `router_v6.py` retained for older profiles and comparisons), checks (`verifier_v6.py`), MLX and llama.cpp backends, expert library |
 | [`client/`](client/) | The web app: plain HTML, CSS and JavaScript, no build step |
 | [`experts/`](experts/) | Expert packages for each base model, and the template |
 | [`core_models/`](core_models/) | Base model descriptions with pinned Hugging Face revisions |
@@ -328,13 +365,13 @@ uv run python -m core.cli      # starts the server and opens the app, like the i
 ## FAQ
 
 **Is it smarter than plain Qwen3.5?**\
-On coding, measurably: the coding expert solves 88% of HumanEval+ against the base model's 77%. In most other fields the experts measured so far match the base model, and those that did not help are blocked. GhostSwitch's job is to use an expert where it helps and step aside where it does not; the [measurements](#measured-not-assumed) show where that stands today.
+In a preliminary 60-task HumanEval+ comparison, the coding expert passed 53 tasks and the base model 46. Other measured specialists have not established an improvement in that screen. This is not a full HumanEval+ score or proof of general coding superiority; see the [results and limitations](docs/evaluation.md#historical-specialist-vs-base-model-evaluation).
 
 **Does it work offline?**\
 Yes, once the base model and your experts are downloaded. Routing, answers and checks all run locally; only web search and browsing Hugging Face for new adapters need the internet.
 
 **How fast is it?**\
-On a MacBook Pro with M1 Pro and 16 GB, the 9B model on MLX writes 13–18 tokens per second. Before the answer, the router makes a few short model calls and the model may think first, so each answer in the screenshots above took about a minute, 17–24 s of it thinking. Turning thinking off for a request, or the 4B model, answers faster.
+Earlier MacBook Pro M1 Pro runs with 16 GB and the 9B MLX 5-bit checkpoint generated 18–24 tokens per second; generation speed was not remeasured in the current router-only test. See the [current routing latency](docs/evaluation.md) separately. The first request also loads the model, and optional thinking adds time. The screenshots use an older 4-bit checkpoint and router. Turning thinking off, or choosing the 4B model, can reduce the wait.
 
 **Can I use my own LoRA?**\
 Yes. Add any adapter made for Qwen3.5-9B or 4B from the **Hugging Face** tab and pick it for a chat, or package it as an expert so the router can choose it.

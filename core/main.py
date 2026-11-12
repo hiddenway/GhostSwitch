@@ -14,7 +14,7 @@ from typing import Any, Callable
 
 from core_models import backbone_ids, display_name, profile_name
 
-from . import attachments, clock, llm, router_v6, thinking_decision, verifier_v6, web_search
+from . import attachments, clock, llm, router_v6, router_v7, thinking_decision, verifier_v6, web_search
 from .expert_registry import EXPERT_REGISTRY, ExpertRegistry
 from .request_contract import parse_request
 from .response_language import LANGUAGE_POLICY
@@ -164,7 +164,18 @@ def _profile() -> dict[str, Any]:
             raise ValueError(f"Invalid v6 execution profile {key}")
     if type(profile.get("auto_thinking", False)) is not bool:
         raise ValueError("Invalid v6 execution profile auto_thinking")
+    if profile.get("router", "v6") not in ROUTERS:
+        raise ValueError(f"Invalid v6 execution profile router; choose one of {sorted(ROUTERS)}")
     return profile
+
+
+# The router an execution profile names; v7 is measured only for the 9B on MLX
+# (docs/reference.md), every other profile keeps v6.
+ROUTERS = {"v6": router_v6, "v7": router_v7}
+
+
+def _route(messages: list[dict[str, Any]], registry: ExpertRegistry, profile: dict[str, Any]) -> dict[str, Any]:
+    return ROUTERS[profile.get("router", "v6")].route(messages, registry, profile["router_max_tokens"])
 
 
 def _usage(calls: list[dict[str, object]]) -> dict[str, Any]:
@@ -287,7 +298,7 @@ def run_request(payload: dict[str, Any], *, registry: ExpertRegistry = EXPERT_RE
                         on_event({"type": "status", "status": "Routing"})
                     routing_started = time.perf_counter_ns()
                     routing_call_start = len(telemetry.calls)
-                    decision = router_v6.route(request["messages"], registry, profile["router_max_tokens"])
+                    decision = _route(request["messages"], registry, profile)
                     router_latency_ms = round((time.perf_counter_ns() - routing_started) / 1_000_000, 2)
                     route = decision["route"]
                     expert_id = decision["expert_id"]
@@ -714,7 +725,7 @@ def main(argv: list[str] | None = None) -> None:
         # Catalogs and the adapter registry were built for another backbone at import.
         runtime_selection.restart(argv, selection)
     if selection is not None and not runtime_selection.installed(selection):
-        setup_reason = f"{display_name(selection.backbone)} for {selection.backend.upper()} is not downloaded yet"
+        setup_reason = runtime_selection.setup_reason(selection)
         if not args.serve:
             parser.error(setup_reason + "; start the server with --serve and download it in the app")
     if setup_reason:
