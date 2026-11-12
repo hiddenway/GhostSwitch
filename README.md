@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".github/assets/banner.png" alt="GhostSwitch: small model, expert answers" width="100%">
+  <img src=".github/assets/banner.png" alt="GhostSwitch — Big AI power. Small hardware. Specialist AI on your everyday laptop." width="100%">
 </p>
 
 <p align="center">
@@ -20,14 +20,21 @@
   <a href="docs/reference.md"><b>Reference</b></a>
 </p>
 
-**GhostSwitch** is an AI assistant that runs entirely on your own computer. It loads one open model, **Qwen3.5**, and gives it a library of **experts**: small LoRA add-ons trained for code, finance, math, law, CAD, Verilog and two dozen other fields. For every message GhostSwitch picks the expert that fits, attaches it to the model that is already in memory, writes the answer and checks it in code before you see it.
+## Big AI power. Small hardware.
 
-Because only one expert is attached at a time, the library can grow to thousands of experts, a trillion parameters and more in total, and GhostSwitch still runs on a laptop with 16 GB of memory.
+**Specialist AI on your everyday laptop.** GhostSwitch brings a growing library of skills for coding, math, design and more to your own computer. No high-end GPU required.
 
-You get a chat app in the browser and an OpenAI-compatible API for your scripts and coding agents.
+Instead of loading a large model for every task, GhostSwitch keeps **one compact model** in memory and switches small specialist add-ons called **LoRA experts**. Ask a question; it automatically chooses an enabled expert or uses the base model when none fits.
+
+- **Fits ordinary hardware.** Start with the 4B model on an 8 GB machine, or choose 9B with 16 GB or more. Speed depends on your hardware; CPU-only answers are slower.
+- **Runs locally.** Your chats stay on your computer. Work offline after downloading the model and experts; web search is optional.
+- **Ready to chat.** Install with one command and open the app in your browser.
+- **Works with your tools.** An OpenAI-compatible API connects GhostSwitch to your scripts and coding agents.
+
+Free and open source. One base model. A growing library of specialist skills.
 
 > [!WARNING]
-> **GhostSwitch is an experiment.** It tests whether one small local model with a library of LoRA experts can give expert-quality answers, and that question is still open: so far one expert is measurably better than the base model, the router picks the expected expert about 9 times in 10 ([measured](#does-the-router-pick-the-right-expert)), and the API, settings and expert format may change without notice. Try it, measure it, tell us what you find, but do not rely on its answers for medical, legal, financial or security decisions.
+> **GhostSwitch is experimental.** More specialist options do not guarantee better answers. So far, only the coding expert has shown a measured improvement over the base model in the project's evaluation; other results vary. See the [expert results](#measured-not-assumed) and [routing measurements](#does-the-router-pick-the-right-expert). The API, settings and expert format may change. Do not rely on its answers for medical, legal, financial or security decisions.
 
 <p align="center">
   <img src=".github/assets/screenshot-chat.png" alt="The GhostSwitch chat: a Python question answered by the coding expert, with the response details panel open" width="100%">
@@ -37,7 +44,7 @@ You get a chat app in the browser and an OpenAI-compatible API for your scripts 
 
 ## Why GhostSwitch
 
-- **A library of any size, in 16 GB.** GhostSwitch keeps one base model in memory and attaches a 30–330 MB expert only for the request that needs it; experts you have not used lately are not kept in memory. A thousand experts need the same memory as one: the base model plus at most 512 MB of recently used adapters. A dedicated fine-tuned model per field would need gigabytes per field and a reload for every switch.
+- **More skills without loading more full models.** GhostSwitch keeps one base model in memory and attaches a 30–330 MB expert for the request that needs it. Recently used adapters share a 512 MB cache budget; older ones are unloaded. Installed experts take disk space, without keeping the whole library in memory.
 - **You don't pick the expert.** A router reads the message and chooses among the experts you turned on, or answers with the plain base model when none fits. You can still name one yourself.
 - **Answers are checked by code, not by another model.** Is the answer complete? Does the arithmetic match the numbers in the question? Does it cite only pages it actually read? Does the JSON keep the requested fields? If a check fails, the same expert writes the answer again, up to four more times.
 - **Experts have to prove themselves.** Each expert can be measured against the bare base model on a public benchmark. Those that are no better are blocked and never routed to. So far one has earned **Verified**: [see the results](#measured-not-assumed).
@@ -95,7 +102,7 @@ You can switch the model or backend later in **Settings → Base model**. A proc
 ## How it works
 
 <p align="center">
-  <img src=".github/assets/how-it-works.png" alt="Request, route, attach the expert, generate, check: accept, retry with the same expert up to four times, or fail" width="100%">
+  <img src=".github/assets/how-it-works.png" alt="More skills. One small model. Ask a question, pick an expert, answer locally. One compact base model plus one active LoRA expert. Experimental; expert quality varies." width="100%">
 </p>
 
 1. **Route.** The router walks a tree of domains: the field (finance, coding, reasoning, legal, engineering design, …) or a general question, then the expert. With Qwen3.5-9B on MLX it reads the message once and answers each step with one letter, about 1.6 s per message on an M1 Pro; elsewhere short model calls choose one node at a time. It answers with the experts you turned on; when a catalog expert you have not turned on fits better, the app offers to download it.
@@ -119,7 +126,7 @@ GhostSwitch answers **one step at a time** and stays out of your workflow: plans
 
 A [LoRA](https://arxiv.org/abs/2106.09685) adapter is a small set of extra weights trained on top of a base model. Because every expert was trained for the same base model, GhostSwitch can keep that model in memory once and switch skills by swapping adapters, on a laptop with 16 GB.
 
-That is why the size of the library does not matter for memory. A 222 MB adapter holds about 110 million parameters, so a library of 9,000 such experts adds up to a trillion parameters, yet each answer needs only the base model and one of them. Recently used adapters stay in memory so that switching back is instant, within a 512 MB budget; older ones are dropped and loaded again from disk in under a second when needed. Measured on an M1 Pro with the 9B model: using six different experts in a row adds 1.2 GB to the server without the budget, and about 0.6 GB with it, however many experts follow. Two things do grow with the library: the disk space of the experts you turn on, and the choice the router has to make. And a large library is breadth, not size: every answer still comes from Qwen3.5 with one expert attached.
+The library grows on disk, while each answer uses the base model and at most one expert. Recently used adapters share a 512 MB memory budget; older ones are unloaded and read from disk when needed again. Measured on an M1 Pro with the 9B model, using six different experts in a row added about 0.6 GB to the server with this budget, versus 1.2 GB without it. Model size, context length and backend also affect total memory use. Adding experts expands the tasks you can try; it does not turn the base model into a larger model or guarantee better answers.
 
 ## Experts
 

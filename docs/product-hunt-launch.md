@@ -1,17 +1,22 @@
 # GhostSwitch — Product Hunt launch kit
 
-Prepared on 2026-11-12. This is a local draft, not a submitted or scheduled launch.
+Updated on 2026-11-12. English copy for the existing Product Hunt draft.
+The launch is not scheduled. [Review the saved draft](https://www.producthunt.com/products/ghostswitch?launch=ghostswitch).
 Product claims below follow the repository README; installation and performance
 have not been independently retested for this launch kit.
 
 ## Positioning
 
-For developers and local-AI enthusiasts who want to try specialist adapters
-without managing a separate full model for every task.
+**Big AI power. Small hardware.**
 
-Lead with automatic expert selection on a local model. Keep the experimental
-status visible. Avoid promising expert-level accuracy across the catalog or
-describing a potential library of adapters as a trillion-parameter model.
+Specialist AI on your everyday laptop. For curious people, makers and
+developers who want to run AI locally without buying a high-end GPU.
+
+Lead with accessible hardware and a growing range of skills. Explain the
+mechanism in one sentence: one compact model switches small experts for
+different tasks. Keep the experimental status visible. The slogan describes
+the product's ambition and range of uses, not performance parity with larger
+models. Do not promise that every expert improves quality.
 
 ## Submission fields
 
@@ -28,11 +33,11 @@ not required to submit.
 
 **Tagline**
 
-Local AI that picks the right expert for each task
+Big AI power. Small hardware.
 
 **Description**
 
-Run AI locally with one model and a library of specialist adapters. GhostSwitch automatically picks an expert for each message, with a browser chat and an OpenAI-compatible API. Free, open source, and experimental. Works offline after model downloads.
+Specialist AI on your everyday laptop. GhostSwitch uses one compact model and automatically switches experts for coding, math, design and more. No high-end GPU required. Choose 4B for 8 GB RAM or 9B for 16 GB. Runs locally, with browser chat and an OpenAI-compatible API. Free, open source, and experimental. Expert quality varies. Works offline after model downloads.
 
 **Pricing:** Free.
 
@@ -46,51 +51,59 @@ Choose the closest available tags in the live editor, up to three.
 
 ## First maker comment
 
-Hey Product Hunt! I'm the maker of GhostSwitch.
+Hey Product Hunt! I'm Danylo, the maker of GhostSwitch.
 
-GhostSwitch explores a question: can one small local model become more useful
-by switching specialist adapters for different tasks?
+Big AI power. Small hardware.
 
-It keeps one Qwen3.5 model loaded, selects an expert for each message, and
-attaches that expert's LoRA adapter. You get a browser chat and an
-OpenAI-compatible API for your own tools. You can also choose an expert manually
-or use the base model alone.
+You shouldn't need a high-end GPU to explore specialist AI on your own computer.
+GhostSwitch brings a growing library of skills to an everyday laptop.
 
-It's free and open source. After downloading the model and experts, you can
-chat offline. Web search is optional. The 9B setup targets machines with 16 GB
-of memory; a smaller 4B option is available for 8 GB machines.
+The idea is simple: keep one compact model loaded and switch small expert
+add-ons for different tasks. Ask a question, and GhostSwitch picks an enabled
+expert or uses the base model when none fits. You can choose an expert yourself,
+too.
 
-This is an experiment, and I want the results to be inspectable. In the
-evaluation documented in the repo, the coding expert scored 88.3% on 60
-HumanEval+ tasks versus 76.7% for the base model. That is a small, specific test,
-not a claim that every expert improves every answer. Most other measured
-experts have not demonstrated an improvement, and adapters that fail the
-project's quality gate are excluded from automatic routing.
+What you get:
 
-The adapters come from their respective Hugging Face authors; GhostSwitch
-packages and routes their work.
+- Local AI with a browser chat.
+- A 4B option for 8 GB RAM, or 9B for 16 GB and up.
+- Automatic expert selection, without loading a full model for every task.
+- An OpenAI-compatible API for your tools.
+- Free, open-source software. Offline chat after the initial downloads.
 
-I'd especially like feedback from people already running local AI:
-Which task would make automatic expert switching useful to you? If you try it,
-please share your hardware, model, and any installation or routing problems.
+No high-end GPU is required, but hardware affects speed: CPU-only answers are
+slower. Web search is optional.
+
+GhostSwitch is experimental. More experts mean more tasks to explore, not a
+guarantee of better answers. Only the coding expert has shown a measured
+improvement over the base model in the project's evaluation so far. The results
+and limitations are in the repo. The expert adapters are the work of their
+respective Hugging Face authors; GhostSwitch packages and routes them.
+
+What would you want AI to help with on the laptop you already own? If you try
+GhostSwitch, I'd love to hear your hardware, your task, and what worked or broke.
 
 Code, setup, measurements, and limitations:
 https://github.com/hiddenway/GhostSwitch
 
 ## Gallery plan
 
-Existing source images are in `.github/assets/`. These are source assets,
-not a finished Product Hunt gallery. Review them for current UI and readable
-text, then export gallery slides at the recommended 1270 × 760 px. Preserve
-the screenshot proportions and use padding rather than stretching.
+Assets are in `.github/assets/`. The new hero and overview use the same dark
+violet/teal visual style. The screenshots show the actual application; the
+hero's laptop diagram is a conceptual illustration. The recommended gallery
+size is 1270 × 760 px; keep source proportions if exporting another size.
 
 | Order | Message | Existing source |
 | --- | --- | --- |
 | Logo | Product identity | `logo-icon.png` (512 × 512; export 240 × 240) |
-| 1 | Local AI. Automatic expert switching. | `screenshot-chat.png` |
-| 2 | One base model. Different specialist adapters. | `how-it-works.png` |
-| 3 | Choose the experts you want to run. | `screenshot-experts.png` |
-| 4, optional | Start with a model that fits your machine. | `screenshot-first-run.png` |
+| 1 | Big AI power. Small hardware. | `banner.png` |
+| 2 | See GhostSwitch in action. | `screenshot-chat.png` |
+| 3 | More skills. One small model. | `how-it-works.png` |
+| 4 | Choose the experts you want to run. | `screenshot-experts.png` |
+
+`social-preview.png` also carries the new hero for GitHub/social sharing.
+The 8–16 GB hero badge refers to the 4B/9B hardware options, not a guaranteed
+memory ceiling for every context length or backend.
 
 Optional 45–60 second screen recording: show a real coding request, the
 selected expert in the response details, the expert library, and the local API
@@ -118,11 +131,13 @@ and initial model download. Do not imply instant responses from an edited demo.
 
 ## Launch-day post draft
 
-GhostSwitch is on Product Hunt: local AI that automatically switches specialist
-adapters on one base model. Free, open source, and experimental, with browser
-chat and an OpenAI-compatible API.
+Big AI power. Small hardware.
 
-If you run local AI, I'd love your feedback on the setup and expert routing.
+GhostSwitch brings specialist AI to your everyday laptop. One compact model,
+automatic expert switching, and no high-end GPU required. Runs locally. Free,
+open source, and experimental.
+
+What would you try on the laptop you already own? I'd love your feedback.
 
 [Insert the actual Product Hunt launch URL before sharing.]
 
