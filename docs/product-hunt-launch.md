@@ -88,20 +88,22 @@ https://github.com/hiddenway/GhostSwitch
 
 ## Gallery plan
 
-Assets are in `.github/assets/`. The new hero and overview use the same dark
-violet/teal visual style. The screenshots show the actual application; the
-hero's laptop diagram is a conceptual illustration. The recommended gallery
+Assets are in `.github/assets/`. The hero and overview follow the original
+GitHub artwork: dark backgrounds, flat diagrams and restrained violet/teal
+accents. The screenshots show the actual application; the hero shows one base
+model connected to an active specialist. The recommended gallery
 size is 1270 × 760 px; keep source proportions if exporting another size.
 
 | Order | Message | Existing source |
 | --- | --- | --- |
 | Logo | Product identity | `logo-icon.png` (512 × 512; export 240 × 240) |
-| 1 | Big AI power. Small hardware. | `banner.png` |
+| 1 | Big AI power. Small hardware. | `product-hunt-cover.png` |
 | 2 | See GhostSwitch in action. | `screenshot-chat.png` |
 | 3 | More skills. One small model. | `how-it-works.png` |
 | 4 | Choose the experts you want to run. | `screenshot-experts.png` |
 
-`social-preview.png` also carries the new hero for GitHub/social sharing.
+`banner.png` is the wide README version. `product-hunt-cover.png` and
+`social-preview.png` use a taller composition so the copy fits the launch gallery.
 The 8–16 GB hero badge refers to the 4B/9B hardware options, not a guaranteed
 memory ceiling for every context length or backend.
 

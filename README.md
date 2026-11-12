@@ -102,7 +102,7 @@ You can switch the model or backend later in **Settings → Base model**. A proc
 ## How it works
 
 <p align="center">
-  <img src=".github/assets/how-it-works.png" alt="More skills. One small model. Ask a question, pick an expert, answer locally. One compact base model plus one active LoRA expert. Experimental; expert quality varies." width="100%">
+  <img src=".github/assets/how-it-works.png" alt="More skills. One small model. Ask, select a specialist, attach its LoRA adapter, answer locally and check the response in code. The base model stays loaded. Experimental; expert quality varies." width="100%">
 </p>
 
 1. **Route.** The router walks a tree of domains: the field (finance, coding, reasoning, legal, engineering design, …) or a general question, then the expert. With Qwen3.5-9B on MLX it reads the message once and answers each step with one letter, about 1.6 s per message on an M1 Pro; elsewhere short model calls choose one node at a time. It answers with the experts you turned on; when a catalog expert you have not turned on fits better, the app offers to download it.
