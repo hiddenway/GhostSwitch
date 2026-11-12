@@ -3,6 +3,10 @@
 GhostSwitch is experimental. This page separates routing accuracy from answer
 quality, and current-code measurements from historical results.
 
+See the [detailed router comparison](../benchmarks/2026-11-12-router-v7/comparison.md)
+for all four runs by task, or download the
+[comparison graphic](../.github/assets/product-hunt-router-comparison.png).
+
 ## Current router v7
 
 Measured on **2026-11-12**, after the current router v7 changes, on an **Apple
