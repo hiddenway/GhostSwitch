@@ -1,0 +1,4202 @@
+[
+  {
+    "key": "cuad:cuad_termination_for_convenience-336",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "11e73cbc5a6f5ec89114eeb87039f15dc9f37da548aea73fdce45a814b107c23",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "medqa:580",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "f25ab2e16018f76ac99302ca9fffc70b3f63f647835811915e75bb18f4aeee3b",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_exclusivity-4",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "7bee789d0058fa0843eb3404038b634b1c3c7013ddb0a7c41d1de4c2e5cdd79d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:1698cd5319b84814a4784252ac131d4c",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "d32cde8e30c3170bab8d57fc29ef40a7b031a19ae5c5bc9758af13d0bd824fd3",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:e0eec4940165bbe2",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "e0eec4940165bbe26d1f4fcf7801fbc2578618f78dd649ab5a1f97258f7ff742",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:51217435894e5a1b",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "51217435894e5a1bf8d0e87cfd74e24cbfff862a1f7a39d08596bfbe2c499d32",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/147",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "136be6a53e979397923a8f8e490674a9120462f93561ee0e6f40f42b75a02f04",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/91",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "f76b6df649787b2a162263181f022ac1d7b82ab2a58e07e3778da31fb17bc10f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:2d0ff0f26fb8e8ef",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "2d0ff0f26fb8e8effcd4918c0653fcc0eee53226f4d13b79eee2fc03df6286aa",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:ETR/2011/page_17.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "487960d7b19c2fdaf9ba0df36e426aac6f4d8c91d405f149c4ea9986c84852ef",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:AMT/2008/page_94.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "dbc52d3e7a67be53251e4e2003a91ce95e9fe97541bf730209d873230e60291a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:89e44a65181076ab",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/153",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "9f5e392c3a5a7624e4449b90e767938f069fc0672689447d775a99f756429e87",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-494",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "a03233ba5ea5c393133ec52a821c62bcbbcb25446c45a26ff8f233f2df433664",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:3391c058e714734b",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "3391c058e714734b2a349e66d6708733ff35e49cb4d22a521ae0b692e21a76e6",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "medqa:971",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "78c34bbb1433fc157e9efbd002803f78fa331ab3f9535cda3984f4a566930032",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:ba474c32c7c4db65",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "ba474c32c7c4db657376ec72136594729848d88a0423d0457e9f6eea6680e9c1",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:AAL/2013/page_18.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "89a22ef3758c9849b46ac660ff2b837efa46d4ca490010ebd74cd8056f5ff06f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:86ef2a0fd0244bb38b414b14292d5d30",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "6c6f626e3369d979ec83016149266d08ca5d19f53705c06687c46194671800d5",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_algebra_513",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "9400fb3f7da4410a2ec0ea348b006589a66b9b7830d3334d22cf83a060740507",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:AMT/2006/page_104.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "7660f61b21de0e28d7f87563c248461118fb2221509307a70a0c9eaba852d8f6",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:45f53fe4ac8a4bb9b91342d48e9c296a",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "60efd6f69b4c4d3467ae18463646ddaa33f4b2f5f727cf32df5977ade8935c06",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:d83ffa23b87041f8b0c27bb3ad618a92",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "456285e1b1f35d3c0f828b652fdebc614e3ec46a3038f67dd4cacdcef7546179",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-314",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "746a183f599b160a83e7308ed711bde624775867687b5b31e027eb984d4a98e2",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_21442",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "b68e15d5b46f52b1bd774fda5580de28232f682f6adb4dee42457d758ff55e92",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:DVN/2012/page_77.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "f4928756b5e64a24dcbd24947cda8b6c8732af9a5b5bb99ae9d648eadc03e03e",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:4d4f7a00621e23c1",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "4d4f7a00621e23c1ef1e1ca6970dda6157a4a7afb000de94fc94163a6406f48c",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:7b9699a584ec47e0977706b82202a749",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "f40b4da508a6a29423896fd7b8073c78fae3665165ba05bd6ed8710a9b15a0dd",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:6c7f04a463f20398",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "6c7f04a463f203983dcfc1b50cd819500d6d0e087c2e746c76714689567e19e7",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_40934",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "1e534060505a6acf41b2bf1d44047542ab1fd75822ad64e0ca4a56e0580abf99",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:37746cac882d4068",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "37746cac882d406894272569214f6ede6ab7b78de88c01e6bea144234a4013bf",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_non-compete-229",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "7b9dc2b4a8703168e4a0831fe29d409f9b935ce494900a942372f0007695e2a3",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_exclusivity-261",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "5c1d5fae7c20e1d92e51557c917a5fd0cb4284110575ceb7da692e84c8b2195d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:7a16c11edfbf4b0d8eaf0f861dbf7b21",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "cdbff66bf4acfd25f19886b1fb000e1d980f0516eae2c46700d9caaa0beb84cc",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_algebra_113",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "1abf2c2c97ed6f6cdc7be05b75fa153c9dc86707f82cfede1767d321fd36083e",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob125_kmap3",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "1c560601cfebb2724d42eb08895f152ab3db401f0702ac5fc448f2f71dfdd22f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/52",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "646b74bae383afd784a4e8c82076843eb8df8693a5e25603c9f56af7383c3e30",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:b096cd3cc576e1df",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "b096cd3cc576e1df1bfc3ea2e8c1b89817a67e1f4d4209100e7e0ac03323b45a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob010_mt2015_q4a",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "949c2f1787a1d115e7b7f58d9705a52180debeb47a3581d849de6fca346e8c66",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_exclusivity-2",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "0e998c67565755c18493dbf128c406c4a5b701cab41b484632f4eb53ed8ab105",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/96",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "8254800d4e551d0e5b2b19a667511429ef4820ed4529c58c4869ef534adda1d0",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:f8385c2bedf5af81",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "f8385c2bedf5af812b3e13ed50abf373552e551992c637acf8c341fb2bd4ef30",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:46ffb831bbb57179",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "46ffb831bbb5717977280909d133272c1cda68f7769a58f18e83331e906c5aa0",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_17607",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "021e0e59f574225bdb305b3836cd7384032c105e59fe54f3cecf479822209d6c",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-990",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "6d534d7aa904d9a612a404cbad06ae48a7f299b5abf0e301db4c997a2d13ea3d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:7e8135ad15dc0371",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "7e8135ad15dc03710f78522d402a5b8d724706a1ba0445714a448e59a77c2ec9",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:503c617fbdab4576",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "503c617fbdab4576be1c79b421947a7c5f1a2b365808c6b6f8e31287d1aeb674",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-285",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "64eea0f59b475107bea0d2c05313847ccbe61fcc555cd445919ec0bd21956926",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob073_dff16e",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "a62dd822d8376a599d650fb43d5aa91854da5fd25225a519a2d70193222ac0cb",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-498",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "b4355058cfcde5320f6cd626d3a4417cd986908462dd5bc2df3102dc0a7377b7",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:GIS/2018/page_110.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "416e30f309dc2fd7791d51ff978eaff7e940b15018717b3afca4e6c94cd209b4",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/40",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "4a53ec8bba8a86e9593964a7fe5475b5ab71a47241c1c9f692c4bef48eb5face",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:66ada4a1b1b49410",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "66ada4a1b1b49410c7f8a6a27934b65139499a9c3e5c65549375068a70a3c51f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:b2573a4bd6d543948d963ea81cc237f2",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "2d0b9cf0ea09a8cc6abca6fb561f730d89348aeeb35e3fb588fa2a6b1a474365",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:UNP/2009/page_42.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "b6799a6fd340f6271c02b34bdb0020f72ebb586becf8254571b86c6a147f6782",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:ADI/2010/page_80.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "462bff11d9d664ae399b8042a810d16ea2a6a9c4d625eb4b75fdeee0c8ae96bd",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-35",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "a56f1ab99b8635a333c6d6e8afc11a561efb8942df91430006a19f780dc55114",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-230",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "674129857901ca7867649f47afc9086ff14ab15702502823a479b29a9d9575f5",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_numbertheory_5",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "8565b8355a49c7e86f75cd96e82a0a0b545945522015a69fd2ed77c7c45f231b",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/159",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "f8a9b881ea99c5432ebf6a4948491bd46bca94cb5f0641b62aecfccbcc2a6aed",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/130",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "e3fc9e47599153383d395c360c758d2735c62f442d85ca6dc38dccef60a2329a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/37",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "1252555ea7d4800deb5f09d791c407523b419879046148990a238974819457d9",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:LMT/2015/page_89.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "a6a954925d55a39a665ee9d877f7771c5fa746f461e01f7c17a961481f109d0b",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_exclusivity-162",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "555fc602784b85575939f2d5dbb898041500765bcb4cf621dec88b51fa3241da",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/157",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "1ad8c821758b9106e0a6231fa337e07b178631fc05f09dfe45d633b3e17a2687",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:SNA/2007/page_69.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "72ba000951b63818a88f8ad5d3916174a28069c74e13513cda43afc24b17128a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/12",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "79aed4d1bcb3aca1dbd757a26e6cbc367ddfc91956c3cd2f2d39d5a7c3715729",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "medqa:394",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "bc1b587fde400ee1fb2a6efc7d5b3c8c07083a64f8ad4006a0cd64b14a420d22",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:4be3cb881fb44953b10963e966e1268c",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "ea61128f945633acab0ef4e00c35fa36d8cff3fd9c89914e3ae38b5995fc565a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_algebra_188",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "13c9cef4aaf1fb1ac5b1bcd8aa791801dc24462a9125c763c9b436e164363aaf",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/101",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "f5e5884e1af6a3a26c3a1e344e7fba2bb57147e2a2b0ebc0b2fae313024e0796",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:JPM/2003/page_106.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "b8d019f76b76d0325e5c604982d8239a8bd03849dee967a996801ecbe9112bd8",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob004_vector2",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "a08edbd5519e58de5042e51665e126c3a088e0f951f0f9ddf3a65e17600db40d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob021_mux256to1v",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "e9419b9ec500c17bfd87ad72eceaa50e8003a50b9ee2e766d31d5bfc96afd476",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:CB/2008/page_229.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "d73ab53ceebfdd70769d256c43d95baf4b07033c2da830634dcb719046563b2b",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/50",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "4672404ec335faf8ded25ab55afe16ba510371fab40acdc74413b30223823ec0",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-341",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "8844d6f2549c8ee23f08072f84b13c6190255fdf2c3db94da357540fd7cd3572",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:5a5c6035044f914d",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "5a5c6035044f914d24e5fa5677048b7461bb3c3a4a7cfa474fbcfa29588670d8",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_numbertheory_342",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "ef3e8250e82f8902e75f5c1796d56e9501705962060e78dd150023e2b846ddf0",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/29",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "74aefb8010b3fe4387bc642affeaee0f63f18e35a4d740908deeeef80dac293d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:7954bc81cf750c36",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "7954bc81cf750c36c91d432a844a5f2ba689213263761bdebf866d28b3662f61",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:d04ddb39eff5469b",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "d04ddb39eff5469b4b4b6d090b51e6f46e47dc4daec06702964c1f737f7e8123",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:DVN/2015/page_79.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "8d175c3911d0f21349e13d1382b76b80f7bc323d0d8b5fc8aa3cd60745190bb3",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-249",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "637fca73998f48354ce168c0b5d702dd67bbc36a19efdb8bd585cd9cddba753d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:imo_1997_p5",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "2344dec6f8a537629f67f187e181f69b5ad325e29ec93feff651aa4ba5b41bc6",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_numbertheory_254",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "88a2f212b804f1c7a062b31dad5498ff5f27849f669347c0d702d96e8c1b50da",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-6",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "ddcb122997fea424e15786e93152528a3c0ef69881300c16555e62a32321983f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:fd80e71474ab5257",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "fd80e71474ab525762acf1d979f85ecb5a6fe83d34087d7baac7f108e31b4415",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_20976",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "36b95d5b8f454a8e37492490895840316110fd8a0080a3031549dd0e2ab9075f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-931",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "04e0fb544e0b448ff849118dd50128cba2f7dfdbf3d13ff9a0859e5594e56dfe",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/143",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "64bcd38d7c45d1c05de49f0613721a9e5ab15fdd922d8c280576e26e40cc1340",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:UNP/2015/page_56.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "42f239c6a5ec444a188035539584e6be58b9bafbad19caddf5641e20a8eee151",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:amc12a_2021_p18",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "bba12e9e0300c8f3f2fd61ebc478d6ee000168e00bfdb061376d7a74ffc573c7",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:CMCSA/2015/page_112.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "95c98e165102b497cbf23a2b2315d61f0c97b408424077a7fc735c92c1a1c58d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/1",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "cb7de45672f12033feaad6d3542f2c3f4ebd9b54696a9042ef6d6ad0488a9308",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/145",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "73804b3c3dce6149d4bf6c05da94f641bb5b7105dee13c026e385cb0a28f5600",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:5c73dbe16b684214b9e340f96e875782",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "2e22d87c4bcdb34f0e53e311aaf6232060f25b408dd94bd7a83a0b19be55361d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:c1f40447167a9997",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_26718",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "cc38ea5d7a7326e80d3cacf6fcf5779ffc9c08bbf14e0dbb7fd3df809628b570",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-439",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "c8a1c3ef2ec8352d4bb211ee05679d86a2901bb968aa5676aa879f775a4e0bbb",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-69",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "82f40a72d6a15461faeab255bb331d28a4003f5125e32cd27b602313d209162f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/139",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "fdc1233310510553e70b3ee8697691e127a8dc28b7b17688b5a1758480fc3bae",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob041_dff8r",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "0de2714a76d9b5a79394eb690617e1042c81b9106389a796fad3cdf5ff49c907",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/36",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "56d3078b70136652e657a5859e573cd32f67f6ba0bf0dad3ea2b00433fe1b84d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:LMT/2014/page_77.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "234a2f3529671b043ed77a5d495b0c9f75496b18043c1096c04f916df51c7482",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/30",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "c313a149af32ee0304631254bce1244167fcadd0e59e54ea4a2c19f515fa651d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:af50d248cb1e46ac9f8995d6b072ab52",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "148f2cd71c7582eb49397724c42623b8ce2f4720eb146a7a3f854a33cb600fa2",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob047_dff8ar",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "25c757e8b39224d8bbe495e2929fc200e7de188c1c8c5e49840776ccb07fa700",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_3771",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "4929655ba6267226e8df2153a5eb90b2d533497f54644d1efc72a7a216bf574c",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_non-compete-420",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "22542e6e00f6bb97d453e1c6c456ff1bc74d402ab2dc278136d64c1978f34d98",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/132",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "89a916d1b7b6fefde693171cdb5e8f82f7d97a6a881a9f9bd45d72208c2be18d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:80dccd7594ad42d1a31f16fa4abaee34",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "dde373a99500c3aee71f4480a9426dae1658cfcc6675d926c543b31e267d8c92",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:31f35b63aa84436998f4c028e8a5762f",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "68901482ca3fe1d442fbaa64641a274dbf564ad5eafe9e9ee1cac08fdeede8dd",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob051_gates4",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "a4da8d7337e734fe104b5a92145c5e8d63fe6063a66d2712ead33e6089095a13",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "medqa:780",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "1b8c5d549cbe61567931d23e0cef2b46110b587de068976493b57b81e716aded",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-198",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "2c8f38b1e7314cf3de5e0a598af2645a6daa81d7b158fc54c91083384ef2eda8",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:PKG/2002/page_52.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "7d455a30b8076f7ba480a69663e53f9b6880b2357ae7677ea75047083bb27d5c",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob007_wire",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "3320235416b99cac2d34f04c94031dece575fe53c46d7099503d53750980416a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:MS/2013/page_132.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "76cd97c818d199a4b0e80a2a41bff996394e45225d66e2360ed8558542d37eb0",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/131",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "ef0771cf97d0951b89b32a467a9004b494ac44ff47ef161e4ecc01c1b873026c",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/98",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "94f1ac1dd41eecf41d7e1de5ad81860f50cff5fb09f07e342a0bc88c52081991",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-145",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "6dba45f5a70faa9259cfcf0a816efdddcc85b41207bdbe4a263aa73f85aabbd4",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:ef52784af72fdcb4",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_41451",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "675d26563b0e8b218fbf91b9781a4bfa3b773fbda54390434737cd98eab0a299",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:e77989e5507c4d6a9ed6e85857d0e5ed",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "df4d1cb71f3081350e9a83edeb584121efa46fdca8b58a2016e4bdca6d9212f8",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/108",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "2626860baaa2d8c06d4dfc350bf17ff023c84c573fd864b6c0ff400680fa58f6",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:LMT/2014/page_91.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "4a230902628731233c2ef775050e0255ad64868e012a2445023c4ae9853e4c04",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "medqa:1011",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "8664eba7fcfe20679a01862c3def5c7f1ab88dfc7fa7547c9763346c86f1502a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:BKR/2017/page_56.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "358a1e6a539ed02f85d6a83e17e6cd5dbfb9b4a33869fed489a86fc565a29d7f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob027_fadd",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "c0ac82177504f4c5d9c56ac18e23adc02d2c4da2f08bb45b97badf80650386ec",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob146_fsm_serialdata",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "99799fec8e2b6d226af099cba3eae9b9f49e06e0edc38911a05ff2ef7f7af1ec",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:2f9ce57185214f36a3e7a923d3387bd0",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "8423774f7b7a4a5f2ace4f71c75a0f3da8f99e1de405c4f69974cd099388dfec",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_30476",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "4362a9844db0e37366afb0581f6811603483cc7038d9a640fb11dbc3a35c5b6a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "medqa:862",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "56bb1cac3451e52188571c1288165783c348dee1fa6beac499cf7c450a0d9f17",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/80",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "335c88cf4a607db5eeab9084889be965252a45d38e47321b982ba1e5af898b74",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_non-compete-383",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "9995628e33c226c6132cde6282d6706944f4e58e4cc6dd34e2b08bfb6be3783e",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:f4b448336ef94d1fa2a016d0929f0ca0",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "a46ee8e0535ae275d26a18f487ec4aa7dd8489f84cf6c6009a0f8241b4243ef7",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-343",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "9c3e3b799374b58b1727b8edda27a468afa63b57735fb03468c378777b9e8c1b",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/59",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "ff6fe88769e011e2ec491d80ea9f252e0ab9f35213dd588c8dc3c1f39acdabfb",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:1cf83a55b71943c88b20b04081c4c3fe",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "c0b8b255ebd8c6fd7a049af20c5df75309c19cb2f39afbe7968fef1cfe253766",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:4c671f32b61a497c8199f0a21dfa4f87",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "087f8d3a01353cb52f1be0d8c1ac98a93a75488404ae2daaf0bb54473e0037ee",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "medqa:81",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "20449b4c45fe1ea158e257b97c86b4f29699579bf75e74edbf3f7884702c5eeb",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "medqa:720",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "c2b41826ebab194c35ac0ea7c562bd09340deaf39f49b613eb437d03a53bbe64",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-545",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "2ef6f0edc021f9ac8850898b47c53a86a1d8932c8a1feeff5a81c2f226be520f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/56",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "c680e24c4012f51330494fa687dfa0cb9659b04addb572b67ef7192bbbb2c06c",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-1050",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "e06894e998ea139cdcafe4225b53b9e5f11a2a8385302164f23eb9e479b0ce25",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/43",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "5bf15a2ecf5e5fb1ab636c3574e9ca8ebccf7d58bc9e643a6aec2812719fd38d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:algebra_sum1onsqrt2to1onsqrt10000lt198",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "b4e9aaa9a0520fc3b491036aa50de149388b789f83cade6a2068617c9e49ea69",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/71",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "2834efa9f57225e16fac19f9076d51d0d33838cc669b7afff3c7b42c79997ec3",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/44",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "3dd3af0309a04706f1c62f6b49ac23848accbade29a6e0a0333349d3bcb21442",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-1057",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "a94973dc6cf3ef2eef732a691bdd3ed608ca4763792e8e7b27daf7673cb2cbd3",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:a5864e38c3be45ffb5cb7bfd5fdc5ff7",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "1cd429d06f60930e3defac34965f6512d55c00e9bc348dc422665a620aefea6a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:38b185feab5b409881d44c113e9b68b2",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "1cdb2990e7ea8fe71a4480b3f5e7c628d6cff45105a7fc00ce167498c72c5a06",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/121",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "9327368ceac589cc643e0c445a21a5cc97ed6c708a449250f03771892b5b532e",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:076473b02f7f7661",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "076473b02f7f76619fb48bedc3a6295a3be8333d87f67983f0f05dd6f95fa7a0",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_34011",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "a11e0d4406caa2d67d30cbb0c1d4839025116c2ae9d03e5489e9a760077f3a04",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_24574",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "cb00f77cda82b500a5f392d7973d9e415101dd5807b0bc667ce38a92948c7b60",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-1221",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "c304d09333b1a493213eea78566df68716c638757eb32fb30cb5100c7e9d5997",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob078_dualedge",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "3e547613a9ca9d4b006596d979b860f4f2dc816addbdcedd1de873b8c8622b31",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-615",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "f305b111ba593a513d808168d8fda2e4f4312ad807e20e5006848d2c2b279b9b",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/46",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "cdeac3a7ea33f831c8c527878e3e9430ceb36f2fe0fef79089a4c5091c3e920a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_18267",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "2e04e7634681b41a4518302280d9ce03accd0ab821e12a1e23067d64cbf3363b",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_exclusivity-694",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "09a4ba964228ff450c23b92e9e679643795f780411d450000505cdc7f0ac16f6",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob060_m2014_q4k",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "f55c7d58881ea40bcbe77f23543aa74b32bda9897724550fe4828da156cb145e",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-83",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "2928e46a9d340ef5fcf9f2bce3a1c735572aa57c3e63f10a706dde2987f1f890",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-1173",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "204d143e2d13b715eab2a0ddd4eba019a52c580b4eb03d8dd40eab67e8fac36c",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:MRO/2008/page_45.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "26d8a2d870572bbd00d1939ef6c5de2e980755a78ce7951c6f219b716a86b543",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-289",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "5e2f3a69ad366c96c99778a3e69e2390cae3326dff85df63686eebc752cd2ea5",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:c2596826a823a139",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "c2596826a823a13939db48d0ee04bfb0083fdf8133eff4468550ca63ebb76864",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-325",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "7c97b9c571af2eee711858258b4e02b0a2507e1d74f7c4201e4d7ec157b42b6a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-706",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "85fd682c2d8cb131f581735d1c0cdb4d5485a1c57cf2ee27d221c13d5bed693d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-1244",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "1c47c530dcd02f2a3443d4d46cd55cbccfdfd9e451a8b0d64e6eab5eb27cd9b6",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:95ab39c44458ecc1",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "95ab39c44458ecc1e254c4d2194c59d86dd455c7dbdec58797b2fcac0f7df839",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:C/2008/page_22.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "a1f818f2eaae612d0623e77c672f1340866bc9b7ef24106bd88074a5d4ed5c3b",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_numbertheory_582",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "0c959376e8486f7defcd3b80198acd4e0be5d0d578dc680ca0760f3b9105d399",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-787",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "86798c957a7c948882d4ec0b5767e1e0fd1a522d2604aded2b8d253e041960b6",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:1ecc678e8184e4ef",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "1ecc678e8184e4ef5150ad3a51b05a3d29fc3b2672e74ff0fb98cc7249ce5883",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-178",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "2e2bcae9faa28d1f5aa3e885a843518fd06f804c5acddb06d022bb270a839881",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/120",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "5c7479c687960fb2d5bb491ee57d9c9313321df554a8ed280efcc3e089713a97",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_20833",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "986ad3998865f1c4177750a6d48f6689075bec6be16119114259c06c9d6c0340",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:ANSS/2012/page_93.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "d8515cb7631ee4dddb8dd5fce5e2c65b5e3b889b3d4b35c89e057e140ce46471",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:342aff57cd5940c68cf7a2c747e2109a",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "02fd19ffde0d1a69862199f536858d403d9942b63232f91fcd2b33c7e4bca238",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-332",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "4d69be07f2bff77d41b001db42a072e89aeb2c062c13ec40949c3c921c662356",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-763",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "db2291d145c56098b3605fa3e90e7ac83afeac98c7ea144b9217c2fe7e9d796b",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_18802",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "555491de8a12f9cf9cdc5ce83864e75f307570362f9b59c663860b73937ccd84",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_exclusivity-121",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "a96d4c3229a498c965fa97a641dcd28ea67e561230e828158100c730fb570c33",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:UPS/2010/page_52.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "81ae5d5661ae9e0cf8d917e174699b00937aaad0189888b74586bb14f99d4dd0",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-22",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "1cf1ad3a7b3ffd8bfee99dd1657718bdbd7a0bd765f3e2fc54f6cfd062f5d40f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-1153",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "2f2443bd1e47a8bf144bde1a5ad3bbb31c4c76bed39ed5e8b866d6b8c283a59b",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_non-compete-105",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "d772e088ebff8abdc1842edb09d100868f4e35b5883223407633038114aab767",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_33510",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "0067820f2e08be645ff744b67e129b0dc9318abee407bec5ff146a6c44359bc5",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/83",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "d0887e1af1082f37a3fdbb9b93ae5797de07a7dcf13a954416b1fec4afa11e3b",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-975",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "5a7772b9583b1b83019a8ef17a00052f58b51e1f4328d127ab00cab0becd5939",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:MRO/2003/page_45.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "af3955b056a15dee829801d0fae74a82de121dff68ad005cf43c82589f4cbee3",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/23",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "539307d95fa2b6b8c1e70c44c394849195c1928353abee94bb534198cb971b24",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-989",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "d2079fa6176bd55a66c1751f0115ddee83fca9595e26928be2e3e38eb42e76ab",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/84",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "0e6744f674068ae7af19b15dbd5fcaacb33707c99d6adf13f91295a3d1460700",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:1568c98c680d4159a09f8763a0e6afd3",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "80eae44095623d2559aa906850d3ce6cf6a1409ca04d2a76a2d58024b1bd2bfe",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:imo_1981_p6",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "2a3be220e29f7052a3978309cb9f4f0f8d5270cdb111b19ffd309d050eedfaaa",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob149_ece241_2013_q4",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "0ce9d84909c167df206a162b5d39891f6685a392119228deb08d573db4fe154f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_non-compete-366",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "2cbaeaeb51b735a27c0da59973b127df3a54b63e172e91cf50ce8f97daeef482",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-315",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "ec1910073f0c4c1b301182d4b32edf3ba638bcd3670c8b1071a382b6b028ac49",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob093_ece241_2014_q3",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "3e17061ce1088e9224ed73dda1ea3d7fdaa476e16edaea7959d8a054b99a90ec",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-880",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "f2970a56df666addd1f3c8afc24c369194a48f0a3154113f09c6864e5e48dd22",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_numbertheory_457",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "16b6bb78dc8bbbb49bae92c230f5f68f0b859297b4657be99af02d3057acd7ba",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/87",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "4dbb2311fb7e2b2d9c43a106dd6fa518054063eb16f66fcfc2fdbb93094afba9",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-564",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "14929d430a090f99a3fc6728a554e298f4705dbe0d35a7527ec11d72b3e20c59",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-845",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "e1f016ffd5a66cd9f5c22e679bfe9187459ce966b362de3ed28967c706a72e2f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob135_m2014_q6b",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "adccdf43c9464efeaecb79cca7a1d833efc7202e971cfe71fe032072e347d9b2",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob084_ece241_2013_q12",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "e6ef3aa8e7c73f6d66ed6f5ff1c15fba956da4a5b89994a784472c459453a16a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob108_rule90",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "6f6736be93c8d77502134a4d89bdb6f9401095ec1808e6cb352cf4698a01bad9",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-470",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "634cb64fddc1278bf6ce554b474836c4cb1acc985e93d4cb922e8f49603f71ab",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:amc12a_2009_p7",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "1ce998175d52713d1d808b29aa226c454bfc742fb42d29c52a794ae6101d02e7",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/14",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "8c34d15d382ee5720e0713e58733b7be26a0b038339470fab3946f37f450f0d6",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:SLG/2001/page_48.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "4b09d32e6ae8c109173f5ddb67bb37cb2c7e2314e2ec6300bcc1ec021ab86839",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-407",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "3d6bf48f5ebefa5ff3f205201475fa802e1a9f81ffbe9963485dd13e63017e42",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:SYY/2005/page_70.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "8f570e30cb633cfe5c0f2bb30684570ee108533cc7cdfdb0ccd622844216ea3d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/146",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "d838adccc12d470fb69632640a934c3b89c145eb7114aac11e58540130fbd5d1",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-32",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "21e1e7b514eb444662c24f7072e210a889283bb5ad30ca793e5000c1e990cff7",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:ILMN/2003/page_58.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "ff16f81025f7e437fc9c938881ed78c044c92b4906fae79e7f8ccbecaa29a8e1",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:96de0a1515904c8699d6e90510b7042d",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "fdf06947750fa7ed03726ffbe6535fb0b986654ccf6fb5d3c8c5edcc7775fe39",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-726",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "b43a29dba5256df9ce5bf571f6bba8bb1d7bdb7b7b29f85d673af1b5f110cd1a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-288",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "00483dd9bb5dff6866fd71e95dec382821a23c7b2e93967f977856943afc1f58",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_algebra_141",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "c642224c64bf0d65da6711648dc6d626162f718743ce7dfc7f49a72c9d8b151f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_non-compete-266",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "2e0afe7fb02b0bdacb218ff30f540239f7b9f30206202fe41af2e2c3809add00",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_numbertheory_765",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "a689d0050a416541c1276a6d44950a85451b538a1bfa938520b5a7e3788f9ced",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:a93e9bf6548340609b76a22b5c1d04b1",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "407c192ddfb408c460f22cf87d842365dd374c45a55f6ef0a74d92abfc7ab60f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:induction_12dvd4expnp1p20",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "8b1760c03a7e32d4af6988bcc27da81356d474c9154184512d4e1160a3df42aa",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:f204e980822a41e89f2693c8d93801bd",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "e38475e31273bfa0485e41f91875aeb4c542c21232885ecc041c8790aa6d466e",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:d1069235e9d94c9683813d31b81c88a3",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "d0bc1b5ef39897cb953efaf201cb20c6e6375ee2669f280551c474ede71299c8",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob028_m2014_q4a",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "b75275273b4c0f64d4bc9cd516c1a503dce1cdae3267457f2f7e9be9cb6e7dd8",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:8c2b9b8240c2ce74",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "8c2b9b8240c2ce74726a939bf4c485b9fc3e7868c2f0e48a6a8489659a92168e",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_43035",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "72d73c68962e5459a4977ee493a142f6b92f3a00c0aea75838e5a3c599591397",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-457",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "3678a57a257c402c10dfbc5d683d81c25feae75d5c746109e6b16ed97598cf0b",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/42",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "eda97a1c2e0eb45c3c4d9d73eb137bacd71b5a8aa7a5cf31f66452fa88d7e7f6",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:SNA/2013/page_84.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "f9bd6fc7e6e93d0d18844eb121f5c8ffc57898e2b38d73cfeaa3f1bb922d9ea8",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:HUM/2017/page_118.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "47717736885defc4ef8bd2880d3f4b78feac7d45e171e2268424851a545b51a4",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_28732",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "3fb2353d40294a3108e4ce0defce04622afe7f7fb14dd039b044cec513415819",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-80",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "a989e3480ae713e199a0311853bb4ad0837d14959abbd9053d4808fe3c27687f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-35",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "cef65491df16255330017c8a356da1403ce61cd5b1e50181c54e7a2fbe755976",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:ETR/2008/page_298.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "4d0fe84b73fb659a6f1f2384038da7b0a4a19ed46164792a21debb0736a8397f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-386",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "5a34be578f2fa436c25a5c8c77a7b8a300263b1a23374ce6fe5a11db06151aa0",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-329",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "6c493728d04a576dd6b12a8007951d6f58bb1b1db3a53d2a29d8ca13afe1577f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_18084",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "1057a65fc9f79e563077f67c033069277073d2fa9a3bead97f0c3037f39affed",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:48d24939d21d4cd1826404383489c0b9",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "9d7d0bef4063c4ce68f313ceb9a2d58cff5736f9e4f8a06221ea6422eba60a5f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-187",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "f1904a997ed6ff6873a876c798c199ed0543a71aaca116bc2930639c4448b811",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-2",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "dd161a3f362c66bc957d0fb23aa4f6610f0446570bb5745d9dac2f152c140352",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/4",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "f3fda36485f91ee86c11721b665047089aac340f4808a7c4570b8e6783d92f4e",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_numbertheory_769",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "d79fc285e8ac5163d98bc1a033b9712484d3112da4e7858b24c72af6c727489c",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-61",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "13e56a88759b7614e0acf41b3ec6cbadf8dbba6a65393e439240d4ecac2f81bb",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob072_thermostat",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "530cc456775c16ddcff026e029578a698a6383128be6f2a5b04c5c5da89e5089",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:amc12a_2021_p25",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "8fa4dbfeaefd249d04738b405c3af77b37e9fc6dd0b9365ccc4a1d2f44612683",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:6b635bb04bf2434db8a4bb5c63fea8ae",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "fa2deb2e530df131a822f8cbed939baaf12460e10abd96951c3b51b919f527db",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "text2cypher:instance_id_14757",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "5048600b3ec329fb3eb3dd09196336953ba6f02d9023d5bc54809a7a5d9b2018",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:PNC/2012/page_100.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "d99fdec9d4186e1a39e8c2a5618ae5d3bef5f0baa9e127a6de0671a665ec3e02",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:GS/2013/page_220.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "04bccb5e08bb9102541448db9e26af890618414d8f884a87222aa5dc10017e0c",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:2e7da2610042433c",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "2e7da2610042433c41b02cad24401c5c0f83bee93ed07d6f5807f7883d252c45",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:c24791a712624317a203fed67f3f9433",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "93f8075e6b269c1ad2e44d3193d4a1e5594193ae181f8f2d626cfc047afeebba",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:JKHY/2019/page_18.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "4e4a9d3747b62b0a0e7fae8db775f133cc8badf2d9fb61dd81593d8397f3b03f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_algebra_412",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "c1c72f376d90b37fffe851d932c4769661e0ba8d809fa4ed13d580e7d9876b04",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:dad92f898cd3f957",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "dad92f898cd3f957f6a61c8dbbd70cfb6a5aee938edfc0b54af4f8ebdef4bb3c",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "b8195b093d69b5c1f6d15928ce3d9eb47ec6ec1b014d04daf65f6fdb51cc1570",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:6f4aa430584542bd97f12975e8e93a6b",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "aca10fee4e0e3bf28e3b3d3183e97cf1b12f7d3137cac84e21b27968a76449dc",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/85",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "822cb02402117971b0acd0c60a39cafb81470a743bcbdcc99f03cf5c388b0c85",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-429",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "edb04c660aaca5e5dc87f28c41822958d0e5183d56c057cbae025f696a771010",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "pii:3bff2981b08747bb879946c722ef2c55",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "d4d652e77154cfbaafdc145307ab262d144671999eed62dc21ee460ea17a2d14",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_algebra_332",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "e050195d86050e4f5e36cfe38d3d9b35964195c71a4988a1c5445832f5c9b6cb",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob001_zero",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "cfedd583ceb0378b05fa18b5ea525272920fdd5b5eba0716dd7f5eec3e95e05d",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_numbertheory_353",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "c68c1869d58abe1af424557028f078df7d1f2d04350a1053bf6aecfc8081347a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-482",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "2ba2e582f33220b9c0ee7adde41e57fddf2cc274348f36dd924711b229d3d22e",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:eaea0c1080796440",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "eaea0c1080796440180027b3ddca45c68eca17d3b2070f65b50ff67b6393352f",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-61",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "32aa6e3f098179bc8ed9d38ab98377e68dda51adc1f95473b17a4202ade58924",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:HOLX/2009/page_127.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "9bdf3941383c330ac65f24de32eaa37028569fcb4f2824c6553c9fcf3096039c",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-654",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "628ff25a0aa3cd6923cba83363613cc96d2fce2861150d3947f6fd9882ddf8fa",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:4f25dfe951a9ee72",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "4f25dfe951a9ee72613ab2e8021ffb4e09871143628991c5fb560e0a3f8a3c67",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:imosl_2007_algebra_p6",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "89dd81618ddfc4dc15d2b5a218a6d88f5c85b30cc1bc83baee034f74d3b51349",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:3d701bcf2811e919",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "3d701bcf2811e91950d7766cdbd2660e2ee02be6825f8e5dbd569752cb7327b2",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/58",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "0ae22d251029869df1893ef3cb7d2564d78dfaed680dd1db61d3d6e3a3996e2a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/22",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "314b3beb8b496e6d06a3f3420e665c8ca9afefa47c59dc8a461397afbb48cd80",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "gsm8k:test-275",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "d0797cc999099186b8843c3e97a7177fd5c87ce02b8fedd5f75dd881cf7f82e5",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_numbertheory_229",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "cbd0fe63eeb29a12f26a2ead1485abe719f23a5b3ee8d458461a1e64f14fb02c",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "medqa:1026",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "1d87edacd27054a3a34ea5841783be6dd09908f5bd9a68ca2e524b3f99a022e2",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:mathd_algebra_441",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "fdfebdac90da4408f3fa1cfcb93c4c32390df4b6d8d04a3341dafb5c572251b7",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob144_conwaylife",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "c601e44dec379a27fe9733a087fbcfbbac8df6e6a72cb96a769704806d788230",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:algebra_amgm_sum1toneqn_prod1tonleq1",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "d3ab6f72ed090ab2ad05ea21e65b0e043a9bdc7153f4419667ca904083ac8b76",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/149",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "1aac2cbc5bb6a50f3c0110a7b92aa3857d8c2032f52d8c818e822b1f8221f5a1",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:JPM/2015/page_137.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "5f980aee4e3392f9b3363754590e86b563e4371d05e8f417e15bdec127c79cf4",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:RSG/2012/page_93.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "959c90c17a08e0733af0265e78d589b6da17f243486ce57f6c839f9ba84d74c0",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob057_kmap2",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "4e7798570b7aa3031cb18ce89017aec58ee4a5ebeee334bb252379fbf3ffd494",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/48",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "eed097fe3d42b1204c74d6f2852402a674b954f9bbb4c1014c429759e75a6ad1",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/140",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "0905edf2cdb32c85091541ee864298844f7d9130a70fbacc563cba99503a3232",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:amc12a_2021_p19",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "53eda69c132b1134fb11221f663738a11afd9618173f3358f4272f3bb5ff93ee",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob154_fsm_ps2data",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "ce035c02ea7116b0c7f97ecfc6622c3ffa6f6d195a3d050b35edda98a08cecfd",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "no_robots:a9a8696c28ade7a3",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "a9a8696c28ade7a3f9e0b3d8d97abb862ed987239887e988a2dd21cee1915cb2",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob077_wire_decl",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "64962c9fa3c01d3e80ab21226a0eba5217e4d6cc6dbf10ae57ca21fda460c561",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/54",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "bc91aa6826506d9a9ee248905f5fb3d720b091d9bec30423a9d6ce43bb38eab2",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "verilogeval:Prob037_review2015_count1k",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "a0a864da5d8dd392fdd77ae386b411f0454d4c703a79a4f93168291f02f50c5a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "medqa:750",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "193c62ca4d267b8c558ef97a5774fd5e32f88572ef026b452737c796e1566b4a",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "finqa:MRO/2017/page_96.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "3084e8d87eb40455853757e110a38c27afaebb0519cdc916c2566d919ad7da9b",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "humaneval:HumanEval/32",
+    "source": "humaneval",
+    "expected": "coding_expert",
+    "prompt_sha256": "745aafc00844774e26478ba71e3f630442fd46ba9c1f525e4024856e23aad4eb",
+    "cohort": "reference_replay"
+  },
+  {
+    "key": "minif2f_lean4:amc12b_2021_p4",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "76ff6f57bc782b7b569ac1450f821264706f2562cdf9ed3a8d24e2781605e578",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "minif2f_lean4:mathd_algebra_459",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "b05142c2c2bfccc13ba2d6276d9ba10024b5be9a1c10fa43b21b7fa124eeda90",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-649",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "88ee3314cfdb7eb8ba27d85ded3c3a07dae6677d749ccb37c5d239fdf4c6070c",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-637",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "9e2f83bcc8529aeede107f39666870f6b2f2bb03530ffb42b99adab704c7e43c",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_3568",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "d23c136bcf4297aa28255d7aed58525b8d75e50b952dad4f95538bf19275d455",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_8272",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "8873939a25ae7ca670eef8b431feb3ba985deacd6a1e662ed40ebc33acf464dc",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_3699",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "05a9e9904b1f2d6c5707bba5ed2a47c093b478f7561d713bb45c22d4445c9224",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-95",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "3bf34f42957e244007075d1163cc74af8e00d813c3cdd8cc356d710a111379a9",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:9",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "f5ce82f19c030be04b6f77d45750e6ff0c9cf9a3e1cef98f1f05666091e488a5",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "minif2f_lean4:mathd_algebra_17",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "614d48e4a63b6a6a8c1f74bc6f547c8cc9ec19fdf15dcf4ad4efc38eea85a9cc",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:PNC/2014/page_111.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "360a78432151f2290f8624b292e42ccdf4dbd4f31c735b6a7daf854d737c15b3",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:e0b1ce063570abea",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "e0b1ce063570abea18f6ed8dbeadb06d796c243f7e6a2a1f49379e74384d5ba6",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:ECL/2016/page_52.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "059ec9d7570f255b5071833dc94193ee6df6b70fa5e99c948ef31e9d67e63e0b",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_11140",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "4f5eed6e7ea29a707e068e871573a447b6e5b6ef7a16454709b19895bc66dd68",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:111",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "2d4a79258932c8e879889aa61eb30a44c97222b1b60a0d63742e196be293709d",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-242",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "fe8287154f3e9e322cd75ecd0c4fd9a26d7e6896ac34864efe77e9a5eec7866d",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:AMT/2007/page_29.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "711f7e05f2be69880fc4decca15a60ba177198e1126084e3e64862e0cfaa5782",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:0e36cf0e4e5741bca8c7d9dfbcd1ae20",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "f2a0a672165d70004abf32cc6ac19cabd87b2681aeaadb82b3daaa8ec237566c",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-93",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "b721780859ca57564fdbd86904be0832a96e4572bc28fd0a6b4ecbc0583f63cd",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:1f1c25dd4f795b15",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "1f1c25dd4f795b151f180ab18467385fd533988876fb5303fb5bb3459e35c23a",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:58ff17be13248eac",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "58ff17be13248eac49ee8819e0c0932a24aa86ce83bae6c5a81606790fba7b35",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_non-compete-371",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "8296699137c7bd71a938fd7299af0b40f4b2529e8231bab47d9fa68128e078dd",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:1134",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "9c35435c61f982176a8efe76cb38d60c362e4313143c767da38a3d852c908f16",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:86939af2af514cb6951e1821a997b879",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "8fab49d1248f6f58a47c28d4f0ff304337e48d7071361aba548ea5e4d32df933",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-244",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "1e637a3b93a733e64b88ce174f9e99503ec0d4b9c04ae67faf98fcde92677fd4",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:0c30072a27e82c8f",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "0c30072a27e82c8fc2f6009a0d08214fb1552c42b1917aa9acbcfe3d1c5d9e91",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-262",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "ef4f2352ba98f633194e085f9c22890cd25bf66ad0aa6edc198da0f82ec8113a",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-146",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "0b37ce92ec8013e281581275ac546a51af87f451e93d80017264a44b771b4028",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:a7113f66fdd0488c9181a666abd05657",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "0806dfd1900d613bf831ded81194d148fafcaabde40823ec01146dfce269aeaa",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-1096",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "3ca17b2107c07da07b703ec7aa9c6f1258f54c1b35f7f4beb9989980a5c340b8",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:PNC/2014/page_111.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "ba6124dd24d4ef25e59c9317ef14a9fea49251296865a4b5c9d499d60ee814a3",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_29562",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "94a9c1dc123bbd12caf15b60bf6c1eacc723bddb0bfdec802d1de21d8bfe61a2",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:0d38a9aebadf4bf4a885a89d454c6fbd",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "9d0a756a63ede7b09bc6b3b81990131c7bb8d7e3e2b7bdfdbbb27d7da76d2793",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:GS/2017/page_179.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "311b3f78f45d970c073cb6d364f8ceaa03b8fd2592406c0f7a950001966c1b18",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_27022",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "c3379a21387ae2642ad4b483fb1132a77018606db9aef96a01cf5455538d6641",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-486",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "0053352a8570c25f6076fe2da7e9da0bcf4c97239466879442294a29948a27d2",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:2065b3c57f02d3e7",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "2065b3c57f02d3e7fb4e531ee740a7abd4715d4c4bf462f910f7d07f8ed49c7b",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_13324",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "631a57884140241f808d18ae6534eee6c840a1965e0b7c321af4f8c8f07a1a24",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "verilogeval:Prob152_lemmings3",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "b69e40d5628b570c1388b417ff7fc5d4ad482148ea89d2aa18af2e2daf683949",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_45234",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "be8ca83e4a8c066a2ccaeeba7b645f724b8560d07a0188cb72cac83f4095e3b4",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_exclusivity-659",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "02f074eb7e9508db4c1f8cf138bf7f171d1266a770bc3ada57fb83dde39a6347",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:17b62a7ecf91cae6",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "17b62a7ecf91cae6ab14f5504d18da30b44396a30219e2b824a59607e58053a5",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:775",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "2a994571c3274e6f9ec8646ca53e1897e8d274752ca7ba53249cd6315809dcea",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:PNC/2012/page_65.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "1ebc74c768736572f7ee2517305f42a8bc267f8eeb7c093944a4f30cf1ef9286",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:61c323af236b48c8ada6eec6a3987fbb",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "2b0a709a0049ab8aa3782d6ab6874dc52e79f5c9afd152010a2ffe0d9b8bdab4",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:FIS/2016/page_45.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "4251611cfd1e152e3e4e1ca93a2f37240c337a03a10910c9b2a5c8571e491a6f",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:HOLX/2003/page_52.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "45557a27008b067034444ea1c6871e303929891cf5184f99e5eec8cc4787beb7",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_38857",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "db52cc4205bbbced138b8ce84087d0885fbcf835b93219efb7afb96d9ba2d1ee",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:e8cb79e4f7b5414bb78987b82b6c1147",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "e16ed3f32202f5fa70590c2146050c16d6abfdb472df3602e1d42dfffe05953d",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:e20eeb892f54c481",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "e20eeb892f54c4810c7d93f54778f1d76df20c699cc7bc3df0c25e283a595a83",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-114",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "7df2831030b69261d0007eb26aed8c1c72d239767b6fa4e6ecd9a29e29410391",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:307",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "55777b9f7cfae1a1b3729b9928dd984a3a6d592ad291d66b6d4a4688fe498548",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:ed1753a210144494a73fce9c7baff3d1",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "793f4341d2aa9e8ff0e8f73b7c21c4b9268b07ae671aa5a10fbd6e5d283aafa9",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-962",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "a29f4c78fbe5da5eb88acb24559ead6611b32f06680131c21c4f7b89be1f9c7e",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:9beb41a989ac57f4",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "9beb41a989ac57f4fdc979d80b3b65eb99d25b97c9f664eb42bcaa16ccd74267",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_exclusivity-328",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "41300a81d1e980e8f37110b077bf1131461bc2a45da8ae0a6b77abe1ff75345c",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-579",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "4be586100db46dd5ff36bb60ed2c41abc666cc46d4259ccd19b29d95e5393955",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-585",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "b39bedbf6df683202bd3db5578dddaf16714df774b1cd71eb7e8de3b94158872",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:a2acba4442cc04a9",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "a2acba4442cc04a98acb1e4ec53cd5677d85e55f0e539f3346597bf85f07d694",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_non-compete-106",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "5c67b51875ab6edecf853582e4489d9ceec62ce224952a537c876601b2fb3771",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:HII/2015/page_88.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "50d9f08b02867d8e9b61599eae276adcf853ab6c4d60afc4062baf49809fb8c5",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_23647",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "61468bd7e49975de34805b58696353e2bdd776e70bf71067fe5bc761a59163e7",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_21943",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "b9bdfe0fbed145955c941bf4ea7271af69d268c5388a2c213648ba28334683a5",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:MKTX/2004/page_99.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "63e471bbc1a928dcc854c780a50a8cd3ff5d97c0e31e02ce77f347a431e9db94",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:232b981b4828414c8d564b4b9dc92a6a",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "5a8e506e764a3ca78937bf14e4d20f7b5ebad5cf72080021f4e6cfcb724d06cf",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:a08e2b36113e5d71",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "a08e2b36113e5d71feb47d60494b84029dec93aab7e1ad658b433eebff8e0ba3",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-533",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "1f6244b4e407c87acff55325af78d91313124c13600f04c3e14abc82633b9bf4",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:7d1a1e1b267ad072",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "7d1a1e1b267ad0722a86ca4fad6ddbebd51176842040b291e0008de019ce5379",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_exclusivity-343",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "e2d318af33836b5ce2da2ef2bbc58fee531e78f33992f0a9723ca6e518dc6cad",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:143",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "6e05d8ecb8c082e087bafe19d7dc555c07b30c9b91d66344e58917c9fdf49224",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_12808",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "232f086fe1bad111805296df6504de83c67063caeebdd7a8e6513e8d8fbc2f96",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-258",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "d161ca5e21e8ff8df0582da3b921841c75f0ca512458d63ac5f4405fbc98a2c8",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_29293",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "93bef50d15f4e20ddf9527d4fbed4a3dc410e6223b7d9fb76586dea49539b2f7",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_33738",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "317682d31ed015d1b67c1b1924f6f8070e40aeea0d095e71d07adf34305c52fe",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "minif2f_lean4:mathd_numbertheory_328",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "c0ba54ae5ad3417227fa511d5089cc507d382513e59a3253d0a210fbde49df88",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "minif2f_lean4:amc12_2000_p1",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "18e051de33d31f94a21125fd5487ce744e1ce3db5be701b1f6d99d3da2e1d537",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-372",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "a70965bd08aa81430c30573ed4edfe0032da2824eaf5547ec7b0a1b64c754e7f",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:1256",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "5b367ffb0f83112013ce81096afb81e900a7e52de3b1c40e5198576d9fa4eb88",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-308",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "311b85244090400b1219e4f74b7cc89daa7122acb7b72ca7e9cac3b621479887",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:1043",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "54d76b75479f242824b74b643db4e9395721c435f3f7f07a888c673c68cbc8fd",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:ce677f01c9f4459692d6fbb84c290916",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "ce8464532318e58d68df4dd18564128c62b37e33dc7cfca0cc88f58d298a676a",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:709",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "7890a748d4ddbf868b9b17e66c3b74e92d25aa1afee5de43662bf05760abfff1",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:682",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "74e4a002233e1138b0584ae9dc8a5be4a6358be57c882abb34f9392373d0634c",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-1256",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "4d8dda49cd9817b30a6ead3fc83087256d05f5b88884eb6ce39cbb2501696f95",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_35928",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "bd35e7e84c4d222a0cfcbb8133cfeb6b478b8a4011e586d06ca06dea57ea0ff2",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-510",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "be2dd64cb09f714af13b6cc026877d4d5d97a986ea49b4cfa83cb1e59d7438bc",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-1109",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "89306812c69dd2f5d0924b0eb100b95d67de7066cdafc35c24d8ea8967cbd934",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:ac0d55915dbc6880",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "ac0d55915dbc688034a5fa10e0a0567a2e43baafed48b670e27a99a753d23c5d",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "minif2f_lean4:mathd_algebra_196",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "01de84cc06c01468341a94b3277f8a69b4b45e0c9ab695059bde5dc21d305733",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:15c5e92c48e24a4b897617b822555db7",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "3f75900af30b7f405fb19dcacf8b52878fa768aaf8124699d39d6ec9ac2b08e1",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:a794f05f5d6687b8",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "a794f05f5d6687b8a2e78d904a89209812a47276ad51ed1405043d45b1500cab",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-295",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "b57b868e0c9f2df07247d4849de168aee18dd9519bd23dbbd583054de9263ada",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:7bc58574708b8a53",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "7bc58574708b8a53410195e1d914dc5a86428b8cc02a383a0f47ddb0c211064c",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-240",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "3900dbdf76401be4c9ac172e646f6f11eec192a162bef8bca4b128c0c740b87a",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-1208",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "50e45892802179493233d0aa25a44cb2ca669aa574162cb01b39e6c47040cba7",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:c1e734b7c9273ade",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "c1e734b7c9273ade357686249bef609292f02928f4d7e92aaf8e804903705dcf",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:GPN/2010/page_89.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "3d5b6aa61030b988ac21324a676e476aa5c47421afb3950b964eabf03437084b",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:3cf7583809cc9110",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "3cf7583809cc9110e00c65652f69c9235ecb294741c261595eb4ef71d9fd537c",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:MRO/2017/page_96.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "bf8e224d598b25e18d425a01df7d09297863c11f130beda4dc5d3dfb6c0b4b51",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:7de5c3a5bfad41e4aef31eeea8b22030",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "4cb2cf0264fbc55d3d2c4c8105dd597a48c7f79912c37609b7c5aec0f2f459d0",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:d428f73dbb6b41ad92a18438ef24e50b",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "62c94de9fcd8219a67badbb7f5c2424b5bd6aa091c74f185e5ba030f3cdec1fd",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_13476",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "5d1237b3d1075b98cdc87b5293a773724c48ed078bf1ae98bc89bba353a9987f",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:AWK/2012/page_117.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "1e527c0d62a139457a37ef3213fd6b74a5cc403988dc757d388f484c4837df29",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-1054",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "e55ce610d5ae75b4053bca2639262c9ab4aaf8bcf3c66d825751856bbd7a7786",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:0e6d015c25774021b45c1ec887072f89",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "d9f49f941e7dfb8411f0f37385e6f78103c31a6506514c974ff938a7e01d533d",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "minif2f_lean4:mathd_algebra_153",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "400aa73cc843ee63ab885b2cb6d4727535edc0d75482334cbd0a886dbe264e75",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:d2adf24a39ef45ccb978d8a79dee7a33",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "ef801eb8e6dba5223e3d069a4f9f78e6c187ba0882af151f351df8e5fa7718d1",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-1035",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "57d7b42b71051cc2dd0d14f2e7c64029862809320886d03202183ac7989ebb92",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_40536",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "5d9d3b4a4d2949d3bfb8e42dfee6484f321254ca8fd25f8e19e2f7d046a47b98",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:AWK/2013/page_122.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "60981a980a3ba5872c45744d11e9e978042941ed61ec93b35463e97354f66247",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-131",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "88c00f32b3b5d600b5148d24b64d7554b49e7faec1ea37453583a0cd28b7eacc",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-210",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "0fe2ac77de7bb7785a72abfd8ff2c86996c91d8d76672dee2bc651f878128be3",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-542",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "a487b3a40e2b15a3c8b99e6bc1fbe16d516262eae91f45af8d73a2725a63a04b",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:8b445a2c8ba74270aa05a6f96566d9dd",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "572449f836d688323a1bd9d7510de60f91a0bcf661444f962e5e2ec55ca3a7d2",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-182",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "24f5e5473880020767812d0d96b3c638d74e776e2b29f124bf9cab5b1393ffe5",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:1142",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "485116b1b29ce4efad495cb456813a5062cfe1357c678ea781785355c03522cc",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-398",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "c9caf616625e13cef17fe07d30f1ee2f13e4101846f0b72ea20ab0f13851ae28",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:edeab4768c064dc98c540ff88aa810f3",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "bec4dc6580b195d54f29098433898037a1107731fafbee3b4d73aeb6b3ae2b2f",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-853",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "453ba64f0f36ff3d7c13d92a02bb190571a8d7492cd80f1aa28509f7c3ab21bb",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-496",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "db72b38ebb32c1abd0883b0c15fe9d159017fe72575f259b6fbf5519a136cbda",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-447",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "ef8d6a5f4c4e3a667ab03b9f1703ff6162880a617e6a63f15c876794e152dc0b",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:c120b2918a174668962a4365d04b604e",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "429675654b294287a0e28f6cd656436fc762a37a9de54e2cbbe09c85a57dfac4",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-29",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "b06ab8c9eb7525345c5cf1f6c124033dd29d086e6c589cc65fad7e5f473d22b9",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:41d4a14f575e4bb1bcbc25dea485d534",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "8bcb29bfad5b831fe61beae465c5231dd22f6b7ca35d4f8454d4d446b6ddab4f",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:GS/2012/page_189.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "bba5a5845abe40e36568e7dd70268c1f6fd12fcff43972cb121089464b9ffd5e",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-1102",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "7d567dadb0903c0739704dc2d5d2381643c43a20e35bb6510c4d7f5a969435b5",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-527",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "c2fb39fc7ead7b5454450f0ae37c7102c7cd254eb5e1e85658f3f1ff1470c24a",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-1242",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "7afc16054ab3c7d25ae2866029678af02cd0e425b5b057536d10008df2b07c9a",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-717",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "c769c8a0cb55ef0bc2365ced23ea9e7d161c60f479f8c5b240ce566b211c3718",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:a247fc717ee245f5a1ff4d9e54e1849f",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "c4535a998e14022a7e7407a58689114992c50355ed6e502a15ac64dff2da6131",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:079e49e7313d1892",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "079e49e7313d18925ddc6d79ee2bfdaa6efe110fd5e5154d68eb30a3aeb303ce",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:244ecb6b0826574c",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "244ecb6b0826574c23d978c03ca05300669ceecf65734363fe097610a6ca25bc",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:80",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "0bf7a3c73f28b38855f9f3da1d008d7aa42f39572ec056ec7c0ea9ad9995d1bb",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:637431cf269c4aa3b52ab2e64b25a718",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "9625d0fff882400be83e856debf9b65a7fb94a007cc19af3464ad90cbeed74af",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-720",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "a36277c4620bf0572d712ed20542ca5151584ccaa6ceaadc6e39a2d9ce9db0c7",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "minif2f_lean4:induction_pprime_pdvdapowpma",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "0503d6316fcf24b60086b1c3066d32b318e14c918bc3dcd5cbcc0ef6c6bdb7be",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:edcbfaa28a53505e",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "edcbfaa28a53505efeb660324de996f5f87064f05f82c00a430b4bf693563e24",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-842",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "f8aca049a49a21ed12d4592a2dc092a0ca095df2230fcb05e1438b325ab83f69",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_exclusivity-691",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "be759e8f0b3d7485b0563fb328277e5425c01fd74a2fe112c719659660e89cc8",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-161",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "5bd95899df5ebaf3e339589f6dc10787267edbf3c35cb1bb5ca820eae3ce776e",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_31809",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "d45371f9ab3bc55bb3a4ea9be06eeb7812bc9c028e97b8c04e73ed358249f53a",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:622",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "cb0beb3066245fb5ff4467f0f38c5a892fed055786d1b90f0741244119dba266",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-1024",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "6db585c6af518d85874ac4064bd879f9da1cfbbf5a038ce17e35e60a0cc4eba6",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:c2c3159fafc7d47e",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "c2c3159fafc7d47e194430e37ebe9e1b7f624fca4b0f713e8796b14482fbd1e6",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:2b71ffcaeab943979c7384b8246ff9f8",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "1e64a92cc3e0795110ef301954ef743f8ea9301d17775247de3e68af2f3dc622",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-168",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "d51d0edb7ce15277ce3712c1153b087de6af922bb687f85b0f967dc91f6fd973",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-575",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "2a7f9e702815167b1708108bd0984ce117179f83a3679a81ca9938193a42d269",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:e9c46210587c0ce4",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "e9c46210587c0ce455a20422f65d5471275eb38dc4b6db98fd2144bcff13ae72",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:796d23a3c2b746e284af0e1f255e6ccc",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "63e63ec098698a76d4260f96403a15205d3a9ee54d47708cc7c4bb7abb806129",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_32525",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "b2ea61d12475dd64bf23cd15a343bdc271ce4342aea60b4b9c7308f687feb7c4",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:773",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "86479c376adbdef09054ff5cd114e55c7e6b78495d2587c6168799f7618c338d",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-1135",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "af5f8efabc0e62e33b2893acab0d0ecad3ba3789f3eaa7921d0eb0afd3eda875",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:12a51577fc8c8f57",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "12a51577fc8c8f57379974dff63caa82cfee85878af091db7e9ed8bef0c2dff7",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:AWK/2017/page_148.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "79dade511d6568145a866ce9e3df74155fdaceda582a5955baf1ccf6c50f2929",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:1038",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "dae89c6b40942d36e7b4942b57bef6fe8352ec03e873157b13ba8f01336f6be5",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:IP/2006/page_30.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "787aaf6b1625b1c0ddd3533592ec1a23ca81d93107ae4a161dd530d5a81405f2",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:C/2009/page_45.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "9e71ea1ca52fdd475c997079a70bcf93222a6e7f1e3f7c67938f30de61afc2ad",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:57da948e2c2240da907a4862234f0a60",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "5ed78b4eb38da84885e3b5282dddba53ca2577a7abae8d12344eaad8b2f8a229",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:ABC/2005/page_49.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "197e276b38cfee2c4af92462e44102787ca2553f1f7a6a504b2d58aa79834da3",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:94411716b6f24da7afbb8caadc084070",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "27c60aab863fb21078b83fa8e231ede5725e3e952999e13e095852059bc4a507",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-1176",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "062bf698caa33356a5cf5aec38c617fe95c1643a9dc929429d7d70a53a65bec5",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_15131",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "956cda23e889da637854090d1885e7724083350b08e3d9b60dad4309d91a692e",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:MAS/2017/page_27.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "8a521a274e15e023d0aaaa9784306956434f7febb6731d39593693aa59a7c728",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:DG/2007/page_67.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "8e6524290b53c707bb2d2bfeb0d7e23e1a01c0114174d518b0208bfdcd8ccec4",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_non-compete-46",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "35758cc7cecc67d4c8a19f3ce6606b52d814ea6b6cb9d55541a83ed32820edaf",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-146",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "6b687054fa9889cd82b3bba9d1edce6edfdc36fcbc45142f30f80b3f18f57eef",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:ADBE/2008/page_89.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "e3410c6cc67267802635916e3ec0398b8b3e7717f1376e81a4261385cb769311",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:6fde67dd3e7b4bc0a01c60bf1386951e",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "d8ce488433e1fdbf7df8718d3dcc6f075a9b420361ad6b2c778c282bf067410e",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_40246",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "1975907ea108be904b69a49a1fd3aa1e5c597c474a4c264f7f72d496b9c6cd3c",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-531",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "051f31e7a03c4847146dd312b2d474d08879d04eba069b493b5340c0fa77f8e8",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-122",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "14398f20238a9b74c0e35e714254c6983bb3ede0a8ce8cda4a116c71ef6a76bf",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:c8ad0f2a90434fab8266923ab48b7764",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "69f52890c98604330c3da5ddb0573af5f3062f77a289717aefb9bb9414465bdc",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:MAS/2012/page_26.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "6d688c745eafeacbf9793b83f476da9c81bbad672320eb6fb5ee8f654e81ade2",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-815",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "269801e939124a166ddd4fe9d24f77560e1e337db0f0a493a3b35369efe6fe03",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-193",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "94d81786fe565282d1c39abd4746f3bc03f842a040b59888513df5963360b054",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-9",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "def5f6789e22287426a9637d95b595f35a1de7a4f9e03a36243cea8359948edc",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-748",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "15866f819d9b8bf072fc9f1e99309b68000a0945accb6d8b503e4917083a46a7",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-933",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "ddd4b09a1134a0d84edbd2ca655ec003551cc5b98b247c202b5742ad956b15fa",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_14271",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "cf71a6fda91e34c77386ce121c40f93d34cc1b07887a48d9c63774a34ee905d0",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:01c082ff57c845db9a41830657d4c2f6",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "4060d551d25e3616b97156a5b27a8de34657db23e90c0b6822d07f5eaac50da2",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_31582",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "d643d1733775ee91d7c1749243daa71bb60d2e4c5de74298ad45f1d1c1f93976",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-675",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "54fa9619fd3cd7f4e89605f81e322e07f9b85cb216fa3ceba7e7c2a276d062e5",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_17505",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "4e08dc84e9cfb672e90d38f7c8122fb9a371373b553d333705b098c87deeb3a1",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-60",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "1fc35b5f617a9faa8ad5ddc1d2f64501081ca520a7ac4bb655c6ee8a94bcc3c0",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_non-compete-70",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "a860a2716c905906aefbc650b8b7fd28ec6f47c15b478eeac6ec7a6182e6e4ad",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:f17e86e400862b58",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "f17e86e400862b58a8f76248b6a0516ef3258bdbcc14e2bf04973c276cb80adf",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:UPS/2012/page_32.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "36f898e0ab4d733600065aaaf1de1289f58da9d0c0f44ba778b6204d190ed69d",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_non-compete-262",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "cdce9b016bed654644995e578c754219f31afc1932d0c52db042ebf3ba0b8949",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:305c5c875e004bb0bb5131f70bd43740",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "d5e0e02b01c9e8bcff4429bb510e342b57314bbf49737dc711996218d27c1081",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-879",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "105811d0778d60655f5d54a339a8f0cdf838e3d3c70e20ef40b2a6bb8ece5778",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:59b4cee67aabb257",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "59b4cee67aabb257050e24350386b215c61af9a4e00bf1b6044bedd14ab864f8",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-250",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "170f32d84eb72605093ff2a3d7230ab858c9249fdc1ec4b7033e958152c43fd3",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_26652",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "7e0071596b702b6d7b604e2cffa3b4695abae47691a2d185acc62bb0461f6c3b",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:MSI/2012/page_87.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "0840224748a86294faa0e24acc616742585f67fb3dadd1c65615da382fb95ee4",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:a88b3d44f1598abf",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "a88b3d44f1598abfb32011ef71e859618a69c60e54d77ac0477a29d649036625",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-956",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "48071be4caa304563439e2bb9f7bafe25fc498a16cbad4dfd734f569d0026232",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:f0bfe3f8637787f7",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "f0bfe3f8637787f7feade76b0b4542f98eaa7a6979db99717babbe6d773e2dc8",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:167a6d9b383f4e3bb570a8ecbb42951a",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "78c0298e4e2a862fada98a8e3eee5b3929235a18b212179ccd595fc25269808c",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:JPM/2014/page_122.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "86f32a123942ff00da272d1da76f6239ba15a113b4cdf31a5c524eda05c2d7a5",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:1710783b7d044a79b438ff600f4d90b4",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "1a458c20cde725bf50a1c5e7bf2d0be22077ddd05574afc6c406480ea8853270",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:f82ab0808c634c56aa39311847b6389a",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "67177bce3103d5f65ffe6a8bb1123734b86043fdfd562ef927e57524a83c103c",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_29996",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "fce6c1c540cb8888962a3e03c9d0df86540f5fef2d852e3126b914a67252755f",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_non-compete-273",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "63b61a1a84b176db7d517ce7bc11b9f732b03feb2db20436a94a2de6f5a32834",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_22025",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "e783b789680d4c1e458559a2ec3b18b56d8c6112b1c64a8d305a9a2fd7068a1e",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-1131",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "b5292b60176d3fbedac869536f332657d3552d13ac4468917ac9215f8b7c117f",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "minif2f_lean4:amc12b_2021_p13",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "3b3e391454bee5f9609d61c19a7c9e603dbbcd5a7627ef095090f6cdb36a45e6",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:JPM/2010/page_120.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "5d4e123de606000e4df758a51776b20d3177437c79239e6a171f20e871c23d45",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:700",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "f69f52b08a8a5b6dedb1543a627361ca181a321af479304aba8323eb547871ce",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:dbbe795ab6edb4b0",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "dbbe795ab6edb4b0b00d7dc488041c666a0050c0630291a71ac00a77311013e9",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:GS/2014/page_165.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "c25698a46a03f21e8d85ee85209a3b462839bc5633ed1e1b2e72e3a0ccc168b9",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:b9239176e2ff46b4ace405b4350f98da",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "81f67671197b8badfba04b2740ddd25da5d0494798e23a865d96639d254f21e2",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-204",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "0416c1b2a4e0d16bd826f9f89453ba4a77238db37f35a8a15faac1d5031532b7",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:624",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "1f002e412392553042f3018daf2f60d501ec0b62affc4b421b793cba7bff09b8",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-1025",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "d88e3f1b5b34bff9b40f911584c7a76b6037b3314ec1e646833fdee46f16cfab",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "verilogeval:Prob009_popcount3",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "75de12addc28cd2765a1984e4879012fa7d50196c303bffe60cab5488caa375e",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:156d4d5d0a1c438683b8fa86ae7fb8e6",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "5ba7b5bf0282e638097819e3a4c61c4b5a812727699f820627137a333fd00852",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_32456",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "690cacc58cd3fde17ca2df497847fcb5b6a3f31ab4fb7bcce333247901275810",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-237",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "694d46c5e7a4ba6ee7d778bea412a1e80f3e53e3d7727fe2fe1e663b5ee29c83",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-521",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "d2e176068dd4ee7033ac7809acfc59c39064742546d41070fd54cfd88ffa0e66",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-212",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "9053a35ef61c02345896c469951d33f0db9e23bdeb58d502540631619c162336",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_cap_on_liability-1037",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "47215a653c74ebe29eb59df9864705f09fd82b76e3de7986e22176f699c47450",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:JPM/2010/page_281.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "fa08503d768adf69008a5325ce476a193aa677e269cf78099d28e003e7aa9ac3",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_3270",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "6ae5493fcf8d3bff91e3b4a23a920e45b65486ec3e877e9093b8e513d647c1b3",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:62ad8ad2fb5e912a",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "62ad8ad2fb5e912a6a726ce97148ab183e00836f1f419cb36b40ce9b539f966b",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_3065",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "7d03d7b981350eb61e025863f43c08d7ac27184025f795096da7e6077b99df19",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-146",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "fb51b3bd4cf82d49cb37f4cc208de61a9578f113b28b648ccc79cae2df7751be",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:JPM/2008/page_117.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "5b250ff94870f87541a6f660862024bebf447e678ed5d21f69674eb31a3d9912",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:7d8b087379124728",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "7d8b08737912472872ed2932afe7af99bc72e16457a76b9f91f6b6e376284f24",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_3810",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "21991ebb0e11e97d89814a892342c1728aa70471b854ff961876ab8a246cde48",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_22565",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "ab918fcdd8bbac949ce707c5f2588ce74b22a8c00916adaf087406e12b8ca88e",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:23",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "7d68d140cf766fa47fbee5a7304fb02d5c241460389a518696c445be995ac8b9",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_3046",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "6ae27fa9dca2d13bd41e00ed058bcb3a12b2cc23446add72c9f21616a95b7d9c",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:7344ee0a2f794082a8bdb9e3178289b2",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "a6e7ddcf9da94280ad6522df447d7cabf7339fa970f04213b6251049970c4cfb",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-1012",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "d3d6b73a2d1d21d2d4e6dbdc2bd1f29579536d874723d7273dfd12beb397b78a",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_31983",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "f5c896199cfcdcf16d27ce1ccda66e9045f85974c24cb11b9a876e6f5b02e917",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-276",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "2230185d53b70887fa29e237ae250a981ce0762225ebf08d07ff92578783390a",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:e4f17b50cfb049c7b1afe25e953908d0",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "f7406ba8fef1fdd7bd6d1f5b0daae19d903dd7b708601131c6724504bc724f91",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_32571",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "684e514c30498edcce9bc33ff4385094568e04bcaa5794aa80b2e0978df3a4fb",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_exclusivity-553",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "093229bba9e12e885b2c8a4d777443d5daced5d38e973dabc210fa135b700f7e",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-1019",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "d18223d378413b3d54069e1069f9eee6b9f5611de8f70879475ee4f9d2608d5d",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:fafd92407ddf89c0",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "fafd92407ddf89c0194177a60f58a38a1407d1c0dfa055df0367a7853ed134b9",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:43f8619275ad40b3a903e38e57aef8e1",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "a1669cf65452c610eef2b1198b2b48f538b8da778855137e5b2c334f5e226ad5",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_3733",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "d22b7ef3f8978458c17209d70c295af51cb65ff1b46dd1e7119291ae4179bfbc",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-678",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "7b707515cf5df9ed93fef2dd2fce3c6fed3f407a24bcdd3c959a2fdcedd1d65a",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:2b1029df4e474f2aa4b179dc4b0bf47e",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "28a8dc7685a2d80ffa1ccb78e1cc7c7aafc3c763d6a5f94c5a03b838074a47b4",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_39903",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "7b19f1a929761467b61c889965bab6bae7aeb7b4e5aef5b3abd4f6c949c5f5c1",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:441",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "a998fb5b24a87a836909086134d31e309a5fbc423983676e71b84cb23c3461c5",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:BLL/2010/page_37.pdf-4",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "1d7c480283a03ea69b10394cbf84e27cc18e56d31920c244a67980a4a94f6e89",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:f15bf5f600fde612",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "f15bf5f600fde612c62aac19aacc96fec9d5492ea20cd882fcf438f7da528fdc",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-1006",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "e15151651ef1ff1ab32d5bcd980d24d4066c9aa88f572102f8551b3dfef77c7b",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:VNO/2014/page_57.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "61fdd9adf272aed0309a1205b6812f5ed13f840eed786ae1771b6b22cb00f91d",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-229",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "6ecf97ae390509a2d9267f3317269c3bec4c4aa2dd1f6a983bc7e51f296b9f47",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:85d3f9db6c1544c385da564cda36801a",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "942474f47d66b5923c5a52b6031f9535c25c4b0a6a4d67baf2ba27333e5c5064",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "verilogeval:Prob062_bugs_mux2",
+    "source": "verilogeval",
+    "expected": "verilog_expert",
+    "prompt_sha256": "0789e2627f273d65d277d0ca6af1b42a80dafd3aa77e0be67573eeaedf133b39",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_23792",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "d60994d28e02fc7d856f06d3b93af2f1919a7f58f4f9f1e27463f2dbb2e410d1",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-769",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "6824bd5fbcae3e0b1cdeef0bcbbe9f725bcf2ed9e460732d87edcfeb161a6fcb",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:5aaa7f02f4b24ef68463eadb96553737",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "58e7e24d8818522bfbbe6a2cc7a995c002247256f9f008fd0f3d407b90f54f24",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_4727",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "c3e41dab783c895986db928639b9287ac0db29911d9d25d63f58976a6b5cdd31",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:AOS/2010/page_18.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "17a12af11c211896275f72f0f40a51832771f2877a929ca611d5ca7990dce4de",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_3103",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "2749496d23b6c2242eda322b5613259e6c21522d8bb758fe828c7f2a831e5a12",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:PNC/2007/page_92.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "35f99e2b59c5fbc5124e5ad6e7146f36918f85f2c95b1439fcb85ba5f569e775",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_28748",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "7636f5a31d1e9026db0fb00a0f65011f4128d83317bc682c91a34b1ced8b5330",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:JPM/2008/page_87.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "642bb8307d1d8b27948ad881a6a90a7b1bceed2a7f33bcbecf474dd37cc18f30",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:IPG/2017/page_92.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "89793159759093a92a2a23262c7e99905d20effb20e0844fb2c5d83b64fcae6e",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:1632d26b1f3145fba80a6fb0b888d2d8",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "711e5fbe849ae0b9e9885f58468c7772c6254f2214de2246b027595de991dd42",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_termination_for_convenience-418",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "4a29b3f33366c8b62d149f88df2c82c7475c28363bed80c528aa4667090dc665",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:c4a36942e9bf41c78f9e66a5959f63d0",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "62923c0e4c516a47cb9d26fdd36abfe92b682ad440775282f61f31ab6ef18c65",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:JPM/2012/page_140.pdf-1",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "720cc7e542f9ff680259091114889a3b5de66489b9bf8b3a5da29dcaf70ee95c",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-854",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "aff259c2992f10dd6ed98f482d0a72b46cec1f2f9fc3684d01bee5f8b57e4ba0",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_26599",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "7756ad3a19e12c32181214db8d593733ada2e1c72ed8b9cb304fe539224f3cfc",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:73d6f61d9fc2261b",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "73d6f61d9fc2261b5ff4fc6a130ce46e5f759fdd82536f4458150cc9abe67453",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-539",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "8a64c75fd86eb1e3b9dd26c5ab9c34c025f62caadd7908cd86ff910b17abd747",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:AMT/2007/page_127.pdf-3",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "9fae9acc61e6806e5ca0c5c10bfe651ea06aee5af5a1e9983dc2634c5dca2df9",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_25997",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "ca6eafd3172741c2ae069dae39b1a174f123b8ee2628a0e7a356eecd1e063332",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:HWM/2015/page_173.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "f23db603c88af9d2a3ad052043ed9b25323dc5f9b9aa5192dec47359041afa94",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "minif2f_lean4:mathd_numbertheory_239",
+    "source": "minif2f_lean4",
+    "expected": "lean4_generalist_expert",
+    "prompt_sha256": "81555dc9e5eae3ef6c7963fff80c81d40f471581f6710e3ddb4c819039b659c3",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_24346",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "74e0259ad4b5d429059a5e889f5cb9e3eccf6abc37b4918e41ceda5eaf646269",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:f55f7b2d25704c9a975fd257581aeae7",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "42c1e7508f72affdbcdb986e99e28490e8118510382656a0e08f962e194fa517",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:a1f930ab77dda26f",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "a1f930ab77dda26f05c58851efc4c27dbc6e180ec529c04a8ed40e43cd8d0304",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-134",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "84abcb692ce3b2d7b299a7ab6fa2621dcc4f3e387e1c6339ebec30f9dd103b2f",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_3735",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "5d3afeb35cf99de77b070e523994ead2bb549f18bacbfac240f079ad565fec9c",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_39804",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "b75c1e25093a292a706e80268ea4fc561672f7fc9889176055e0dcb74cfb134d",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:1534040f068641a08239832736446d7a",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "b90cb19fa4ccbb2e1de982710aa0e5c4d663839682cba99197c90356b512e3e1",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-1127",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "c422639be6c0ac2600b9ebbb21757b3230a3eb4e02576ba3339b1a7dbdebb41f",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_audit_rights-452",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "b96ac96a776b8b1f2a39cbd2bb4627ad2112b086c3ca77714b11127f3295900a",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-1164",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "96218815734a6c221b07b0668adee368809773fc70f9b59ed8f26849894f8181",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:52348cef7a534e7d8bbc8847726b7cdf",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "b5da1d17004da9b7a5dce192680be43bffd207ecd13c8b3040accadcb55969fc",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:c9c3b6cbba53473ebfec578be7d2a157",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "666af1b4ca9dd3b2806812a9480e8f5fee3bd90689b0767df3c44f86db06a4d3",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_18743",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "bed467983585e54758c5622bbe7aeddf71f56ddeb05d7e8ad88d166535bdf899",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "cuad:cuad_exclusivity-306",
+    "source": "cuad",
+    "expected": "legal_contract_expert",
+    "prompt_sha256": "37583a75469cd9858db0a018da47fa15df198bd36f3fee01de0db5b8003341e4",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "no_robots:e6fd684789090b25",
+    "source": "no_robots",
+    "expected": "base",
+    "prompt_sha256": "e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_15446",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "0617c64a4a8e89983a512a6723458942fc6c0273916fa06812547665c5e969f2",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_39672",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "c27c924c9de48109b1ee9b1c2a971b8f4206fbd9e7ac48af41032180c56abdad",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "gsm8k:test-597",
+    "source": "gsm8k",
+    "expected": "reasoning_expert",
+    "prompt_sha256": "32075c99785a9f2d8e9d0bec276691a9cba76bbe71bcf8e5c75b9f650f91aba6",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_20861",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "a168d68ea02e68275b78232d4a36131a1483bcd99af75e201aab8c80ed7f9b5f",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "pii:93954b0996e146bf94a6748b25e07dcb",
+    "source": "pii",
+    "expected": "privacy_dlp_expert",
+    "prompt_sha256": "c39b54d339dc4fc6520ba9763fc1c2b324eab7613d64eabc0c2dccb881e7dc5e",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "finqa:PPG/2012/page_29.pdf-2",
+    "source": "finqa",
+    "expected": "finance_market_expert",
+    "prompt_sha256": "df40ac10c1acb7813981100e960708b7689dcba10aa650a817de6e9c5145dad6",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_31544",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "5953cc982926c428babcb669b36a85dacc2bb95d3f1f089f781409da49340109",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "medqa:232",
+    "source": "medqa",
+    "expected": "base",
+    "prompt_sha256": "66cf7e9a5bbcc6d1b8b560ee1c56a81c6ef71265ad1f365c1d22a63b048af1d9",
+    "cohort": "fresh_unseen"
+  },
+  {
+    "key": "text2cypher:instance_id_19217",
+    "source": "text2cypher",
+    "expected": "text_to_cypher_expert",
+    "prompt_sha256": "1b661707d1f0c7cc9feab96fadcec380bb4ec9608a30bd30cff7dcaa9eb354e1",
+    "cohort": "fresh_unseen"
+  }
+]

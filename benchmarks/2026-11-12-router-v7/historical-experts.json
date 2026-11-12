@@ -1,0 +1,241 @@
+{
+  "date": "2026-10-09",
+  "status": "historical direct-expert comparison; router not evaluated",
+  "conditions": "Qwen3.5-9B Q4_K_M GGUF, RTX 3090, quick mode, thinking and verifier off",
+  "summary": [
+    {
+      "expert": "coding_delta_expert",
+      "task": "humaneval",
+      "n": 60,
+      "base_score": 0.7666666666666667,
+      "expert_score": 0.7833333333333333,
+      "expert_only_better": 3,
+      "base_only_better": 2,
+      "unadjusted_p_value": 1.0,
+      "settings": {
+        "task": "humaneval",
+        "thinking": "off",
+        "quick": true,
+        "limit": 60,
+        "seed": 0,
+        "base": "base/humaneval-off-quick-60-0.jsonl"
+      }
+    },
+    {
+      "expert": "coding_expert",
+      "task": "humaneval",
+      "n": 60,
+      "base_score": 0.7666666666666667,
+      "expert_score": 0.8833333333333333,
+      "expert_only_better": 8,
+      "base_only_better": 1,
+      "unadjusted_p_value": 0.0390625,
+      "settings": {
+        "task": "humaneval",
+        "thinking": "off",
+        "quick": true,
+        "limit": 60,
+        "seed": 0,
+        "base": "base/humaneval-off-quick-60-0.jsonl"
+      }
+    },
+    {
+      "expert": "cybersecurity_expert",
+      "task": "cti_rcm",
+      "n": 60,
+      "base_score": 0.5666666666666667,
+      "expert_score": 0.5166666666666667,
+      "expert_only_better": 3,
+      "base_only_better": 6,
+      "unadjusted_p_value": 0.5078125,
+      "settings": {
+        "task": "cti_rcm",
+        "thinking": "off",
+        "quick": true,
+        "limit": 60,
+        "seed": 0,
+        "base": "base/cti_rcm-off-quick-60-0.jsonl"
+      }
+    },
+    {
+      "expert": "entity_extraction_expert",
+      "task": "conll",
+      "n": 60,
+      "base_score": 0.6736750912486207,
+      "expert_score": 0.6722004608294931,
+      "expert_only_better": 17,
+      "base_only_better": 14,
+      "unadjusted_p_value": 0.720100131817162,
+      "settings": {
+        "task": "conll",
+        "thinking": "off",
+        "quick": true,
+        "limit": 60,
+        "seed": 0,
+        "base": "base/conll-off-quick-60-0.jsonl"
+      }
+    },
+    {
+      "expert": "finance_market_expert",
+      "task": "finqa",
+      "n": 60,
+      "base_score": 0.6166666666666667,
+      "expert_score": 0.6666666666666666,
+      "expert_only_better": 7,
+      "base_only_better": 4,
+      "unadjusted_p_value": 0.548828125,
+      "settings": {
+        "task": "finqa",
+        "thinking": "off",
+        "quick": true,
+        "limit": 60,
+        "seed": 0,
+        "base": "base/finqa-off-quick-60-0.jsonl"
+      }
+    },
+    {
+      "expert": "iac_security_expert",
+      "task": "terraform",
+      "n": 60,
+      "base_score": 0.5333333333333333,
+      "expert_score": 0.5166666666666667,
+      "expert_only_better": 5,
+      "base_only_better": 6,
+      "unadjusted_p_value": 1.0,
+      "settings": {
+        "task": "terraform",
+        "thinking": "off",
+        "quick": true,
+        "limit": 60,
+        "seed": 0,
+        "base": "base/terraform-off-quick-60-0.jsonl"
+      }
+    },
+    {
+      "expert": "legal_contract_expert",
+      "task": "cuad",
+      "n": 60,
+      "base_score": 0.7666666666666667,
+      "expert_score": 0.8333333333333334,
+      "expert_only_better": 4,
+      "base_only_better": 0,
+      "unadjusted_p_value": 0.125,
+      "settings": {
+        "task": "cuad",
+        "thinking": "off",
+        "quick": true,
+        "limit": 60,
+        "seed": 0,
+        "base": "base/cuad-off-quick-60-0.jsonl"
+      }
+    },
+    {
+      "expert": "medical_reasoning_expert",
+      "task": "medqa",
+      "n": 60,
+      "base_score": 0.6666666666666666,
+      "expert_score": 0.65,
+      "expert_only_better": 1,
+      "base_only_better": 2,
+      "unadjusted_p_value": 1.0,
+      "settings": {
+        "task": "medqa",
+        "thinking": "off",
+        "quick": true,
+        "limit": 60,
+        "seed": 0,
+        "base": "base/medqa-off-quick-60-0.jsonl"
+      }
+    },
+    {
+      "expert": "penetration_testing_expert",
+      "task": "pentest",
+      "n": 60,
+      "base_score": 0.8833333333333333,
+      "expert_score": 0.8666666666666667,
+      "expert_only_better": 3,
+      "base_only_better": 4,
+      "unadjusted_p_value": 1.0,
+      "settings": {
+        "task": "pentest",
+        "thinking": "off",
+        "quick": true,
+        "limit": 60,
+        "seed": 0,
+        "base": "base/pentest-off-quick-60-0.jsonl"
+      }
+    },
+    {
+      "expert": "privacy_dlp_expert",
+      "task": "pii",
+      "n": 60,
+      "base_score": 0.7531515706515707,
+      "expert_score": 0.782921892921893,
+      "expert_only_better": 7,
+      "base_only_better": 2,
+      "unadjusted_p_value": 0.1796875,
+      "settings": {
+        "task": "pii",
+        "thinking": "off",
+        "quick": true,
+        "limit": 60,
+        "seed": 0,
+        "base": "base/pii-off-quick-60-0.jsonl"
+      }
+    },
+    {
+      "expert": "reasoning_expert",
+      "task": "gsm8k",
+      "n": 60,
+      "base_score": 0.8833333333333333,
+      "expert_score": 0.9,
+      "expert_only_better": 2,
+      "base_only_better": 1,
+      "unadjusted_p_value": 1.0,
+      "settings": {
+        "task": "gsm8k",
+        "thinking": "off",
+        "quick": true,
+        "limit": 60,
+        "seed": 0,
+        "base": "base/gsm8k-off-quick-60-0.jsonl"
+      }
+    },
+    {
+      "expert": "software_engineering_expert",
+      "task": "humaneval",
+      "n": 60,
+      "base_score": 0.7666666666666667,
+      "expert_score": 0.8166666666666667,
+      "expert_only_better": 6,
+      "base_only_better": 3,
+      "unadjusted_p_value": 0.5078125,
+      "settings": {
+        "task": "humaneval",
+        "thinking": "off",
+        "quick": true,
+        "limit": 60,
+        "seed": 0,
+        "base": "base/humaneval-off-quick-60-0.jsonl"
+      }
+    },
+    {
+      "expert": "text_to_sql_expert",
+      "task": "sql",
+      "n": 60,
+      "base_score": 0.5833333333333334,
+      "expert_score": 0.5833333333333334,
+      "expert_only_better": 1,
+      "base_only_better": 1,
+      "unadjusted_p_value": 1.0,
+      "settings": {
+        "task": "sql",
+        "thinking": "off",
+        "quick": true,
+        "limit": 60,
+        "seed": 0,
+        "base": "base/sql-off-quick-60-0.jsonl"
+      }
+    }
+  ]
+}

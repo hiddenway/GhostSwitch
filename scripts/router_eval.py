@@ -19,6 +19,7 @@ between three processes; the report reads every routes*.jsonl in the results fol
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import platform
 import random
@@ -96,6 +97,40 @@ def dataset(limit: int, seed: int) -> list[dict]:
     return items
 
 
+def evaluation_items(args) -> tuple[list[dict], set[str]]:
+    """Freeze inputs and exclude previously evaluated IDs before taking a sample."""
+    excluded = set()
+    for path in args.exclude_keys:
+        keys = json.loads(Path(path).read_text())
+        if not isinstance(keys, list) or any(not isinstance(key, str) for key in keys):
+            raise ValueError("An exclusion file must contain a JSON list of question keys")
+        excluded.update(keys)
+    if args.dataset:
+        items = [json.loads(line) for line in Path(args.dataset).read_text().splitlines() if line.strip()]
+    else:
+        items = dataset(args.limit, args.seed)
+    seen = set()
+    selected = []
+    for item in items:
+        if not all(isinstance(item.get(key), str) and item[key] for key in ("key", "source", "expected", "prompt")):
+            raise ValueError("Each question needs a key, source, expected route and prompt")
+        if item["key"] in seen:
+            raise ValueError(f"Duplicate question key: {item['key']}")
+        seen.add(item["key"])
+        if item["key"] not in excluded:
+            selected.append(item)
+    if args.shard:
+        index, count = (int(part) for part in args.shard.split("/"))
+        if count < 1 or not 0 <= index < count:
+            raise ValueError("Shard must be i/n, with 0 <= i < n")
+        selected = selected[index::count]
+    if args.max:
+        selected = selected[:args.max]
+    if not selected:
+        raise ValueError("No questions remain after exclusions")
+    return selected, excluded
+
+
 class AllExperts:
     """Registry stand-in: every expert in the routing tree counts as installed and turned on."""
 
@@ -132,12 +167,14 @@ def _machine() -> dict:
 def _git() -> dict:
     def git(*command: str) -> str:
         return subprocess.run(["git", *command], cwd=ROOT, capture_output=True, text=True).stdout.strip()
-    import hashlib
     code = {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()[:12]
             for name in ("core/router_v6.py", "core/router_v7.py", "core/thinker.py", "core/routing_context.py",
                          "core/response_language.py", "core/router_tree.py", "core/expert_packages.py",
                          "core/llm.py", "core/config/router_tree.json", "core_models/backbones.json",
-                         "scripts/router_eval.py") if (ROOT / name).exists()}
+                         "scripts/router_eval.py", "core/main.py", "core/request_contract.py") if (ROOT / name).exists()}
+    for path in sorted([*ROOT.glob("core/config/execution_profiles/*.json"),
+                        *ROOT.glob("experts/**/*.json"), *ROOT.glob("experts/**/prompt.txt")]):
+        code[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()[:12]
     return {"branch": git("branch", "--show-current"), "commit": git("rev-parse", "--short", "HEAD"),
             "uncommitted_changes": bool(git("status", "--porcelain")), "code_sha256": code}
 
@@ -187,29 +224,40 @@ def run(args) -> None:
         # Comparing quantizations means loading checkpoints the app does not ship.
         import core_models
         core_models.validate_local_model = lambda profile: None
+    items, excluded = evaluation_items(args)
     selection = runtime_selection.resolve(args.backbone, args.backend, args.model_path)
     llm.configure_backbone(selection.backbone, model_path=selection.model_path, backend=selection.backend)
     registry = AllExperts()
-    items = dataset(args.limit, args.seed)
     results = Path(args.results)
     results.mkdir(parents=True, exist_ok=True)
     path = results / "routes.jsonl"
     if args.shard:
         index, count = (int(part) for part in args.shard.split("/"))
-        items = items[index::count]
         path = results / f"routes.shard{index}.jsonl"
-    if args.max:
-        items = items[:args.max]
     done = {json.loads(line)["key"] for line in path.open()} if path.exists() else set()
     todo = [item for item in items if item["key"] not in done]
     print(f"{len(items)} questions, {len(done)} already routed, {len(todo)} to go", flush=True)
-    meta_path = results / "run.json"
+    meta_path = results / (f"run.shard{index}.json" if args.shard else "run.json")
     meta = json.loads(meta_path.read_text()) if meta_path.exists() else {"sessions": []}
+    inputs = "".join(json.dumps(item, ensure_ascii=False, sort_keys=True) + "\n" for item in items)
+    inputs_sha256 = hashlib.sha256(inputs.encode()).hexdigest()
+    snapshot = _git()
+    if done:
+        if meta.get("dataset", {}).get("inputs_sha256") != inputs_sha256:
+            raise ValueError("Cannot resume: input questions differ from the previous session")
+        if any(session.get("git", {}).get("code_sha256") != snapshot["code_sha256"] for session in meta["sessions"]):
+            raise ValueError("Cannot resume: evaluated code changed; use a new results directory")
+    (results / (f"inputs.shard{index}.jsonl" if args.shard else "inputs.jsonl")).write_text(inputs)
+    excluded_json = json.dumps(sorted(excluded), ensure_ascii=False, indent=2) + "\n"
+    (results / "excluded-keys.json").write_text(excluded_json)
     meta.update({"router": args.router, "dataset": {"seed": args.seed, "limit": args.limit, "max": args.max,
-                                                    "shard": args.shard},
+                                                    "shard": args.shard, "input_file": args.dataset,
+                                                    "excluded_keys": len(excluded),
+                                                    "excluded_keys_sha256": hashlib.sha256(excluded_json.encode()).hexdigest(),
+                                                    "inputs_sha256": inputs_sha256},
                  "model": _model(llm, selection), "machine": _machine()})
     meta["sessions"].append({"started": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "questions": len(todo),
-                             "git": _git()})
+                             "git": snapshot})
     meta_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n")
     started = time.monotonic()
     with path.open("a") as out:
@@ -232,6 +280,11 @@ def run(args) -> None:
                 rate = (time.monotonic() - started) / number
                 print(f"{number}/{len(todo)}  {rate:.2f} s/question  ~{rate * (len(todo) - number) / 60:.0f} min left",
                       flush=True)
+    meta["completed"] = time.strftime("%Y-%m-%dT%H:%M:%S%z")
+    meta["code_unchanged_during_run"] = _git()["code_sha256"] == snapshot["code_sha256"]
+    meta_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n")
+    if not meta["code_unchanged_during_run"]:
+        raise RuntimeError("Evaluated code changed during the run; results must not be treated as one version")
 
 
 def _pct(part: int, whole: int) -> str:
@@ -354,6 +407,8 @@ def main(argv: list[str] | None = None) -> None:
     r.add_argument("--router", choices=("v6", "v7"), help="default: the router the app uses for this backbone and backend")
     r.add_argument("--max", type=int, help="route only the first N questions of the shuffled set")
     r.add_argument("--model-path", help="another checkpoint of the backbone, e.g. a different quantization")
+    r.add_argument("--dataset", help="frozen input JSONL containing key, source, expected, prompt and optional category")
+    r.add_argument("--exclude-keys", action="append", default=[], help="JSON list of previously used question keys; repeatable")
     rep = sub.add_parser("report")
     for command in (r, rep):
         command.add_argument("--results", default=str(ROOT / "results" / "router"))

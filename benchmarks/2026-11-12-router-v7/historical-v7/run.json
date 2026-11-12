@@ -1,0 +1,55 @@
+{
+  "sessions": [
+    {
+      "started": "2026-10-30T01:32:47+0400",
+      "questions": 300,
+      "git": {
+        "branch": "router-optimization",
+        "commit": "5e8fcfb",
+        "uncommitted_changes": true,
+        "code_sha256": {
+          "core/router_v6.py": "d458640ba70e",
+          "core/router_v7.py": "1c4dd6c80a82",
+          "core/thinker.py": "da6a7d1b0178",
+          "core/routing_context.py": "90e54748de65",
+          "core/response_language.py": "5427f4689735",
+          "core/router_tree.py": "f96cd9727e92",
+          "core/expert_packages.py": "17c280ec552a",
+          "core/llm.py": "217dcdf21bc5",
+          "core/config/router_tree.json": "1cf0915694d4",
+          "core_models/backbones.json": "f626514a1d8e",
+          "scripts/router_eval.py": "1afc0b018a73"
+        }
+      }
+    }
+  ],
+  "router": "v7",
+  "dataset": {
+    "seed": 3,
+    "limit": 1000,
+    "max": 300,
+    "shard": null
+  },
+  "model": {
+    "backend": "mlx",
+    "model": "mlx-community/Qwen3.5-9B-5bit @ 64b670725ad59d26c7b77430a3a4ae671afb776a",
+    "published_source": "mlx-community/Qwen3.5-9B-5bit @ 64b670725ad59d26c7b77430a3a4ae671afb776a",
+    "quantization": {
+      "group_size": 64,
+      "bits": 5,
+      "mode": "affine"
+    },
+    "runtime": {
+      "mlx": "0.32.2",
+      "mlx-lm": "0.31.3",
+      "llama-cpp-python": "0.3.35"
+    }
+  },
+  "machine": {
+    "system": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "chip": "Apple M1 Pro",
+    "memory_gb": 16
+  },
+  "status": "historical; not a measurement of the current router"
+}
